@@ -1,0 +1,1 @@
+//pages are for routes
