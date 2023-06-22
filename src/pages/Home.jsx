@@ -1,8 +1,20 @@
-import React from 'react'
+
+import Contact from './Contact'
 
 const Home = () => {
+const {home} =props;
+
+
+
   return (
-    <div><h1>Home</h1></div>
+   <>
+   {home.map((item) => {
+    return (
+      <Contact item={item}/>
+    );
+
+   })}
+   </>
   )
 }
 
