@@ -1,12 +1,13 @@
 //pages are for routes
+//imr + sfc
 
-const Contact = (props) => {
-    return (
-      <div>
-        <p>{props.contact}</p>
-      </div>
-    );
-  };
-  
-  export default Contact;
-  
+import React from "react";
+const Contact = () => {
+  return (
+    <>
+      <p>Contact</p>
+    </>
+  );
+};
+
+export default Contact;

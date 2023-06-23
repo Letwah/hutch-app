@@ -1,23 +1,19 @@
-
-import Contact from './Contact'
+import Contact from "./Contact";
 
 const Home = () => {
-const {home} =props;
-
-
-
   return (
-   <>
-   {home.map((item) => {
+    <>
+      <p>home</p>
+      {/* {home.map((item) => {
     return (
       <Contact item={item}/>
     );
 
-   })}
-   </>
-  )
-}
+   })} */}
+    </>
+  );
+};
 
-export default Home
+export default Home;
 
 //rafce
