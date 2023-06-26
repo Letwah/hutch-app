@@ -1,4 +1,4 @@
-const fineArtImgs = [
+const illustrationCatalogue = [
   {
     id: 1,
     title: "A.M",
@@ -99,4 +99,4 @@ const fineArtImgs = [
   },
 ];
 
-export default fineArtImgs;
+export default illustrationCatalogue;

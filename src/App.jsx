@@ -7,7 +7,7 @@ import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import FineArt from "./pages/FineArt";
 import Illustration from "./pages/Illustration";
-import Shop from "./pages/Shop";
+import Cart from "./pages/Cart";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 
@@ -22,7 +22,7 @@ const App = () => {
       {page === "CONTACT" && <Contact />}
       {page === "FINE_ART" && <FineArt />}
       {page === "ILLUSTRATION" && <Illustration />}
-      {page === "SHOP" && <Shop />}
+      {page === "CART" && <Cart />}
 
       <Footer />
     </>

@@ -1,42 +1,78 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+/* #root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr 1fr 3fr 1fr;
+
+  grid-template-areas:
+    "nav nav nav nav "
+    "sidenav main main main "
+    "sidenav main main main "
+    "sidenav footer footer footer ";
+  grid-gap: 0.2rem;
+
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #000000;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+nav {
+  background: #2e2e2e;
+  color: #ffffff;
+  grid-area: nav;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+main {
+  background: #9d9d9d;
+  grid-area: main;
+}
+
+#sidenav {
+  background: #ffffff;
+  grid-area: sidenav;
+}
+
+footer {
+  background: #4a4a4a;
+  grid-area: footer;
+}
+
+nav,
+main,
+#sidenav,
+footer {
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+a {
+  text-align: center;
+  display: block;
+  font-family: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 1rem;
+}
+
+@media only screen and (min-width: 550px) {
+  .container {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 3fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidenav"
+      "main"
+      "footer";
   }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+} */
