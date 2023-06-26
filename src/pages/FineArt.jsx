@@ -1,10 +1,9 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { selectFineArt } from "../features/appSlice";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArt);
-
   return (
     <>
       <p>Fine Art </p>
