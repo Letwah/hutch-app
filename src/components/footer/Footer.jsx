@@ -4,20 +4,20 @@ const Footer = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <button
+      <h2
         onClick={() => {
           dispatch(setPage("INSTAGRAM_ILLUSTRATION"));
         }}
       >
-        Illustration INstagram
-      </button>
-      <button
+        Illustration Instagram
+      </h2>
+      <h2
         onClick={() => {
           dispatch(setPage("INSTAGRAM_FINE_ART"));
         }}
       >
         Instagram
-      </button>
+      </h2>
     </>
   );
 };
