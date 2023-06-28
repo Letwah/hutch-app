@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import axios from "axios";
-import { FINE_ART, CART } from "../store/types";
+import { FINE_ART, CART, ILLUSTRATION } from "../store/types";
 import fineArtCatalogue from "../store/fineArtCatalogue";
 import illustrationCatalogue from "../store/illustrationCatalogue";
 import { saveStore, getStore } from "../persistance";

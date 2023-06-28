@@ -1,15 +1,12 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import {
-  selectIllustrationCatalogue,
-  addProductToCart,
-} from "../features/appSlice";
+import { useSelector } from "react-redux";
+import { selectIllustrationCatalogue } from "../features/appSlice";
 
-// import "./Illustration/illustration.css";
+import "./illustration/illustration.css";
 const Illustration = () => {
-  const illustrationFake = useSelector(selectIllustrationCatalogue);
-  const illustration = [...illustrationFake].reverse();
-  const dispatch = useDispatch();
+  const illustration = useSelector(selectIllustrationCatalogue);
+  // const illustration = [...illustrationFake].reverse();
+  // const dispatch = useDispatch();
   return (
     <>
       <main className="container">
@@ -19,7 +16,7 @@ const Illustration = () => {
             <section className="illustration card" key={item.id}>
               <div className="details">
                 <h1>{item.title}</h1>
-                {item.avail ? (
+                {/* {item.avail ? (
                   <button
                     onClick={() => {
                       dispatch(addProductToCart(item.id));
@@ -29,7 +26,7 @@ const Illustration = () => {
                   </button>
                 ) : (
                   <p>sold</p>
-                )}
+                )} */}
                 <p>{new Date(item.createdTimeStamp).toLocaleDateString()}</p>
               </div>
               <div className="imageContainer">
