@@ -5,8 +5,7 @@ import "./illustration/illustration.css";
 
 const Illustration = () => {
   const illustration = useSelector(selectIllustrationCatalogue);
-  // const illustration = [...illustrationFake].reverse();
-  // const dispatch = useDispatch();
+
   return (
     <>
       <section className="container">
