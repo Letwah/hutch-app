@@ -13,9 +13,24 @@ import Nav from "./components/nav/Nav";
 
 const App = () => {
   const page = useSelector(selectPage);
-
+  const [nightMode, setNightMode] = useState(false);
   return (
-    <>
+    <div className={nightMode ? "night" : "day"}>
+      <button
+        onClick={() => {
+          setNightMode(!nightMode);
+        }}
+      >
+        toggleDayNight
+      </button>
+
+      <button
+        onClick={() => {
+          localStorage.clear();
+        }}
+      >
+        CLEAR
+      </button>
       <Nav />
 
       {page === "HOME" && <Home />}
@@ -25,7 +40,7 @@ const App = () => {
       {page === "CART" && <Cart />}
 
       <Footer />
-    </>
+    </div>
   );
 };
 

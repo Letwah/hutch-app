@@ -11,11 +11,16 @@ const FineArt = () => {
       <section className="container">
         <main>
           {fineArt.map((item) => {
-            console.log(item.images);
+            console.log(item.show);
+            if (!item.show) {
+              //prevents item with show = false being rendered
+              return;
+            }
             return (
               <section className="fineArt card" key={item.id}>
                 <div className="details">
                   <h1>{item.title}</h1>
+                  <h2>{item.medium}</h2>
                   {item.avail ? (
                     <button
                       onClick={() => {
@@ -27,7 +32,10 @@ const FineArt = () => {
                   ) : (
                     <p>sold</p>
                   )}
-                  <p>{new Date(item.createdTimeStamp).toLocaleDateString()}</p>
+                  <p>
+                    {new Date(item.createdTimeStamp).toLocaleDateString()}
+                    {item.size}
+                  </p>
                 </div>
                 <div className="imageContainer">
                   {item.images.map((image) => {
