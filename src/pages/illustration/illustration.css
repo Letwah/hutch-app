@@ -1,0 +1,19 @@
+section.illustration.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.card {
+  flex: 0 1 calc(50% - 1em);
+}
+
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.imageContainer > img {
+  width: 50%;
+}
