@@ -1,16 +1,29 @@
-.fineArt.card {
+/* .fineArt.card {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+} */
+section.fineArt.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
-
 .fineArt.card > .details {
   color: rgb(0, 17, 255);
   text-align: left;
+}
+.imageContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .imageContainer > img {
   display: flex;
   object-fit: contain;
-  width: 100%;
+  width: 50%;
   max-height: 100%;
+}
+
+.card {
+  flex: 0 1 calc(50% - 1em);
 }

@@ -2,10 +2,12 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { selectIllustrationCatalogue } from "../features/appSlice";
 import "./illustration/illustration.css";
+// import illustrationCatalogue from "../store/illustrationCatalogue";
 
 const Illustration = () => {
   const illustration = useSelector(selectIllustrationCatalogue);
 
+  console.log(selectIllustrationCatalogue);
   return (
     <>
       <section className="container">

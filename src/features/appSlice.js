@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { FINE_ART, CART, ILLUSTRATION } from "../store/types";
 import fineArtCatalogue from "../store/fineArtCatalogue";
 import illustrationCatalogue from "../store/illustrationCatalogue";
+import dragImage from "../store/dragImage";
 import { saveStore, getStore } from "../persistance";
 const dataFromDisk = getStore("store");
 console.log(dataFromDisk);
@@ -31,6 +32,9 @@ const appSlice = createSlice({
       state.cartItemIds.splice(indexOf, 1);
       saveStore("store", state);
     },
+    // setDragImage: (state,action)=> {
+    //   const indexOf = state.
+    // }
   },
 });
 
