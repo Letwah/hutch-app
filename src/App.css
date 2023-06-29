@@ -3,7 +3,7 @@
   margin: 0 auto;
   --main-radius: 5px;
   --main-padding: 5px;
-  text-align: center;
+  text-align: left;
   height: 100vh;
 }
 
@@ -14,7 +14,7 @@ body {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.1fr 0.2fr 3.5fr 0.5fr;
+  grid-template-rows: 0.1fr 0.1fr 5fr 0.5fr;
   grid-template-areas:
     "nav"
     "sidenav"
@@ -51,7 +51,7 @@ main {
 #sidenav {
   position: sticky;
   top: 0;
-  background: #ff3636;
+  background: #15157791;
   grid-area: sidenav;
 }
 
@@ -87,5 +87,10 @@ a {
       "sidenav main main main "
       "footer footer footer footer ";
     grid-gap: 0.2rem;
+  }
+  #sidenav {
+    position: fixed;
+    background: #ffa8f3;
+    width: 1fr;
   }
 }

@@ -7,6 +7,14 @@ const Illustration = () => {
   const illustration = useSelector(selectIllustrationCatalogue);
 
   // console.log(illustration);
+
+  //when written filter for implementing rending a project view on illustration as well=
+  // if (filtered.length > 1) {
+  //   return filtered.map((item) => {
+  //     return <p>{item.title}</p>
+  //   })
+  // }
+
   return (
     <>
       <section className="container">
