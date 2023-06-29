@@ -1,17 +1,24 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setsearch, selectsearch, selectSortByPrice } from "./appSlice";
+import {
+  setSearch,
+  selectSearch,
+  selectSortByPrice,
+} from "../../features/appSlice";
 
 const Search = () => {
-  const search = useSelector(selectsearch);
+  const search = useSelector(selectSearch);
   const [errors, setErrors] = useState(null);
   const dispatch = useDispatch();
 
   const onInput = async (e) => {
-    dispatch(setsearch(e.target.value));
-    setErrors(
-      await validate({ [e.target.id]: e.target.value }, "searchSchema")
-    );
+    dispatch(setSearch(e.target.value));
+
+    onInput(e.target.value);
+    // validate input - can write like this
+
+    const res = await validate(onInput);
+    setErrors(res);
   };
 
   return (
