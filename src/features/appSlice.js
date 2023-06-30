@@ -15,6 +15,7 @@ const initialState = {
   illustrationCatalogue: getIllustrationCatalogue(),
   cartItemIds: [],
   search: "",
+  sort: "",
 };
 
 const appSlice = createSlice({

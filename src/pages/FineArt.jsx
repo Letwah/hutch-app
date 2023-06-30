@@ -1,17 +1,21 @@
 import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
+import Sort from "./fineArt/Sort";
 import {
   selectFineArtCatalogue,
   addProductToCart,
   selectSearch,
+  selectSortByPrice,
+  setSortByPrice,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
   const search = useSelector(selectSearch);
-  console.log(search);
+  const sortByPrice = useSelector(selectSortByPrice);
+  console.log(search, sortByPrice);
   const dispatch = useDispatch();
 
   let filtered = [...fineArt];
@@ -25,11 +29,25 @@ const FineArt = () => {
     });
   }
 
+  // /sort by asc/dec
+  if (sortByPrice === "asc") {
+    fineArt.sortByPrice((itemOne, itemTwo) => {
+      if (itemOne.item.price > itemTwo.item.price) return 1;
+      if (itemOne.item.price < itemTwo.item.price) return -1;
+    });
+  } else if (sortByPrice === "desc") {
+    fineArt.sortByPrice((itemOne, itemTwo) => {
+      if (itemOne.item.price > itemTwo.item.price) return -1;
+      if (itemOne.item.price < itemTwo.item.price) return 1;
+    });
+  }
+
   return (
     <>
       <section className="container">
         <main>
           <Search />
+          <Sort />
           {filtered.map((item) => {
             // console.log(item.show);
             if (!item.show) {

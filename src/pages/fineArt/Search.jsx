@@ -1,17 +1,11 @@
 import { useState } from "react";
 import { validate } from "../../validation";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  setSearch,
-  selectSearch,
-  selectSortByPrice,
-} from "../../features/appSlice";
+import { setSearch, selectSearch } from "../../features/appSlice";
 
 const Search = () => {
   const search = useSelector(selectSearch);
   // console.log(search);
-
-  // const [search, setSearch] = useState("")
   const [errors, setErrors] = useState(null);
   const dispatch = useDispatch();
 
@@ -32,14 +26,8 @@ const Search = () => {
         type="text"
         placeholder="search..."
       />
-      {/* ///not sure about */}
-      <p>{errors && errors.search}</p>
 
-      <select onChange={(e) => dispatch(selectSortByPrice(e.target.value))}>
-        <option value="">Reset</option>
-        <option value="Ascending">Asc</option>
-        <option value="Descending">Des</option>
-      </select>
+      <p>{errors && errors.search}</p>
     </>
   );
 };
