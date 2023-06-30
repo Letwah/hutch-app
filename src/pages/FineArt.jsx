@@ -1,17 +1,37 @@
-import React from "react";
+import React, { useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { selectFineArtCatalogue, addProductToCart } from "../features/appSlice";
+import Search from "./fineArt/Search";
+import {
+  selectFineArtCatalogue,
+  addProductToCart,
+  selectSearch,
+} from "../features/appSlice";
 import "./fineArt/fineArt.css";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
+  const search = useSelector(selectSearch);
+  console.log(search);
   const dispatch = useDispatch();
+
+  let filtered = [...fineArt];
+  if (search) {
+    filtered = fineArt.filter((item) => {
+      const values = Object.values(item).toString();
+      console.log(values);
+      if (values.toLowerCase().includes(search.toLowerCase())) {
+        return true;
+      }
+    });
+  }
+
   return (
     <>
       <section className="container">
         <main>
-          {fineArt.map((item) => {
-            console.log(item.show);
+          <Search />
+          {filtered.map((item) => {
+            // console.log(item.show);
             if (!item.show) {
               //prevents item with show = false being rendered
               return;

@@ -14,6 +14,7 @@ const initialState = {
   fineArtCatalogue: getFineArtCatalogue(),
   illustrationCatalogue: getIllustrationCatalogue(),
   cartItemIds: [],
+  search: "",
 };
 
 const appSlice = createSlice({

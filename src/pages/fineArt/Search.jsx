@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { validate } from "../../validation";
 import { useDispatch, useSelector } from "react-redux";
 import {
   setSearch,
@@ -8,30 +9,31 @@ import {
 
 const Search = () => {
   const search = useSelector(selectSearch);
+  // console.log(search);
+
+  // const [search, setSearch] = useState("")
   const [errors, setErrors] = useState(null);
   const dispatch = useDispatch();
 
   const onInput = async (e) => {
     dispatch(setSearch(e.target.value));
-
-    onInput(e.target.value);
     // validate input - can write like this
 
-    const res = await validate(onInput);
+    const res = await validate({ search: e.target.value }, "search");
     setErrors(res);
+    // console.log(res);
   };
 
   return (
     <>
       <input
-        value={search}
         id="search"
         onInput={onInput}
         type="text"
         placeholder="search..."
       />
       {/* ///not sure about */}
-      <p>{errors && errors.image.id}</p>
+      <p>{errors && errors.search}</p>
 
       <select onChange={(e) => dispatch(selectSortByPrice(e.target.value))}>
         <option value="">Reset</option>
