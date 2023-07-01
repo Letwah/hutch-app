@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPage, setPage, selectSearch } from "./features/appSlice";
+import { selectPage } from "./features/appSlice";
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import FineArt from "./pages/FineArt";

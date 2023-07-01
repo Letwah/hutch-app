@@ -1,4 +1,4 @@
-import React, { useCallback } from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
@@ -16,7 +16,12 @@ const FineArt = () => {
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
   console.log(search, sort);
+
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setSort());
+  }, [fineArt]);
 
   let filtered = [...fineArt];
 
@@ -48,7 +53,8 @@ const FineArt = () => {
       <section className="container">
         <main>
           <Search />
-          <Sort sort={setSort} />
+          <Sort />
+          {/* sort={setSort} */}
           {filtered.map((item) => {
             // console.log(item.show);
             if (!item.show) {
