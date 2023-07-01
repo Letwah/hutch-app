@@ -1,20 +1,20 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setSortByPrice, selectSortByPrice } from "../../features/appSlice";
+import { setSort, selectSort } from "../../features/appSlice";
 
 const Sort = () => {
-  const sortByPrice = useSelector(selectSortByPrice);
+  const sort = useSelector(selectSort);
   //   console.log(sortByPrice);
   const dispatch = useDispatch();
 
-  const onSelect = async (e) => {
-    dispatch(setSortByPrice(e.target.value));
+  const onChange = async (e) => {
+    dispatch(setSort(e.target.value));
     // console.log(sortByPrice);
   };
 
   return (
     <>
-      <select onSelect={onSelect}>
+      <select onChange={(e) => dispatch(setSort(e.target.value))}>
         <option value="">Reset</option>
         <option value="Ascending">Asc</option>
         <option value="Descending">Des</option>

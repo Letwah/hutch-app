@@ -15,7 +15,7 @@ const initialState = {
   illustrationCatalogue: getIllustrationCatalogue(),
   cartItemIds: [],
   search: "",
-  sort: "",
+  sort: [],
 };
 
 const appSlice = createSlice({
@@ -38,8 +38,9 @@ const appSlice = createSlice({
     setSearch: (state, action) => {
       state.search = action.payload;
     },
-    setSortByPrice: (state, action) => {
-      state.sortByPrice = action.payload;
+
+    setSort: (state, action) => {
+      state.sort = action.payload;
     },
   },
 });
@@ -49,7 +50,7 @@ export const {
   addProductToCart,
   removeProductFromCart,
   setSearch,
-  setSortByPrice,
+  setSort,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -58,6 +59,5 @@ export const selectIllustrationCatalogue = (state) =>
   state.app.illustrationCatalogue;
 export const selectCartItemIds = (state) => state.app.cartItemIds;
 export const selectSearch = (state) => state.app.search;
-export const selectSortByPrice = (state) => state.app.sortByPrice;
-
+export const selectSort = (state) => state.app.sort;
 export default appSlice.reducer;

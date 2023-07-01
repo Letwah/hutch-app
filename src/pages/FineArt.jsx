@@ -6,19 +6,20 @@ import {
   selectFineArtCatalogue,
   addProductToCart,
   selectSearch,
-  selectSortByPrice,
-  setSortByPrice,
+  selectSort,
+  setSort,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
   const search = useSelector(selectSearch);
-  const sortByPrice = useSelector(selectSortByPrice);
-  console.log(search, sortByPrice);
+  const sort = useSelector(selectSort);
+  console.log(search, sort);
   const dispatch = useDispatch();
 
   let filtered = [...fineArt];
+
   if (search) {
     filtered = fineArt.filter((item) => {
       const values = Object.values(item).toString();
@@ -30,13 +31,13 @@ const FineArt = () => {
   }
 
   // /sort by asc/dec
-  if (sortByPrice === "asc") {
-    fineArt.sortByPrice((itemOne, itemTwo) => {
+  if (sort === "asc") {
+    fineArt.sort((itemOne, itemTwo) => {
       if (itemOne.item.price > itemTwo.item.price) return 1;
       if (itemOne.item.price < itemTwo.item.price) return -1;
     });
-  } else if (sortByPrice === "desc") {
-    fineArt.sortByPrice((itemOne, itemTwo) => {
+  } else if (sort === "desc") {
+    fineArt.sort((itemOne, itemTwo) => {
       if (itemOne.item.price > itemTwo.item.price) return -1;
       if (itemOne.item.price < itemTwo.item.price) return 1;
     });
@@ -47,7 +48,7 @@ const FineArt = () => {
       <section className="container">
         <main>
           <Search />
-          <Sort />
+          <Sort sort={setSort} />
           {filtered.map((item) => {
             // console.log(item.show);
             if (!item.show) {
