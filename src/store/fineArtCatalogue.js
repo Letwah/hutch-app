@@ -3,10 +3,7 @@ const getFineArtCatalogue = () => {
     {
       title: "A.M",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      images: [
-        "src/assets/images/fineArt/large/am.jpg",
-        "src/assets/images/fineArt/small/amSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/am.jpg",
       avail: false,
       price: 160000, //in pennies
       createdTimeStamp: "2021-05-13 11:00:00",
@@ -17,10 +14,8 @@ const getFineArtCatalogue = () => {
     {
       title: "Drawn Up",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      images: [
-        "src/assets/images/fineArt/large/drawnUp.jpg",
-        "src/assets/images/fineArt/small/amSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/drawnUp.jpg",
+
       avail: true,
       price: 160000, //in pennies
       createdTimeStamp: "2022-11-1 11:00:00",
@@ -31,10 +26,8 @@ const getFineArtCatalogue = () => {
     {
       title: "Knowledge and Nature",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      images: [
-        "src/assets/images/fineArt/large/knowledgeAndNature.jpg",
-        "src/assets/images/fineArt/small/knowledgeAndNatureSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/knowledgeAndNature.jpg",
+
       avail: false,
       price: 210000, //in pennies
       createdTimeStamp: "2021-06-28 11:00:00",
@@ -45,10 +38,8 @@ const getFineArtCatalogue = () => {
     {
       title: "Orange Peel",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      images: [
-        "src/assets/images/fineArt/large/orangePeel.jpg",
-        "src/assets/images/fineArt/small/orangePeelSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/orangePeel.jpg",
+
       avail: true,
       price: 180000, //in pennies
       createdTimeStamp: "2021-11-5 11:00:00",
@@ -59,10 +50,8 @@ const getFineArtCatalogue = () => {
     {
       title: "Plants and Planets",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      images: [
-        "src/assets/images/fineArt/large/plantsAndPlanets.jpg",
-        "src/assets/images/fineArt/small/plantsAndPlanetsSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/plantsAndPlanets.jpg",
+
       avail: true,
       price: 195000, //in pennies
       createdTimeStamp: "2021-10-2 11:00:00",
@@ -73,10 +62,8 @@ const getFineArtCatalogue = () => {
     {
       title: "Shelf Life",
       desc: "New work, 2022",
-      images: [
-        "src/assets/images/fineArt/large/shelflife.jpg",
-        "src/assets/images/fineArt/small/shelflifeSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/shelflife.jpg",
+
       avail: true,
       price: 160000, //in pennies
       createdTimeStamp: "2022-02-5 11:00:00",
@@ -87,10 +74,8 @@ const getFineArtCatalogue = () => {
     {
       title: "Sofa",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      images: [
-        "src/assets/images/fineArt/large/sofa.jpg",
-        "src/assets/images/fineArt/small/sofaSmall.jpg",
-      ],
+      image: "src/assets/images/fineArt/large/sofa.jpg",
+
       avail: true,
       price: 95000, //in pennies
       createdTimeStamp: "2021-9-5 11:00:00",

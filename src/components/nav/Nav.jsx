@@ -7,41 +7,41 @@ const Nav = () => {
   return (
     <>
       <div className="nav">
-        <button
+        <p
           onClick={() => {
             dispatch(setPage("CONTACT"));
           }}
         >
           Contact
-        </button>
-        <button
+        </p>
+        <p
           onClick={() => {
             dispatch(setPage("FINE_ART"));
           }}
         >
           Fine Art
-        </button>
-        <button
+        </p>
+        <p
           onClick={() => {
             dispatch(setPage("ILLUSTRATION"));
           }}
         >
           Illustration
-        </button>
-        <button
+        </p>
+        <p
           onClick={() => {
             dispatch(setPage("SHOP"));
           }}
         >
           Shop
-        </button>
-        <button
+        </p>
+        <p
           onClick={() => {
             dispatch(setPage("HOME"));
           }}
         >
           Home
-        </button>
+        </p>
       </div>
     </>
   );

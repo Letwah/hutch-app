@@ -87,9 +87,8 @@ const FineArt = () => {
                   </p>
                 </div>
                 <div className="imageContainer">
-                  {item.images.map((image) => {
-                    return <img src={image} alt={item.title} key={image} />;
-                  })}
+                  {/* //add an onClick here for zoom or something */}
+                  <img src={item.image} alt={item.title} key={item.image}></img>
                 </div>
               </section>
             );
@@ -101,3 +100,7 @@ const FineArt = () => {
 };
 
 export default FineArt;
+
+//multiple images  {item.images.map((image) => {
+// return <img src={image} alt={item.title} key={image} />;
+// })}
