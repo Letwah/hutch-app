@@ -11,12 +11,14 @@ import {
   setSort,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
+import { ASC, DESC } from "../store/types";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
-  console.log(search, sort);
+
+  // console.log(setSort);
 
   const dispatch = useDispatch();
 
@@ -32,21 +34,19 @@ const FineArt = () => {
     });
   }
 
-  //********** SORT not working...
-  useEffect((e) => {
-    setSort();
-  });
-
+  //
+  console.log(sort);
   // /sort by asc/dec
-  if (sort === "asc") {
-    fineArt.sort((itemOne, itemTwo) => {
-      if (itemOne.item.price > itemTwo.item.price) return 1;
-      if (itemOne.item.price < itemTwo.item.price) return -1;
+  if (sort === ASC) {
+    filtered.sort((itemOne, itemTwo) => {
+      console.log(itemOne);
+      if (itemOne.price > itemTwo.price) return 1;
+      if (itemOne.price < itemTwo.price) return -1;
     });
-  } else if (sort === "desc") {
-    fineArt.sort((itemOne, itemTwo) => {
-      if (itemOne.item.price > itemTwo.item.price) return -1;
-      if (itemOne.item.price < itemTwo.item.price) return 1;
+  } else if (sort === DESC) {
+    filtered.sort((itemOne, itemTwo) => {
+      if (itemOne.price > itemTwo.price) return -1;
+      if (itemOne.price < itemTwo.price) return 1;
     });
   }
 
@@ -56,6 +56,7 @@ const FineArt = () => {
         <main>
           <Search />
           <Sort />
+          {/* {console.log(setSort)} */}
 
           {filtered.map((item) => {
             // console.log(item.show);
