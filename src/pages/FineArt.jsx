@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
+import Nav from "../components/nav/Nav";
 import {
   selectFineArtCatalogue,
   addProductToCart,
@@ -19,10 +20,6 @@ const FineArt = () => {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(setSort());
-  }, [fineArt]);
-
   let filtered = [...fineArt];
 
   if (search) {
@@ -35,18 +32,25 @@ const FineArt = () => {
     });
   }
 
-  // /sort by asc/dec
-  if (sort === "asc") {
-    fineArt.sort((itemOne, itemTwo) => {
-      if (itemOne.item.price > itemTwo.item.price) return 1;
-      if (itemOne.item.price < itemTwo.item.price) return -1;
-    });
-  } else if (sort === "desc") {
-    fineArt.sort((itemOne, itemTwo) => {
-      if (itemOne.item.price > itemTwo.item.price) return -1;
-      if (itemOne.item.price < itemTwo.item.price) return 1;
-    });
-  }
+  //**********not working...
+  useEffect(() => {
+    setSort();
+  }, [fineArt]);
+
+  useEffect(() => {
+    // /sort by asc/dec
+    if (sort === "asc") {
+      fineArt.sort((itemOne, itemTwo) => {
+        if (itemOne.item.price > itemTwo.item.price) return 1;
+        if (itemOne.item.price < itemTwo.item.price) return -1;
+      });
+    } else if (sort === "desc") {
+      fineArt.sort((itemOne, itemTwo) => {
+        if (itemOne.item.price > itemTwo.item.price) return -1;
+        if (itemOne.item.price < itemTwo.item.price) return 1;
+      });
+    }
+  });
 
   return (
     <>
@@ -66,6 +70,7 @@ const FineArt = () => {
                 <div className="details">
                   <h1>{item.title}</h1>
                   <h2>{item.medium}</h2>
+                  <h2>{item.price}</h2>
                   {item.avail ? (
                     <button
                       onClick={() => {
@@ -91,7 +96,15 @@ const FineArt = () => {
             );
           })}
         </main>
-        <div id="sidenav">SideNav</div>
+        <Nav>
+          <h2>SIDENAV</h2>
+          {/* <img
+            className="logo"
+            src="src/assets/images/logos/hutch-logo-new-2021-trans.png"
+            alt="logo"
+          ></img> */}
+          {/* <Nav /> */}
+        </Nav>
       </section>
     </>
   );

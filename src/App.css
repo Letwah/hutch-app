@@ -9,6 +9,16 @@
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: justify;
+}
+
+header {
+  /* temporaily put dark mode toggle top left */
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
 .container {
@@ -29,14 +39,14 @@ body {
   text-align: center;
 }
 
-nav {
+/* nav {
   background: #2e2e2e;
   color: #ffffff;
   grid-area: nav;
   position: fixed;
   top: 0;
   z-index: 3;
-}
+} */
 
 main {
   position: sticky;
@@ -85,12 +95,139 @@ a {
       "sidenav main main main "
       "sidenav main main main "
       "sidenav main main main "
-      "footer footer footer footer ";
+      "sidenav main main main ";
     grid-gap: 0.2rem;
   }
   #sidenav {
     position: fixed;
     background: #ffa8f3;
     width: 1fr;
+    min-height: 100vh;
+  }
+
+  #sidenav > .logo {
+    width: 100px;
+  }
+
+  #sidenav > .nav {
+    display: flex;
+    flex-direction: column;
   }
 }
+
+/* 
+----------------- */
+/* 
+body {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  text-align: justify;
+  font-family: "Courier New", Courier, monospace;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.3fr 3.4fr 0.3fr;
+    gap: 5px 5px;
+    grid-template-areas:
+      "sidebar"
+      "header"
+      "main"
+      "footer";
+  }
+  .container > div {
+    border: rgb(255, 255, 255) solid;
+    padding: 2vh;
+    text-align: center;
+  }
+
+  .main-header {
+  //get rid of on mobile 
+    display: none;
+  }
+
+  div.sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    justify-content: space-around;
+    align-items: center;
+    justify-items: center;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .container {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.5fr 1.6fr;
+    grid-template-rows: 0.1fr 2.8fr 0.1fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+  }
+
+  //padding for nested divs  
+  div.logo,
+  div.nav,
+  div.social,
+  .main-header,
+  .main-content,
+  .main-footer {
+    padding: 2vh;
+  }
+
+  .main {
+    grid-area: 1 / 2 / 4 / 3;
+  }
+
+  .sidebar {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1fr 0.5fr;
+    gap: 5px 5px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "logo"
+      "nav"
+      "social";
+    grid-area: 1 / 1 / 4 / 2;
+  }
+
+  .logo {
+    grid-area: logo;
+    background-color: #010101;
+    color: #d3ccbd;
+  }
+
+  .nav {
+    grid-area: nav;
+    background-color: #d9865e;
+    color: #36196a;
+  }
+
+  .social {
+    grid-area: social;
+    background-color: #9f9f9f;
+    color: #010101;
+  }
+
+  .main-header {
+    grid-area: 1 / 2 / 2 / 3;
+    background-color: #d3ccbd;
+    color: #36196a;
+  }
+
+  .main-content {
+    grid-area: 2 / 2 / 3 / 3;
+    background-color: #afc7bd;
+    color: #010101;
+  }
+
+  .main-footer {
+    grid-area: 3 / 2 / 4 / 3;
+    background-color: #d59592;
+    color: #36196a;
+  }
+} */

@@ -7,11 +7,6 @@ const Sort = () => {
   //   console.log(sortByPrice);
   const dispatch = useDispatch();
 
-  const onChange = async (e) => {
-    dispatch(setSort(e.target.value));
-    // console.log(sortByPrice);
-  };
-
   return (
     <>
       <select onChange={(e) => dispatch(setSort(e.target.value))}>

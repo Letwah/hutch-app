@@ -19,23 +19,33 @@ const App = () => {
 
   return (
     <div className={nightMode ? "night" : "day"}>
-      <button
-        onClick={() => {
-          setNightMode(!nightMode);
-        }}
-      >
-        toggleDayNight
-      </button>
-
-      <button
-        onClick={() => {
-          localStorage.clear();
-        }}
-      >
-        CLEAR
-      </button>
-
-      <Nav />
+      <header>
+        <button
+          onClick={() => {
+            setNightMode(!nightMode);
+          }}
+        >
+          toggleDayNight
+        </button>
+        <button
+          onClick={() => {
+            localStorage.clear();
+          }}
+        >
+          CLEAR
+        </button>
+      </header>
+      <main>
+        <div id="sidenav">
+          <h2>SIDENAV</h2>
+          {/* <img
+            className="logo"
+            src="src/assets/images/logos/hutch-logo-new-2021-trans.png"
+            alt="logo"
+          ></img> */}
+          <Nav />
+        </div>
+      </main>
 
       {page === "HOME" && <Home />}
       {page === "CONTACT" && <Contact />}

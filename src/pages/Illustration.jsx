@@ -50,7 +50,6 @@ const Illustration = () => {
             );
           })}
         </main>
-        <div id="sidenav">SideNav</div>
       </section>
     </>
   );
