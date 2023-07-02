@@ -16,7 +16,7 @@ const Footer = () => {
           dispatch(setPage("INSTAGRAM_FINE_ART"));
         }}
       >
-        Instagram
+        Fine Art Instagram
       </h2>
     </>
   );

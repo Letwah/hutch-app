@@ -13,47 +13,56 @@ import Nav from "./components/nav/Nav";
 
 const App = () => {
   const page = useSelector(selectPage);
-
-  // const [fineArtCatalogue, setFineArtCatalogue] = useState(true);
   const [nightMode, setNightMode] = useState(false);
 
   return (
-    <div className={nightMode ? "night" : "day"}>
-      <header>
-        <button
-          onClick={() => {
-            setNightMode(!nightMode);
-          }}
-        >
-          toggleDayNight
-        </button>
-        <button
-          onClick={() => {
-            localStorage.clear();
-          }}
-        >
-          CLEAR
-        </button>
-      </header>
-      <main>
-        <div id="sidenav">
-          <h2>SIDENAV</h2>
-          {/* <img
-            className="logo"
-            src="src/assets/images/logos/hutch-logo-new-2021-trans.png"
-            alt="logo"
-          ></img> */}
-          <Nav />
+    <div>
+      <section className="container">
+        <div className="sidebar">
+          <div className="logo">
+            <img
+              className="logo"
+              src="src/assets/images/logos/hutch-logo-new-2021-trans.png"
+              alt="logo"
+            ></img>
+          </div>
+          <div className="nav">
+            <Nav />
+            <div className={nightMode ? "night" : "day"}>
+              <button
+                onClick={() => {
+                  setNightMode(!nightMode);
+                }}
+              >
+                toggleDayNight
+              </button>
+              <button
+                onClick={() => {
+                  localStorage.clear();
+                }}
+              >
+                CLEAR
+              </button>
+            </div>
+          </div>
+          <div className="social">
+            <h1>contact</h1>
+          </div>
         </div>
-      </main>
-
-      {page === "HOME" && <Home />}
-      {page === "CONTACT" && <Contact />}
-      {page === "FINE_ART" && <FineArt />}
-      {page === "ILLUSTRATION" && <Illustration />}
-      {page === "CART" && <Cart />}
-
-      <Footer />
+        <div className="main-header">
+          <h2>MAIN HEADER</h2>
+        </div>
+        <div className="main-content">
+          {page === "HOME" && <Home />}
+          {page === "CONTACT" && <Contact />}
+          {page === "FINE_ART" && <FineArt />}
+          {page === "ILLUSTRATION" && <Illustration />}
+          {page === "CART" && <Cart />}
+        </div>
+        <div className="main-footer">
+          <Footer />
+        </div>
+      </section>
     </div>
   );
 };

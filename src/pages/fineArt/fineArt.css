@@ -8,7 +8,7 @@ section.fineArt.card {
   justify-content: space-between;
 }
 .fineArt.card > .details {
-  color: rgb(0, 17, 255);
+  color: rgb(19, 19, 19);
   text-align: left;
 }
 .imageContainer {

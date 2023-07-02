@@ -32,25 +32,23 @@ const FineArt = () => {
     });
   }
 
-  //**********not working...
-  useEffect(() => {
+  //********** SORT not working...
+  useEffect((e) => {
     setSort();
-  }, [fineArt]);
-
-  useEffect(() => {
-    // /sort by asc/dec
-    if (sort === "asc") {
-      fineArt.sort((itemOne, itemTwo) => {
-        if (itemOne.item.price > itemTwo.item.price) return 1;
-        if (itemOne.item.price < itemTwo.item.price) return -1;
-      });
-    } else if (sort === "desc") {
-      fineArt.sort((itemOne, itemTwo) => {
-        if (itemOne.item.price > itemTwo.item.price) return -1;
-        if (itemOne.item.price < itemTwo.item.price) return 1;
-      });
-    }
   });
+
+  // /sort by asc/dec
+  if (sort === "asc") {
+    fineArt.sort((itemOne, itemTwo) => {
+      if (itemOne.item.price > itemTwo.item.price) return 1;
+      if (itemOne.item.price < itemTwo.item.price) return -1;
+    });
+  } else if (sort === "desc") {
+    fineArt.sort((itemOne, itemTwo) => {
+      if (itemOne.item.price > itemTwo.item.price) return -1;
+      if (itemOne.item.price < itemTwo.item.price) return 1;
+    });
+  }
 
   return (
     <>
@@ -58,7 +56,7 @@ const FineArt = () => {
         <main>
           <Search />
           <Sort />
-          {/* sort={setSort} */}
+
           {filtered.map((item) => {
             // console.log(item.show);
             if (!item.show) {
@@ -70,7 +68,7 @@ const FineArt = () => {
                 <div className="details">
                   <h1>{item.title}</h1>
                   <h2>{item.medium}</h2>
-                  <h2>{item.price}</h2>
+                  <h2>£{(item.price / 100).toFixed(2)}</h2>
                   {item.avail ? (
                     <button
                       onClick={() => {
@@ -96,15 +94,6 @@ const FineArt = () => {
             );
           })}
         </main>
-        <Nav>
-          <h2>SIDENAV</h2>
-          {/* <img
-            className="logo"
-            src="src/assets/images/logos/hutch-logo-new-2021-trans.png"
-            alt="logo"
-          ></img> */}
-          {/* <Nav /> */}
-        </Nav>
       </section>
     </>
   );

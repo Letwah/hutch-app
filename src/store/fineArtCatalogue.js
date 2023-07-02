@@ -106,3 +106,9 @@ const getFineArtCatalogue = () => {
 };
 
 export default getFineArtCatalogue;
+
+//for list of images
+// images: [
+//   "src/assets/images/fineArt/large/orangePeel.jpg",
+//   "src/assets/images/fineArt/small/orangePeelSmall.jpg",
+// ],
