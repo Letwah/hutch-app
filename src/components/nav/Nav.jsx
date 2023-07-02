@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import { setPage } from "../../features/appSlice";
+import "./nav.css";
 
 const Nav = () => {
   const dispatch = useDispatch();
