@@ -2,21 +2,23 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
-import Nav from "../components/nav/Nav";
+import Availability from "./fineArt/Availabililty";
+
 import {
   selectFineArtCatalogue,
   addProductToCart,
   selectSearch,
   selectSort,
-  setSort,
+  selectAvailability,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
-import { ASC, DESC } from "../store/types";
+import { ASC, DESC, AVAIL, SOLD } from "../store/types";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
+  const availability = useSelector(selectAvailability);
 
   // console.log(setSort);
 
@@ -50,13 +52,26 @@ const FineArt = () => {
     });
   }
 
+  console.log(availability);
+  //YEY IT WORKS!!!!!!
+  if (availability) {
+    filtered = fineArt.filter((item) => {
+      console.log(item.avail);
+      if (availability === SOLD) {
+        return item.avail === false;
+      } else {
+        return item.avail === true;
+      }
+    });
+  }
+
   return (
     <>
       <section className="container">
         <main>
           <Search />
           <Sort />
-          {/* {console.log(setSort)} */}
+          <Availability />
 
           {filtered.map((item) => {
             // console.log(item.show);

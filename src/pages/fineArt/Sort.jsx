@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setSort, selectSort } from "../../features/appSlice";
 import { ASC, DESC } from "../../store/types";

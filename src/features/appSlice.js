@@ -16,6 +16,7 @@ const initialState = {
   cartItemIds: [],
   search: "",
   sort: "",
+  availability: "",
 };
 
 const appSlice = createSlice({
@@ -42,6 +43,10 @@ const appSlice = createSlice({
     setSort: (state, action) => {
       state.sort = action.payload;
     },
+
+    setAvailability: (state, action) => {
+      state.availability = action.payload;
+    },
   },
 });
 
@@ -51,6 +56,7 @@ export const {
   removeProductFromCart,
   setSearch,
   setSort,
+  setAvailability,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -60,4 +66,5 @@ export const selectIllustrationCatalogue = (state) =>
 export const selectCartItemIds = (state) => state.app.cartItemIds;
 export const selectSearch = (state) => state.app.search;
 export const selectSort = (state) => state.app.sort;
+export const selectAvailability = (state) => state.app.availability;
 export default appSlice.reducer;

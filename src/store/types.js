@@ -3,3 +3,5 @@ export const CART = "CART";
 export const ILLUSTRATION = "ILLUSTRATION";
 export const DESC = "DESC";
 export const ASC = "ASC";
+export const AVAIL = "AVAIL";
+export const SOLD = "SOLD";
