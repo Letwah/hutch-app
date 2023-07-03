@@ -1,4 +1,5 @@
 import { useState } from "react";
+import useLocalStorage from "use-local-storage";
 
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,11 +14,21 @@ import Nav from "./components/nav/Nav";
 
 const App = () => {
   const page = useSelector(selectPage);
-  const [nightMode, setNightMode] = useState(false);
+  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const [theme, setTheme] = useLocalStorage(
+    "theme",
+    defaultDark ? "dark" : "light"
+  );
+
+  const switchTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    setTheme(newTheme);
+  };
+  // const [nightMode, setNightMode] = useState(false);
 
   return (
     <div>
-      <section className="container">
+      <section className="container" data-theme={theme}>
         <div className="sidebar">
           <div className="logo">
             <img
@@ -28,14 +39,11 @@ const App = () => {
           </div>
           <div className="nav">
             <Nav />
-            <div className={nightMode ? "night" : "day"}>
-              <button
-                onClick={() => {
-                  setNightMode(!nightMode);
-                }}
-              >
-                toggleDayNight
+            <div>
+              <button onClick={switchTheme}>
+                Switch to {theme === "light" ? "dark" : "light"}
               </button>
+
               <button
                 onClick={() => {
                   localStorage.clear();
@@ -68,3 +76,14 @@ const App = () => {
 };
 
 export default App;
+
+{
+  /* <div className={theme ? "night" : "day"}>
+              <button
+                onClick={() => {
+                  setTheme(!theme);
+                }}
+              >
+                toggleDayNight
+              </button> */
+}
