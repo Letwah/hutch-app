@@ -4,19 +4,17 @@
 :root {
   --background: #eaeaea;
   --text-primary: #1b1b1b;
-  --text-secondary: red;
-  --accent: red;
+  --text-secondary: rgb(0, 255, 123);
+  --accent: rgb(0, 255, 123);
   --border: #1b1b1b;
-  --form-bg: #fff;
 }
 
 [data-theme="dark"] {
-  --background: #1b1b1b;
+  --background: #4a4a4a;
   --text-primary: #eaeaea;
   --text-secondary: rgb(255, 167, 167);
   --accent: rgb(255, 167, 167);
   --border: #eaeaea;
-  --form-bg: #5d5d5d;
 }
 
 * {
@@ -49,8 +47,6 @@ div.social,
 .main-content,
 .main-footer {
   padding: 2vh;
-  background-color: #eaeaea;
-  color: #1b1b1b;
 }
 
 .main-content {
@@ -73,7 +69,6 @@ div.social,
       "footer";
   }
   .container > div {
-    border: rgb(255, 255, 255) solid;
     padding: 2vh;
     text-align: center;
   }

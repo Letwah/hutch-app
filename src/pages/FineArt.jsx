@@ -82,9 +82,9 @@ const FineArt = () => {
             return (
               <section className="fineArt card" key={item.id}>
                 <div className="details">
-                  <h1>{item.title}</h1>
-                  <h2>{item.medium}</h2>
-                  <h2>£{(item.price / 100).toFixed(2)}</h2>
+                  <h2>{item.title}</h2>
+                  <h3>{item.medium}</h3>
+                  <h3>£{(item.price / 100).toFixed(2)}</h3>
                   {item.avail ? (
                     <button
                       onClick={() => {

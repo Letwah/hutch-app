@@ -1,4 +1,4 @@
-section.illustration.card {
+/* section.illustration.card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -6,9 +6,9 @@ section.illustration.card {
 
 .card {
   flex: 0 1 calc(50% - 1em);
-}
+} */
 
-.imageContainer {
+/* .imageContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -16,4 +16,4 @@ section.illustration.card {
 
 .imageContainer > img {
   width: 50%;
-}
+} */

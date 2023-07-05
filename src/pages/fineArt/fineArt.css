@@ -3,27 +3,40 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 } */
 section.fineArt.card {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-rows: 0.5fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "details images";
+  grid-gap: 1vw;
 }
+
 .fineArt.card > .details {
-  color: rgb(19, 19, 19);
+  grid-area: details;
+  display: flex;
+
   text-align: left;
+  align-items: flex-start;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 .imageContainer {
   display: flex;
+  grid-area: images;
+  text-align: end;
   flex-direction: row;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: flex-end;
+  text-align: end;
 }
 
 .imageContainer > img {
   display: flex;
   object-fit: contain;
-  width: 50%;
-  max-height: 100%;
+  width: 85%;
+  height: 100%;
+  align-items: flex-end;
 }
 
-.card {
+/* .card {
   flex: 0 1 calc(50% - 1em);
-}
+} */

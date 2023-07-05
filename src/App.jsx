@@ -40,7 +40,7 @@ const App = () => {
           <div className="nav">
             <Nav />
             <div>
-              <button onClick={switchTheme}>
+              <button className="switchTheme" onClick={switchTheme}>
                 Switch to {theme === "light" ? "dark" : "light"}
               </button>
 
