@@ -67,7 +67,7 @@ const FineArt = () => {
 
   return (
     <>
-      <section className="container">
+      <section className="fineArtContainer">
         <div className="filters">
           <Search />
           <Sort />

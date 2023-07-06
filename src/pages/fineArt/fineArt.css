@@ -2,6 +2,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 } */
+/* 
+.fineArtContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} */
+
 .fineArtContent {
   display: grid;
   grid-template-columns: 1fr;
@@ -9,20 +15,21 @@
   justify-content: center;
   text-align: center;
   background-color: transparent;
-}
 
-.fineArt.card {
-  /* display: grid;
+  .fineArt.card {
+    /* display: grid;
   grid-template-rows: 1fr;
   grid-template-rows: 1fr;
   grid-template-areas: "details images";
   grid-gap: 1vw; */
-  border: var(--border-width) solid var(--border-color);
-  /* padding: 2rem; */
-  margin: 2rem 2rem;
-  box-shadow: 0.5em 0.5em 0em;
-  width: 90%;
-  overflow: hidden;
+    border: var(--border-width) solid var(--border-color);
+    /* padding: 2rem; */
+    margin: 2rem 2rem;
+    box-shadow: 0.5em 0.5em 0em;
+    width: 90%;
+    height: 300px;
+    overflow: hidden;
+  }
 }
 .details {
   /* grid-area: details; */
@@ -65,7 +72,13 @@
 /* 2 colunms on bigger screens */
 @media only screen and (min-width: 800px) {
   .fineArtContent {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, minmax(300px, 1fr));
+  }
+}
+
+@media only screen and (min-width: 550px) {
+  .fineArtContent {
+    grid-template-columns: repeat(2, minmax(300px, 1fr));
   }
 }
 
