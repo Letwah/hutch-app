@@ -3,7 +3,6 @@ import { setAvailability, selectAvailability } from "../../features/appSlice";
 import { AVAIL, SOLD } from "../../store/types";
 
 const Availability = () => {
-  const availability = useSelector(selectAvailability);
   //   console.log(sort);
   const dispatch = useDispatch();
 

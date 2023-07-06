@@ -57,10 +57,10 @@ const FineArt = () => {
   if (availability) {
     filtered = fineArt.filter((item) => {
       console.log(item.avail);
-      if (availability === SOLD) {
-        return item.avail === false;
-      } else {
+      if (availability === AVAIL) {
         return item.avail === true;
+      } else {
+        return item.avail === false;
       }
     });
   }
@@ -75,14 +75,19 @@ const FineArt = () => {
         </div>
         <div className="fineArtContent">
           {filtered.map((item) => {
-            // console.log(item.show);
+            console.log(`url("${item.image}")`);
             if (!item.show) {
               //prevents item with show = false being rendered
               return;
             }
             return (
               <section className="fineArt card" key={item.id}>
-                <div className="imageContainer">
+                <div
+                  className="imageContainer"
+                  style={{
+                    backgroundImage: `url("${item.image}")`,
+                  }}
+                >
                   <div className="details">
                     <h2>{item.title}</h2>
                     <h3>{item.medium}</h3>
@@ -103,9 +108,6 @@ const FineArt = () => {
                       {item.size}
                     </p>
                   </div>
-
-                  {/* //add an onClick here for zoom or something */}
-                  <img src={item.image} alt={item.title} key={item.image}></img>
                 </div>
               </section>
             );
@@ -121,3 +123,5 @@ export default FineArt;
 //multiple images  {item.images.map((image) => {
 // return <img src={image} alt={item.title} key={image} />;
 // })}
+
+// <img src={item.image} alt={item.title} key={item.image}></img>

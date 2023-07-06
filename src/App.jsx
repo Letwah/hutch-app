@@ -20,12 +20,12 @@ const App = () => {
     defaultDark ? "dark" : "light"
   );
 
-  const switchTheme = () => {
-    const newTheme = theme === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  };
+  // const switchTheme = () => {
+  //   const newTheme = theme === "light" ? "dark" : "light";
+  //   setTheme(newTheme);
+  // };
   // const [nightMode, setNightMode] = useState(false);
-
+  console.log(theme);
   return (
     <div>
       <section className="container" data-theme={theme}>
@@ -33,16 +33,20 @@ const App = () => {
           <div className="logo">
             <img
               className="logo"
-              src="src/assets/images/logos/hutch-logo-new-2021-trans.png"
+              src="./assets/images/logos/hutch-logo-new-2021-trans.png"
               alt="logo"
             ></img>
           </div>
           <div className="nav">
             <Nav />
             <div>
-              <button className="switchTheme" onClick={switchTheme}>
-                Switch to {theme === "light" ? "dark" : "light"}
-              </button>
+              <input
+                className={`switchTheme ${theme}`}
+                type="checkbox"
+                onChange={(e) => {
+                  setTheme(e.target.checked ? "dark" : "light");
+                }}
+              />
 
               <button
                 onClick={() => {

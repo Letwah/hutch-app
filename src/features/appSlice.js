@@ -4,16 +4,15 @@ import { FINE_ART, CART, ILLUSTRATION } from "../store/types";
 import getFineArtCatalogue from "../store/fineArtCatalogue";
 import getIllustrationCatalogue from "../store/illustrationCatalogue";
 // import dragImage from "../store/dragImage";
-import { saveStore, getStore } from "../persistance";
+import { save, get } from "../persistance";
 
-const dataFromDisk = getStore("store");
-console.log(dataFromDisk);
+const cartItemIdsFromDisc = get("cartItemIdsFromDisc");
 
 const initialState = {
   page: FINE_ART,
   fineArtCatalogue: getFineArtCatalogue(),
   illustrationCatalogue: getIllustrationCatalogue(),
-  cartItemIds: [],
+  cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
   search: "",
   sort: "",
   availability: "",
@@ -21,7 +20,7 @@ const initialState = {
 
 const appSlice = createSlice({
   name: "app",
-  initialState: dataFromDisk ? dataFromDisk : initialState,
+  initialState,
   reducers: {
     setPage: (state, action) => {
       state.page = action.payload;
@@ -29,12 +28,12 @@ const appSlice = createSlice({
     addProductToCart: (state, action) => {
       state.cartItemIds.push(action.payload);
       state.page = CART;
-      saveStore("store", state);
+      save("cartItemIdsFromDisc", state.cartItemIds);
     },
     removeProductFromCart: (state, action) => {
       const indexOf = state.cartItemIds.indexOf(action.payload);
       state.cartItemIds.splice(indexOf, 1);
-      saveStore("store", state);
+      save("cartItemIdsFromDisc", state.cartItemIds);
     },
     setSearch: (state, action) => {
       state.search = action.payload;

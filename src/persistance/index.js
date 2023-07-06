@@ -1,6 +1,6 @@
-export const saveStore = (key, data) => {
+export const save = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 };
-export const getStore = (key) => {
+export const get = (key) => {
   return JSON.parse(localStorage.getItem(key));
 };

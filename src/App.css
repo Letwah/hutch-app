@@ -37,7 +37,7 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", sans-serif;
 }
-
+button,
 select,
 input {
   border: var(--border-width) solid var(--border-color);
@@ -50,7 +50,7 @@ option,
 input::placeholder {
   color: var(--text-secondary);
 }
-
+button:hover,
 input:active,
 input:hover,
 input:focus {
