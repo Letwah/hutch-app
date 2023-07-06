@@ -68,11 +68,12 @@ const FineArt = () => {
   return (
     <>
       <section className="container">
-        <main>
+        <div className="filters">
           <Search />
           <Sort />
           <Availability />
-
+        </div>
+        <div className="fineArtContent">
           {filtered.map((item) => {
             // console.log(item.show);
             if (!item.show) {
@@ -81,34 +82,35 @@ const FineArt = () => {
             }
             return (
               <section className="fineArt card" key={item.id}>
-                <div className="details">
-                  <h2>{item.title}</h2>
-                  <h3>{item.medium}</h3>
-                  <h3>£{(item.price / 100).toFixed(2)}</h3>
-                  {item.avail ? (
-                    <button
-                      onClick={() => {
-                        dispatch(addProductToCart(item.id));
-                      }}
-                    >
-                      buy
-                    </button>
-                  ) : (
-                    <p>sold</p>
-                  )}
-                  <p>
-                    {new Date(item.createdTimeStamp).toLocaleDateString()}
-                    {item.size}
-                  </p>
-                </div>
                 <div className="imageContainer">
+                  <div className="details">
+                    <h2>{item.title}</h2>
+                    <h3>{item.medium}</h3>
+                    <h3>£{(item.price / 100).toFixed(2)}</h3>
+                    {item.avail ? (
+                      <button
+                        onClick={() => {
+                          dispatch(addProductToCart(item.id));
+                        }}
+                      >
+                        buy
+                      </button>
+                    ) : (
+                      <p>sold</p>
+                    )}
+                    <p>
+                      {new Date(item.createdTimeStamp).toLocaleDateString()}
+                      {item.size}
+                    </p>
+                  </div>
+
                   {/* //add an onClick here for zoom or something */}
                   <img src={item.image} alt={item.title} key={item.image}></img>
                 </div>
               </section>
             );
           })}
-        </main>
+        </div>
       </section>
     </>
   );

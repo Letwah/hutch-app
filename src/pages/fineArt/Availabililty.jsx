@@ -10,9 +10,15 @@ const Availability = () => {
   return (
     <>
       <select onChange={(e) => dispatch(setAvailability(e.target.value))}>
-        <option value="">See All</option>
-        <option value={AVAIL}>Available to buy</option>
-        <option value={SOLD}>Sold</option>
+        <option value="">
+          <p>See All</p>
+        </option>
+        <option value={AVAIL}>
+          <p>Available to buy</p>
+        </option>
+        <option value={SOLD}>
+          <p>Sold</p>
+        </option>
       </select>
     </>
   );
