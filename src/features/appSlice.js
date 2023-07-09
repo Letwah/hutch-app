@@ -16,6 +16,7 @@ const initialState = {
   search: "",
   sort: "",
   availability: "",
+  contactForm: "",
 };
 
 const appSlice = createSlice({
@@ -46,6 +47,10 @@ const appSlice = createSlice({
     setAvailability: (state, action) => {
       state.availability = action.payload;
     },
+
+    setContactForm: (state, action) => {
+      state.contactForm = action.payload;
+    },
   },
 });
 
@@ -56,6 +61,7 @@ export const {
   setSearch,
   setSort,
   setAvailability,
+  setContactForm,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -66,4 +72,5 @@ export const selectCartItemIds = (state) => state.app.cartItemIds;
 export const selectSearch = (state) => state.app.search;
 export const selectSort = (state) => state.app.sort;
 export const selectAvailability = (state) => state.app.availability;
+export const selectContactForm = (state) => state.app.contactForm;
 export default appSlice.reducer;

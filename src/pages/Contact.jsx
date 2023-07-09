@@ -2,11 +2,14 @@
 //imr + sfc
 
 import React from "react";
+
+import ContactForm from "./contact/contactForm";
+
 const Contact = () => {
   return (
-    <>
-      <p>Contact</p>
-    </>
+    <div className="contactForm">
+      <ContactForm />
+    </div>
   );
 };
 

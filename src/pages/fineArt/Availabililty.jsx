@@ -10,13 +10,20 @@ const Availability = () => {
     <>
       <select onChange={(e) => dispatch(setAvailability(e.target.value))}>
         <option value="">
-          <p>See All</p>
+          <div>
+            {" "}
+            <p>See All</p>
+          </div>
         </option>
         <option value={AVAIL}>
-          <p>Available to buy</p>
+          <div>
+            <p>Available to buy</p>
+          </div>
         </option>
         <option value={SOLD}>
-          <p>Sold</p>
+          <div>
+            <p>Sold</p>
+          </div>
         </option>
       </select>
     </>

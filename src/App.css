@@ -65,6 +65,10 @@ input:focus {
   transition: all 0.5s;
 }
 
+.container div {
+  border-radius: 1em;
+}
+
 img.logo {
   width: 100px;
 }

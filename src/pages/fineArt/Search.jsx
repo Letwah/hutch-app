@@ -26,8 +26,9 @@ const Search = () => {
         type="text"
         placeholder="search..."
       />
-
-      <p>{errors && errors.search}</p>
+      <div>
+        <p>{errors && errors.search}</p>
+      </div>
     </>
   );
 };
