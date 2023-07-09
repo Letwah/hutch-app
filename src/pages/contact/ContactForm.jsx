@@ -26,7 +26,7 @@ const ContactForm = () => {
     });
 
     setStatus("Submit");
-    setErrors(res.errors);
+    setErrors(res);
 
     console.log(res);
   };
