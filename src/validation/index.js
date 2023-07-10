@@ -1,11 +1,15 @@
 import joi from "joi";
-import { searchSchema } from "./schemas";
+import { contactFormSchema, searchSchema } from "./schemas";
 export const validate = async (payload, type) => {
   let r;
   switch (type) {
     case "search":
       //call joi
       r = joi.object(searchSchema);
+      break;
+    case "contactForm":
+      //call joi
+      r = joi.object(contactFormSchema);
       break;
     default:
       break;

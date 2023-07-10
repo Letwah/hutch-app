@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
 import Availability from "./fineArt/Availabililty";
-
+import Modal from "../components/modal/Modal";
 import {
   selectFineArtCatalogue,
   addProductToCart,
   selectSearch,
   selectSort,
   selectAvailability,
+  selectModal,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
 import { ASC, DESC, AVAIL, SOLD } from "../store/types";
@@ -19,8 +20,7 @@ const FineArt = () => {
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
   const availability = useSelector(selectAvailability);
-
-  // console.log(setSort);
+  const [isModalVisible, setIsModalVisible] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -65,6 +65,14 @@ const FineArt = () => {
     });
   }
 
+  const showModal = () => {
+    setIsModalVisible(true);
+  };
+
+  const closeModal = () => {
+    setIsModalVisible(false);
+  };
+
   return (
     <>
       <section className="fineArtContainer">
@@ -107,13 +115,8 @@ const FineArt = () => {
                       {new Date(item.createdTimeStamp).toLocaleDateString()}
                       {item.size}
                     </p>
-                    <button
-                      onClick={() => {
-                        dispatch(addProductToCart(item.id));
-                      }}
-                    >
-                      view
-                    </button>
+                    <button onClick={showModal}>show modal</button>
+                    <Modal visible={isModalVisible} close={closeModal} />
                   </div>
                 </div>
               </section>

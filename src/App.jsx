@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useEffect } from "react";
 import useLocalStorage from "use-local-storage";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import { selectPage } from "./features/appSlice";
+import {
+  selectPage,
+  selectToastContent,
+  selectModal,
+} from "./features/appSlice";
+
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
 import FineArt from "./pages/FineArt";
@@ -11,6 +17,7 @@ import Illustration from "./pages/Illustration";
 import Cart from "./pages/Cart";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
+import Modal from "./components/modal/Modal";
 
 const App = () => {
   const page = useSelector(selectPage);
@@ -20,6 +27,15 @@ const App = () => {
     defaultDark ? "dark" : "light"
   );
 
+  const toastContent = useSelector(selectToastContent);
+  useEffect(() => {
+    if (toastContent) {
+      toast(toastContent);
+    }
+  }, [toastContent]);
+
+  const modal = useSelector(selectModal);
+
   // const switchTheme = () => {
   //   const newTheme = theme === "light" ? "dark" : "light";
   //   setTheme(newTheme);
@@ -28,6 +44,8 @@ const App = () => {
   console.log(theme);
   return (
     <div>
+      <ToastContainer />
+      {modal && <Modal />}
       <section className="container" data-theme={theme}>
         <div className="sidebar">
           <div className="logo">

@@ -1,51 +1,53 @@
 import React, { useState } from "react";
-import { selectContactForm } from "../../features/appSlice";
-import { useSelector } from "react-redux";
+import { validate } from "../../validation";
+import { useDispatch } from "react-redux";
+import { setToastContent } from "../../features/appSlice";
 
 const ContactForm = () => {
-  const contactForm = useSelector(selectContactForm);
-  const [status, setStatus] = useState("Submit");
-  const [errors, setErrors] = useState(null);
+  const dispatch = useDispatch();
+  // const contactForm = useSelector(selectContactForm);
+
+  const [errors, setErrors] = useState({});
+
+  const [userInput, setUserInput] = useState({});
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("Sending...");
-    const { name, email, message } = e.target.elements;
-    let details = {
-      name: name.value,
-      email: email.value,
-      message: message.value,
-    };
-    const res = await validate({
-      contactForm: e.target.value,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json;charset=utf-8",
-      },
-      body: JSON.stringify(details),
-    });
 
-    setStatus("Submit");
+    const res = await validate(userInput, "contactForm");
+
+    if (!res) {
+      //do something with form - when we got backend
+      dispatch(setToastContent("hello thanks spspdowj"));
+      return;
+    }
     setErrors(res);
-
-    console.log(res);
+    // console.log(res);
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form
+      onInput={(e) => {
+        setUserInput({ ...userInput, [e.target.name]: e.target.value });
+      }}
+      onSubmit={handleSubmit}
+    >
       <div>
         <label htmlFor="name">Name:</label>
-        <input type="text" id="name" required />
+        <input type="text" id="name" name="name" required />
+        <p>{errors.name}</p>
       </div>
       <div>
         <label htmlFor="email">Email:</label>
-        <input type="email" id="email" required />
+        <input type="email" id="email" name="email" required />
+        <p>{errors.email}</p>
       </div>
       <div>
         <label htmlFor="message">Message:</label>
-        <textarea id="message" required />
+        <textarea id="message" name="message" required />
+        <p>{errors.message}</p>
       </div>
-      <button type="submit">{status}</button>
+      <button type="submit">submit</button>
     </form>
   );
 };

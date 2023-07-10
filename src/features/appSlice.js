@@ -17,6 +17,8 @@ const initialState = {
   sort: "",
   availability: "",
   contactForm: "",
+  toastContent: "",
+  modal: "test",
 };
 
 const appSlice = createSlice({
@@ -51,6 +53,13 @@ const appSlice = createSlice({
     setContactForm: (state, action) => {
       state.contactForm = action.payload;
     },
+
+    setToastContent: (state, action) => {
+      state.toastContent = action.payload;
+    },
+    setModal: (state, action) => {
+      state.modal = action.payload;
+    },
   },
 });
 
@@ -62,6 +71,8 @@ export const {
   setSort,
   setAvailability,
   setContactForm,
+  setToastContent,
+  setModal,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -73,4 +84,6 @@ export const selectSearch = (state) => state.app.search;
 export const selectSort = (state) => state.app.sort;
 export const selectAvailability = (state) => state.app.availability;
 export const selectContactForm = (state) => state.app.contactForm;
+export const selectToastContent = (state) => state.app.toastContent;
+export const selectModal = (state) => state.app.modal;
 export default appSlice.reducer;

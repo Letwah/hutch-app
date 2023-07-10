@@ -3,7 +3,7 @@ import { gsap } from "gsap";
 
 import ModalContent from "./ModalContent";
 
-const Modal = () => {
+const Modal = (props) => {
   let modalVeil = null;
   let modalDialog = null;
   let modalContent = null;
@@ -24,16 +24,16 @@ const Modal = () => {
   }, []);
 
   useEffect(() => {
-    modalTween.reversed(!visible);
-  }, [visible]);
+    modalTween.reversed(props.visible);
+  }, [props.visible]);
 
   const closeModal = () => {
     modalTween.reverse();
-    gsap.delayedCall(modalTween.duration(), close);
+    gsap.delayedCall(modalTween.duration(), props.close);
   };
 
   return (
-    <div className={`modal-container${visible ? " show" : ""}`}>
+    <div className={`modal-container${props.visible ? " show" : ""}`}>
       <div
         className="modal-veil"
         ref={(e) => (modalVeil = e)}
