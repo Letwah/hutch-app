@@ -73,7 +73,7 @@ const FineArt = () => {
           <Sort />
           <Availability />
         </div>
-        <div className="fineArtContent">
+        <div className="fineArtGrid">
           {filtered.map((item) => {
             console.log(`url("${item.image}")`);
             if (!item.show) {
@@ -107,6 +107,13 @@ const FineArt = () => {
                       {new Date(item.createdTimeStamp).toLocaleDateString()}
                       {item.size}
                     </p>
+                    <button
+                      onClick={() => {
+                        dispatch(addProductToCart(item.id));
+                      }}
+                    >
+                      view
+                    </button>
                   </div>
                 </div>
               </section>

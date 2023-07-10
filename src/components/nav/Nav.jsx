@@ -31,10 +31,10 @@ const Nav = () => {
         </p>
         <p
           onClick={() => {
-            dispatch(setPage("SHOP"));
+            dispatch(setPage("CART"));
           }}
         >
-          Shop
+          Cart
         </p>
         <p
           onClick={() => {

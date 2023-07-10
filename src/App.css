@@ -38,8 +38,45 @@ body {
     Ubuntu, "Helvetica Neue", sans-serif;
 }
 
+button {
+  background-color: var(--div-background-color);
+  border: var(--border-width) solid var(--border-color);
+  padding: 1rem 2rem;
+  font-weight: bold;
+  font-size: 1em;
+  position: relative;
+  color: var(--accent);
+}
+
+button::after {
+  content: "";
+  position: absolute;
+  background-color: var(--background);
+  top: 8px;
+  left: 8px;
+  right: -8px;
+  bottom: -8px;
+  z-index: -1;
+}
+
+button:hover,
+button:active {
+  color: white;
+  background-color: var(--background);
+  transition: all 0.3s ease;
+  box-shadow: 0.5em 0.5em 0em;
+}
+
+button:hover::after,
+button:hover:active {
+  background-color: white;
+  border: var(--border-width) solid var(--border-color);
+  transition: all 0.3s ease;
+}
+
 select,
-input {
+input,
+textarea {
   border: var(--border-width) solid var(--border-color);
   padding: 1rem;
   margin: 1rem 1rem;
@@ -65,9 +102,9 @@ input:focus {
   transition: all 0.5s;
 }
 
-.container div {
+/* .container div {
   border-radius: 1em;
-}
+} */
 
 img.logo {
   width: 100px;
@@ -81,13 +118,14 @@ div.social,
 .main-content,
 .main-footer {
   padding: 2vh;
+  /* border-radius: 1em; */
 }
 
 .main-content {
   overflow-x: hidden;
   overflow-y: scroll;
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   background-color: var(--background-color);
 }
 
@@ -99,6 +137,7 @@ div.social,
 .container > div {
   background-color: var(--div-background-color);
 }
+
 @media only screen and (max-width: 800px) {
   .container {
     display: grid;
@@ -115,7 +154,6 @@ div.social,
 
   .container > div {
     padding: 2vh;
-    text-align: center;
   }
 
   .main-header {
@@ -128,8 +166,7 @@ div.social,
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     justify-content: space-around;
-    align-items: center;
-    justify-items: center;
+    /* align-items: left; */
   }
 }
 @media only screen and (min-width: 800px) {

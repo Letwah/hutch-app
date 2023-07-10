@@ -62,7 +62,13 @@ const App = () => {
           </div>
         </div>
         <div className="main-header">
-          <h2>MAIN HEADER</h2>
+          <div className="logo">
+            <img
+              className="logo"
+              src="./assets/images/logos/hutch-logo-new-2021-trans.png"
+              alt="logo"
+            ></img>
+          </div>
         </div>
         <div className="main-content">
           {page === "HOME" && <Home />}
