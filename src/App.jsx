@@ -58,15 +58,19 @@ const App = () => {
           <div className="nav">
             <Nav />
             <div>
-              <input
-                className={`switchTheme ${theme}`}
-                type="checkbox"
-                onChange={(e) => {
-                  setTheme(e.target.checked ? "dark" : "light");
-                }}
-              />
+              <label className="switch">
+                <p>Switch Color Mode</p>
+                <input
+                  className={`switchTheme ${theme}`}
+                  type="checkbox"
+                  onChange={(e) => {
+                    setTheme(e.target.checked ? "dark" : "light");
+                  }}
+                />
+              </label>
 
               <button
+                className="clear"
                 onClick={() => {
                   localStorage.clear();
                 }}

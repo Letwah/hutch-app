@@ -17,8 +17,8 @@ const Illustration = () => {
 
   return (
     <>
-      <section className="container">
-        <main>
+      <section className="illustrationContainer">
+        <div className="illustration">
           {illustration.map((item) => {
             console.log(item.show);
             if (!item.show) {
@@ -29,6 +29,7 @@ const Illustration = () => {
               <section className="illustration card" key={item.id}>
                 <div className="details">
                   <h1>{item.title}</h1>
+                  <p>{item.desc}</p>
                   <p>
                     {new Date(item.createdTimeStamp).toLocaleDateString()} -
                     {item.medium}
@@ -39,7 +40,7 @@ const Illustration = () => {
                     // console.log(image);
                     return (
                       <img
-                        src={`src/assets/images/illustration${image}`}
+                        src={`/assets/images/illustration${image}`}
                         alt={item.title}
                         key={image}
                       />
@@ -49,7 +50,7 @@ const Illustration = () => {
               </section>
             );
           })}
-        </main>
+        </div>
       </section>
     </>
   );

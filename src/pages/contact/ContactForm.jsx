@@ -48,6 +48,11 @@ const ContactForm = () => {
         <p>{errors.message}</p>
       </div>
       <button type="submit">submit</button>
+      <div className="contactMsg">
+        <p>
+          Jimmy will get back to you asap! <br></br>Thanks for getting in touch.
+        </p>
+      </div>
     </form>
   );
 };

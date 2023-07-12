@@ -18,7 +18,7 @@ const initialState = {
   availability: "",
   contactForm: "",
   toastContent: "",
-  modal: "test",
+  modal: "testing",
 };
 
 const appSlice = createSlice({

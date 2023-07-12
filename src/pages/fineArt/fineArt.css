@@ -3,6 +3,9 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+.fineArtContainer {
+  padding: 2rem;
+}
 
 .fineArtGrid {
   display: grid;
@@ -12,7 +15,7 @@
   gap: 2em;
 }
 
-.imageContainer {
+.imageContainer[style*="background-image"] {
   position: relative;
   cursor: pointer;
   border: var(--border-width) solid var(--border-color);
@@ -22,23 +25,23 @@
   overflow: hidden;
 }
 
-.imageContainer::before {
+.imageContainer[style*="background-image"]::before {
+  position: relative;
   content: "";
   background-color: rgb(0, 0, 0);
   width: 100%;
   height: 100%;
-  position: absolute;
   z-index: 2;
   opacity: 0;
   pointer-events: none;
   transition: 0.5s;
 }
 
-.imageContainer:hover::before {
+.imageContainer[style*="background-image"]:hover::before {
   opacity: 0.5;
 }
 
-.details {
+.fineArtContainer .details {
   position: relative;
   top: 50%;
   left: 50%;
@@ -53,10 +56,10 @@
   z-index: 3;
 }
 
-.details:hover {
+.fineArtContainer .details:hover {
   color: var(--accent);
 }
 
-.details > button {
+.fineArtContainer .details > button {
   margin: 1rem 0 1rem 0;
 }
