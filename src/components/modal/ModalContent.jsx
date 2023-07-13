@@ -1,11 +1,11 @@
-import React, { forwardRef } from "react";
+import React from "react";
 
-const ModalContent = forwardRef((props, ref) => {
+const ModalContent = (props) => {
   return (
-    <div className="modal-content-container" ref={ref}>
-      <img></img>
+    <div className="modal-content-container">
+      <img src={props.modalImage} />
     </div>
   );
-});
+};
 
 export default ModalContent;

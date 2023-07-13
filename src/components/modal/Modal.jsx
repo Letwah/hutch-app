@@ -1,46 +1,41 @@
 import { useState, useEffect } from "react";
 import { gsap } from "gsap";
-
+import { useRef } from "react";
 import ModalContent from "./ModalContent";
 
+import "./modal.css";
+
 const Modal = (props) => {
-  let modalVeil = null;
-  let modalDialog = null;
-  let modalContent = null;
-
-  const [modalTween] = useState(gsap.timeline({ paused: true }));
+  console.log(props);
+  const modalVeil = useRef(null);
+  const modalDialogue = useRef(null);
 
   useEffect(() => {
-    modalTween
-      .to(modalVeil, 0.25, { autoAlpha: 1 })
-      .to(modalDialog, 0.35, { y: 0, autoAlpha: 1 })
-      .from(
-        modalContent.children,
-        0.35,
-        { y: 15, opacity: 0, stagger: 0.1 },
-        "-=0.15"
-      )
-      .reverse();
-  }, []);
-
-  useEffect(() => {
-    modalTween.reversed(props.visible);
+    if (props.visible) {
+      gsap.to(modalVeil.current, { autoAlpha: 1, duration: 1 });
+      gsap.to(modalDialogue.current, { autoAlpha: 1, duration: 1.4, delay: 1 });
+    }
   }, [props.visible]);
 
-  const closeModal = () => {
-    modalTween.reverse();
-    gsap.delayedCall(modalTween.duration(), props.close);
+  const onCloseClick = () => {
+    gsap.to(modalVeil.current, { opacity: 0, duration: 1 });
+    gsap.to(modalDialogue.current, {
+      opacity: 0,
+      duration: 1.4,
+      delay: 1,
+      onComplete: props.close,
+    });
   };
 
   return (
-    <div className={`modal-container${props.visible ? " show" : ""}`}>
-      <div
-        className="modal-veil"
-        ref={(e) => (modalVeil = e)}
-        onClick={closeModal}
-      />
-      <div className="modal-dialog" ref={(e) => (modalDialog = e)}>
-        <ModalContent ref={(e) => (modalContent = e)} />
+    <div className={`modal-container${props.visible ? " show" : " show"}`}>
+      <p>hello world</p>
+      <div onClick={onCloseClick} ref={modalVeil} className="modal-veil">
+        X
+      </div>
+
+      <div ref={modalDialogue} className="modal-dialog">
+        <ModalContent modalImage={props.modalImage} />
       </div>
     </div>
   );

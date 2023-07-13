@@ -281,13 +281,14 @@ div.social,
   .sidebar {
     display: grid;
     grid-template-columns: 0.8fr;
-    grid-template-rows: 0.5fr 1fr 0.5fr;
+    /* grid-template-rows: 0.5fr 1fr 0.5fr; */
+    grid-template-rows: 0.5fr 1fr;
     gap: 5px 5px;
     grid-auto-flow: row;
     grid-template-areas:
       "logo"
-      "nav"
-      "social";
+      "nav";
+    /* "social"; */
     grid-area: 1 / 1 / 4 / 2;
   }
 
@@ -299,9 +300,9 @@ div.social,
     grid-area: nav;
   }
 
-  .social {
+  /* .social {
     grid-area: social;
-  }
+  } */
 
   .main-header {
     grid-area: 1 / 2 / 2 / 3;

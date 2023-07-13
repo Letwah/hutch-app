@@ -40,3 +40,9 @@
   color: black;
   text-align: left;
 }
+
+/* .modal-container.show {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+} */

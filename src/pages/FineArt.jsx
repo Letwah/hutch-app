@@ -21,6 +21,7 @@ const FineArt = () => {
   const sort = useSelector(selectSort);
   const availability = useSelector(selectAvailability);
   const [isModalVisible, setIsModalVisible] = useState(false);
+  const [modalImage, setModalImage] = useState();
 
   const dispatch = useDispatch();
 
@@ -65,8 +66,9 @@ const FineArt = () => {
     });
   }
 
-  const showModal = () => {
+  const showModal = (image) => {
     setIsModalVisible(true);
+    setModalImage(image);
   };
 
   const closeModal = () => {
@@ -75,6 +77,13 @@ const FineArt = () => {
 
   return (
     <>
+      {isModalVisible && (
+        <Modal
+          visible={isModalVisible}
+          close={closeModal}
+          modalImage={modalImage}
+        />
+      )}
       <section className="fineArtContainer">
         <div className="filters">
           <Search />
@@ -115,8 +124,13 @@ const FineArt = () => {
                       {new Date(item.createdTimeStamp).toLocaleDateString()}
                       {item.size}
                     </p>
-                    <button onClick={showModal}>show modal</button>
-                    <Modal visible={isModalVisible} close={closeModal} />
+                    <button
+                      onClick={() => {
+                        showModal(item.image);
+                      }}
+                    >
+                      show modal
+                    </button>
                   </div>
                 </div>
               </section>

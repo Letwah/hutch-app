@@ -45,7 +45,7 @@ const App = () => {
   return (
     <div>
       <ToastContainer />
-      {modal && <Modal />}
+      {/* {modal && <Modal />} */}
       <section className="container" data-theme={theme}>
         <div className="sidebar">
           <div className="logo">
@@ -80,17 +80,19 @@ const App = () => {
               </button>
             </div>
           </div>
-          <div className="social">
+          {/* <div className="social">
             <h1>contact</h1>
-          </div>
+          </div> */}
         </div>
         <div className="main-header">
-          <div className="logo">
-            <img
+          <div className="pageTitle">
+            {/* render the page title here */}
+            <h1>{page}</h1>
+            {/* <img
               className="logo"
               src="./assets/images/logos/hutch-logo-new-2021-trans.png"
               alt="logo"
-            ></img>
+            ></img> */}
           </div>
         </div>
         <div className="main-content">

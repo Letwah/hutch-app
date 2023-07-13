@@ -6,6 +6,8 @@ import {
   removeProductFromCart,
 } from "../features/appSlice";
 
+import "./cart/cart.css";
+
 const Cart = () => {
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
   const cartItemIds = useSelector(selectCartItemIds);
@@ -24,23 +26,26 @@ const Cart = () => {
   }
   return (
     <>
-      <p>Cart</p>
-      {cartItems.map((item) => {
-        return (
-          <div key={item.id}>
-            {item.title} £{(item.price / 100).toFixed(2)}
-            <button
-              onClick={() => {
-                dispatch(removeProductFromCart(item.id));
-              }}
-            >
-              Remove
-            </button>
-          </div>
-        );
-      })}
-      £{(total / 100).toFixed(2)}
-      <button>Checkout</button>
+      {" "}
+      <div className="cartContainer">
+        {cartItems.map((item) => {
+          return (
+            <div key={item.id}>
+              {item.title} £{(item.price / 100).toFixed(2)}
+              <button
+                onClick={() => {
+                  dispatch(removeProductFromCart(item.id));
+                }}
+              >
+                Remove
+              </button>
+            </div>
+          );
+        })}
+        <div>£{(total / 100).toFixed(2)}</div>
+
+        <button>Checkout</button>
+      </div>
     </>
   );
 };
