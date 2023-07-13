@@ -6,6 +6,7 @@
 
 select {
   color: var(--accent);
+  text-shadow: 0.1px 1px 3px rgb(84, 255, 104);
 }
 
 .main-content .container {
@@ -73,8 +74,23 @@ select {
   z-index: 3;
 }
 
+.fineArtContainer .details p,
+h1,
+h2,
+h3 {
+  text-shadow: 0.5px 1px 2px rgb(255, 255, 255);
+}
+
+/* .fineArtContainer .details p:hover,
+h1:hover,
+h2:hover,
+h3:hover {
+  text-shadow: 0 0 0;
+} */
+
 .fineArtContainer .details:hover {
   color: var(--accent);
+  text-shadow: 0;
 }
 
 .fineArtContainer .details > button {

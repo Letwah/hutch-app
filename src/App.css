@@ -139,7 +139,7 @@ input:focus {
 
 .slider:before {
   position: absolute;
-  content: url("./features/counter/assets/DohNut.png");
+  content: url("");
   height: 27px;
   width: 27px;
   left: 3px;
