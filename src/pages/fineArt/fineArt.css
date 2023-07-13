@@ -3,8 +3,25 @@
   flex-direction: row;
   justify-content: flex-start;
 }
+
+select {
+  color: var(--accent);
+}
+
+.main-content .container {
+  background-color: var(--div-background-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  background-color: transparent;
+  gap: 2em;
+}
+
 .fineArtContainer {
   padding: 2rem;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto; */
 }
 
 .fineArtGrid {

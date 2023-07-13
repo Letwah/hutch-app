@@ -65,15 +65,13 @@ button::after {
 button:hover,
 button:active {
   color: var(--accent);
-
   transition: all 0.3s ease;
-  box-shadow: 0.5em 0.5em 0em var(--shadow-color);
+  box-shadow: 0.5em 0.5em 0em var(--background);
 }
 
 button:hover::after,
 button:hover:active {
   color: var(--accent);
-
   border: var(--border-width) solid var(--border-color);
   transition: all 0.3s ease;
   opacity: 1;
@@ -88,7 +86,7 @@ textarea {
   border: var(--border-width) solid var(--border-color);
   padding: 1rem;
   margin: 1rem 1rem;
-  background: var(--background-color);
+  background: var(--div-background-color);
 }
 
 option,
@@ -185,12 +183,12 @@ input:checked + .slider:before {
 
 /* END light /dark mode toggle  */
 
-body {
+/* body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-}
+} */
 
 .container {
   background-color: var(--div-background-color);
@@ -315,7 +313,6 @@ div.social,
 
   .main-footer {
     grid-area: 3 / 2 / 4 / 3;
-
     display: flex;
     flex-direction: row;
     justify-content: space-between;

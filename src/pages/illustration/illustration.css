@@ -7,11 +7,11 @@
   gap: 2em;
 }
 
-.illustrationContainer {
+/* .illustrationContainer {
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto;
-}
+} */
 
 .illustrationContainer .illustration {
   padding: 2rem;
