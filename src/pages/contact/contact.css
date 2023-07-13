@@ -14,7 +14,7 @@
     rgba(255, 255, 255, 0) 100%
   );
   backdrop-filter: blur(15px);
-  width: 40vw;
+  width: 80vw;
   height: 95%;
   margin: 0 auto;
   padding-top: 2rem;
@@ -44,10 +44,18 @@ label {
 
 textarea {
   margin-bottom: 2rem;
-  width: 30vw;
-  height: 30vh;
 }
 
 .contactMsg {
   padding: 2rem 1rem;
+}
+
+@media only screen and (min-width: 800px) {
+  .contactForm {
+    width: 50vw;
+  }
+  textarea {
+    width: 30vw;
+    height: 30vh;
+  }
 }

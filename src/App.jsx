@@ -67,6 +67,7 @@ const App = () => {
                     setTheme(e.target.checked ? "dark" : "light");
                   }}
                 />
+                <span className="slider round"></span>
               </label>
 
               <button
