@@ -29,7 +29,6 @@ const Modal = (props) => {
 
   return (
     <div className={`modal-container${props.visible ? " show" : " show"}`}>
-      <p>hello world</p>
       <div onClick={onCloseClick} ref={modalVeil} className="modal-veil">
         X
       </div>
