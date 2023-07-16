@@ -40,7 +40,6 @@ const FineArt = () => {
     });
   }
 
-  //
   console.log(sort);
   // /sort by asc/dec
   if (sort === ASC) {

@@ -1,40 +1,48 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { gsap } from "gsap";
-import { useRef } from "react";
+// import { useRef } from "react";
+import { setModalImage } from "../../features/appSlice";
 import ModalContent from "./ModalContent";
 
 import "./modal.css";
 
 const Modal = (props) => {
-  console.log(props);
-  const modalVeil = useRef(null);
-  const modalDialogue = useRef(null);
+  // const modal
+
+  const modalVeil = useSelector(selectModalVeil);
+  const modalDialogue = useSelector(selectModalDialogue);
+  // const visible = useSelector(selectVisible);
 
   useEffect(() => {
-    if (props.visible) {
-      gsap.to(modalVeil.current, { autoAlpha: 1, duration: 1 });
-      gsap.to(modalDialogue.current, { autoAlpha: 1, duration: 1.4, delay: 1 });
+    if (visible) {
+      gsap.to(modalVeil.current, { autoAlpha: 1, duration: 0.5 });
+      gsap.to(modalDialogue.current, {
+        autoAlpha: 1,
+        duration: 0.5,
+        delay: 0.5,
+      });
     }
-  }, [props.visible]);
+  }, [visible]);
 
   const onCloseClick = () => {
     gsap.to(modalVeil.current, { opacity: 0, duration: 1 });
     gsap.to(modalDialogue.current, {
       opacity: 0,
-      duration: 1.4,
-      delay: 1,
-      onComplete: props.close,
+      duration: 0.3,
+      delay: 0.2,
+      onComplete: "close",
     });
   };
 
   return (
-    <div className={`modal-container${props.visible ? " show" : " show"}`}>
-      <div onClick={onCloseClick} ref={modalVeil} className="modal-veil">
-        X
+    <div className={`modal-container${visible ? " show" : " show"}`}>
+      <div onClick={onCloseClick} ref={setModalVeil} className="modal-veil">
+        <p>X</p>
       </div>
 
-      <div ref={modalDialogue} className="modal-dialog">
-        <ModalContent modalImage={props.modalImage} />
+      <div ref={setModalDialogue} className="modal-dialog">
+        <ModalContent modalImage={modalImage} />
       </div>
     </div>
   );

@@ -13,7 +13,6 @@ import Illustration from "./pages/Illustration";
 import Cart from "./pages/Cart";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
-// import Modal from "./components/modal/Modal";
 
 const App = () => {
   const page = useSelector(selectPage);
