@@ -1,9 +1,13 @@
 import React from "react";
+import { useSelector } from "react-redux";
+import { selectModalImage } from "../../features/appSlice";
 
-const ModalContent = (props) => {
+const ModalContent = () => {
+  const modalImage = useSelector(selectModalImage);
+  // const modal = useSelector(selectModal);
   return (
     <div className="modal-content-container">
-      <img src={props.modalImage} />
+      <img src={modalImage} />
     </div>
   );
 };

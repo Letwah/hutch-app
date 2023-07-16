@@ -20,16 +20,23 @@
   color: white;
   height: 100vh;
   width: 100%;
-  background-color: rgb(14, 14, 14);
+  background-color: rgba(14, 14, 14, 0.65);
   opacity: 0;
   visibility: hidden;
   position: absolute;
 }
 
+.modal-veil p {
+  position: fixed;
+  top: 4rem;
+  right: 4rem;
+  cursor: pointer;
+}
+
 .modal-dialog {
   position: relative;
-  width: 90%;
-  background-color: #f2f2f2e3;
+  width: 92vw;
+  background-color: #f2f2f2a1;
 
   padding: 20px;
   transform: translateY(50px);
@@ -38,13 +45,14 @@
 }
 
 .modal-content-container {
-  color: black;
+  color: rgba(0, 0, 0, 0.631);
   text-align: left;
 }
-
 .modal-content-container > img {
-  max-width: 90vw;
-  margin: auto;
+  max-width: 85vw;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, 0%);
 }
 
 /* .modal-container.show {
