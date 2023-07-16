@@ -49,31 +49,19 @@ const App = () => {
               alt="logo"
             ></img>
           </div>
-          <div className="nav">
-            <Nav />
-            <div>
-              <label className="switch">
-                <p>Switch Color Mode</p>
-                <input
-                  className={`switchTheme ${theme}`}
-                  type="checkbox"
-                  onChange={(e) => {
-                    setTheme(e.target.checked ? "dark" : "light");
-                  }}
-                />
-                <span className="slider round"></span>
-              </label>
 
-              <button
-                className="clear"
-                onClick={() => {
-                  localStorage.clear();
-                }}
-              >
-                CLEAR
-              </button>
-            </div>
+          <Nav />
+          <div>
+            <button
+              className="clear"
+              onClick={() => {
+                localStorage.clear();
+              }}
+            >
+              CLEAR
+            </button>
           </div>
+
           {/* <div className="social">
             <h1>contact</h1>
           </div> */}
@@ -88,6 +76,16 @@ const App = () => {
               alt="logo"
             ></img> */}
           </div>
+          <label className="switch">
+            <input
+              className={`switchTheme ${theme}`}
+              type="checkbox"
+              onChange={(e) => {
+                setTheme(e.target.checked ? "dark" : "light");
+              }}
+            />
+            <span className="slider round"></span>
+          </label>
         </div>
         <div className="main-content">
           {page === "HOME" && <Home />}

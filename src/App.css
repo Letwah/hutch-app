@@ -104,10 +104,9 @@ input:focus {
 
 /* The switch - the box around the slider */
 .switch {
-  position: relative;
-  display: inline;
+  display: flex;
+  align-items: center;
   width: 40px;
-  margin-bottom: 20px;
 }
 
 .switch p {
@@ -123,16 +122,12 @@ input:focus {
   width: 0;
   height: 0;
 }
-
 /* The slider */
 .slider {
-  margin: 0 0 40px 0;
   position: absolute;
   cursor: pointer;
-  top: 75%;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  /* top: 2rem; */
+  right: 2rem;
   background-color: #1a1a1a;
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -203,17 +198,22 @@ input:checked + .slider:before {
 } */
 
 img.logo {
-  width: 100px;
+  width: 10rem;
 }
 
 /*padding for nested divs*/
-div.logo,
+
 div.nav,
 div.social,
 .main-header,
 .main-footer {
   padding: 2vh;
   /* border-radius: 1em; */
+}
+
+div.logo {
+  display: flex;
+  align-items: center;
 }
 
 .main-content {
@@ -295,10 +295,12 @@ div.social,
 
   .logo {
     grid-area: logo;
+    flex-direction: column;
   }
 
   .nav {
     grid-area: nav;
+    text-align: left;
   }
 
   /* .social {
@@ -307,6 +309,10 @@ div.social,
 
   .main-header {
     grid-area: 1 / 2 / 2 / 3;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .main-content {

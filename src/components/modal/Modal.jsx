@@ -12,8 +12,12 @@ const Modal = (props) => {
 
   useEffect(() => {
     if (props.visible) {
-      gsap.to(modalVeil.current, { autoAlpha: 1, duration: 1 });
-      gsap.to(modalDialogue.current, { autoAlpha: 1, duration: 1.4, delay: 1 });
+      gsap.to(modalVeil.current, { autoAlpha: 1, duration: 0.5 });
+      gsap.to(modalDialogue.current, {
+        autoAlpha: 1,
+        duration: 0.5,
+        delay: 0.5,
+      });
     }
   }, [props.visible]);
 
@@ -21,8 +25,8 @@ const Modal = (props) => {
     gsap.to(modalVeil.current, { opacity: 0, duration: 1 });
     gsap.to(modalDialogue.current, {
       opacity: 0,
-      duration: 1.4,
-      delay: 1,
+      duration: 0.3,
+      delay: 0.2,
       onComplete: props.close,
     });
   };
@@ -30,7 +34,7 @@ const Modal = (props) => {
   return (
     <div className={`modal-container${props.visible ? " show" : " show"}`}>
       <div onClick={onCloseClick} ref={modalVeil} className="modal-veil">
-        X
+        <p>X</p>
       </div>
 
       <div ref={modalDialogue} className="modal-dialog">

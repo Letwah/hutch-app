@@ -1,7 +1,19 @@
 .nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+
+  align-items: left;
+}
+
+.nav p {
+  border: 0 solid;
+  padding: 1rem;
+}
+
+.nav p:active,
+.nav p:hover {
+  border: 2px solid;
+  transition: all 0.5s;
 }
 
 @media only screen and (max-width: 800px) {
@@ -13,5 +25,6 @@
 
   button.clear {
     padding: 0.5rem 1rem;
+    display: none;
   }
 }
