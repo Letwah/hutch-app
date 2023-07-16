@@ -33,11 +33,11 @@
 }
 .modal-dialog {
   position: relative;
-  width: 92vw;
+  /* width: 92vw; */
   background-color: #f2f2f2a1;
 
-  padding: 20px;
-  transform: translateY(50px);
+  padding: 50px;
+  /* transform: translateY(50px); */
   opacity: 0;
   visibility: hidden;
 }
@@ -47,7 +47,7 @@
   text-align: left;
 }
 .modal-content-container > img {
-  max-width: 85vw;
+  max-height: 85vh;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0%);

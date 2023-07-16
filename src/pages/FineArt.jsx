@@ -132,7 +132,7 @@ const FineArt = () => {
                         showModal(item.image);
                       }}
                     >
-                      show modal
+                      detailed view
                     </button>
                   </div>
                 </div>
