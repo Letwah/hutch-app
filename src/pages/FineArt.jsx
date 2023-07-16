@@ -11,6 +11,9 @@ import {
   selectSort,
   selectAvailability,
   selectModal,
+  selectModalImage,
+  setModalImage,
+  setModal,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
 import { ASC, DESC, AVAIL, SOLD } from "../store/types";
@@ -20,8 +23,10 @@ const FineArt = () => {
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
   const availability = useSelector(selectAvailability);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalImage, setModalImage] = useState();
+  // const [isModalVisible, setShowModal] = useState(false);
+  // const [modalImage, setModalImage] = useState();
+  const modal = useSelector(selectModal);
+  const modalImage = useSelector(selectModalImage);
 
   const dispatch = useDispatch();
 
@@ -67,21 +72,21 @@ const FineArt = () => {
   }
 
   const showModal = (image) => {
-    setIsModalVisible(true);
-    setModalImage(image);
+    dispatch(setModal(true));
+    dispatch(setImage(image));
   };
 
   const closeModal = () => {
-    setIsModalVisible(false);
+    dispatch(setModal(false));
   };
 
   return (
     <>
-      {isModalVisible && (
+      {modal && (
         <Modal
-          visible={isModalVisible}
+          visible={showModal}
           close={closeModal}
-          modalImage={modalImage}
+          modalImage={setModalImage}
         />
       )}
       <section className="fineArtContainer">
@@ -129,7 +134,7 @@ const FineArt = () => {
                         showModal(item.image);
                       }}
                     >
-                      show modal
+                      details
                     </button>
                   </div>
                 </div>

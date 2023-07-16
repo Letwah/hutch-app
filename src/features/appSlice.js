@@ -18,7 +18,8 @@ const initialState = {
   availability: "",
   contactForm: "",
   toastContent: "",
-  modal: "testing",
+  modal: false,
+  modalImage: "",
 };
 
 const appSlice = createSlice({
@@ -60,6 +61,9 @@ const appSlice = createSlice({
     setModal: (state, action) => {
       state.modal = action.payload;
     },
+    setModalImage: (state, action) => {
+      state.modalImage = action.payload;
+    },
   },
 });
 
@@ -73,6 +77,7 @@ export const {
   setContactForm,
   setToastContent,
   setModal,
+  setModalImage,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -86,4 +91,6 @@ export const selectAvailability = (state) => state.app.availability;
 export const selectContactForm = (state) => state.app.contactForm;
 export const selectToastContent = (state) => state.app.toastContent;
 export const selectModal = (state) => state.app.modal;
+export const selectModalImage = (state) => state.app.modalImage;
+
 export default appSlice.reducer;

@@ -18,7 +18,9 @@ const ContactForm = () => {
 
     if (!res) {
       //do something with form - when we got backend
-      dispatch(setToastContent("hello thanks spspdowj"));
+      dispatch(
+        setToastContent("Thank you for your enquiry. We'll be in touch soon!")
+      );
       return;
     }
     setErrors(res);

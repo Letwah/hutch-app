@@ -55,21 +55,9 @@ const App = () => {
               alt="logo"
             ></img>
           </div>
-          <div className="nav">
+          <div>
             <Nav />
             <div>
-              <label className="switch">
-                <p>Switch Color Mode</p>
-                <input
-                  className={`switchTheme ${theme}`}
-                  type="checkbox"
-                  onChange={(e) => {
-                    setTheme(e.target.checked ? "dark" : "light");
-                  }}
-                />
-                <span className="slider round"></span>
-              </label>
-
               <button
                 className="clear"
                 onClick={() => {
@@ -87,13 +75,25 @@ const App = () => {
         <div className="main-header">
           <div className="pageTitle">
             {/* render the page title here */}
+
             <h1>{page}</h1>
+
             {/* <img
               className="logo"
               src="./assets/images/logos/hutch-logo-new-2021-trans.png"
               alt="logo"
             ></img> */}
           </div>
+          <label className="switch">
+            <input
+              className={`switchTheme ${theme}`}
+              type="checkbox"
+              onChange={(e) => {
+                setTheme(e.target.checked ? "dark" : "light");
+              }}
+            />
+            <span className="slider round"></span>
+          </label>
         </div>
         <div className="main-content">
           {page === "HOME" && <Home />}
