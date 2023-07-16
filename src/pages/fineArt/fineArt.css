@@ -1,0 +1,98 @@
+.filters {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+select {
+  color: var(--accent);
+  background-color: var(--background);
+}
+
+.main-content .container {
+  background-color: var(--div-background-color);
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  background-color: transparent;
+  gap: 2em;
+}
+
+.fineArtContainer {
+  padding: 2rem;
+  /* display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto; */
+}
+
+.fineArtGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-rows: auto;
+  background-color: transparent;
+  gap: 2em;
+}
+.imageContainer[style*="background-image"] {
+  position: relative;
+  cursor: pointer;
+  border: var(--border-width) solid var(--border-color);
+  box-shadow: 0.5em 0.5em 0em;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.imageContainer[style*="background-image"]::before {
+  display: block;
+  position: relative;
+  content: "";
+  background-color: rgb(255, 255, 255);
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  opacity: 0.3;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.imageContainer[style*="background-image"]:hover::before {
+  opacity: 0;
+}
+
+.imageContainer[style*="background-image"] > .details {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  text-align: justify;
+  font-size: 0.8rem;
+  color: rgb(0, 0, 0);
+  opacity: 1;
+  transition: color 0.5s;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  z-index: 5;
+}
+
+/* .fineArtContainer .details p,
+h1,
+h2,
+h3 {
+  text-shadow: 0.5px 1px 2px rgb(255, 255, 255);
+} */
+
+/* .fineArtContainer .details p:hover,
+h1:hover,
+h2:hover,
+h3:hover {
+  text-shadow: 0 0 0;
+} */
+
+.fineArtContainer .details:hover {
+  color: var(--accent);
+  text-shadow: 0;
+}
+
+.fineArtContainer .details > button {
+  margin: 1rem 0 1rem 0;
+}
