@@ -10,7 +10,10 @@ import {
   selectSearch,
   selectSort,
   selectAvailability,
-  selectModal,
+  selectModalImage,
+  selectIsModalVisible,
+  setModalImage,
+  setIsModalVisible,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
 import { ASC, DESC, AVAIL, SOLD } from "../store/types";
@@ -20,9 +23,9 @@ const FineArt = () => {
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
   const availability = useSelector(selectAvailability);
-  const [isModalVisible, setIsModalVisible] = useState(false);
-  const [modalImage, setModalImage] = useState();
 
+  const modalImage = useSelector(selectModalImage);
+  const isModalVisible = useSelector(selectIsModalVisible);
   const dispatch = useDispatch();
 
   let filtered = [...fineArt];
@@ -67,12 +70,12 @@ const FineArt = () => {
   }
 
   const showModal = (image) => {
-    setIsModalVisible(true);
-    setModalImage(image);
+    dispatch(setIsModalVisible(true));
+    dispatch(setModalImage(image));
   };
 
   const closeModal = () => {
-    setIsModalVisible(false);
+    dispatch(setIsModalVisible(false));
   };
 
   return (
