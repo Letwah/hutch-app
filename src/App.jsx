@@ -4,11 +4,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  selectPage,
-  selectToastContent,
-  selectModal,
-} from "./features/appSlice";
+import { selectPage, selectToastContent } from "./features/appSlice";
 
 import Contact from "./pages/Contact";
 import Home from "./pages/Home";
@@ -33,8 +29,6 @@ const App = () => {
       toast(toastContent);
     }
   }, [toastContent]);
-
-  const modal = useSelector(selectModal);
 
   // const switchTheme = () => {
   //   const newTheme = theme === "light" ? "dark" : "light";
