@@ -27,24 +27,33 @@ const Cart = () => {
   return (
     <>
       {" "}
-      <div className="cartContainer">
-        {cartItems.map((item) => {
-          return (
-            <div key={item.id}>
-              {item.title} £{(item.price / 100).toFixed(2)}
-              <button
-                onClick={() => {
-                  dispatch(removeProductFromCart(item.id));
-                }}
-              >
-                Remove
-              </button>
-            </div>
-          );
-        })}
-        <div>£{(total / 100).toFixed(2)}</div>
+      <div
+        className="cartContainer"
+        style={{
+          backgroundImage: `url("./assets/images/fineArt/large/drawnUp.jpg")`,
+        }}
+      >
+        <div className="cartBox">
+          {cartItems.map((item) => {
+            return (
+              <div key={item.id}>
+                {item.title} £{(item.price / 100).toFixed(2)}
+                <div>
+                  <button
+                    onClick={() => {
+                      dispatch(removeProductFromCart(item.id));
+                    }}
+                  >
+                    Remove
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+          <div>£{(total / 100).toFixed(2)}</div>
 
-        <button>Checkout</button>
+          <button>Checkout</button>
+        </div>
       </div>
     </>
   );

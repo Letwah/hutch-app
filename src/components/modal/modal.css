@@ -26,14 +26,14 @@
   position: absolute;
 }
 .modal-veil p {
-  position: fixed;
-  top: 4rem;
-  right: 4rem;
+  position: relative;
+  top: 1rem;
+  left: 98vw;
   cursor: pointer;
 }
 .modal-dialog {
   position: relative;
-  /* width: 92vw; */
+  /* width: 85vw; */
   background-color: #f2f2f2a1;
 
   padding: 50px;
@@ -48,6 +48,7 @@
 }
 .modal-content-container > img {
   max-height: 85vh;
+  max-width: 100%;
   position: relative;
   left: 50%;
   transform: translate(-50%, 0%);

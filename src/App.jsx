@@ -13,7 +13,8 @@ import Illustration from "./pages/Illustration";
 import Cart from "./pages/Cart";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
-// import Modal from "./components/modal/Modal";
+
+// import hutchLogo from "./assets/images/logos/JimmyHutch.svg";
 
 const App = () => {
   const page = useSelector(selectPage);
@@ -39,7 +40,7 @@ const App = () => {
   return (
     <div>
       <ToastContainer />
-      {/* {modal && <Modal />} */}
+
       <section className="container" data-theme={theme}>
         <div className="sidebar">
           <div className="logo">
@@ -48,6 +49,7 @@ const App = () => {
               src="./assets/images/logos/hutch-logo-new-2021-trans.png"
               alt="logo"
             ></img>
+            {/* <img className="logo" src={hutchLogo} alt="logo"></img> */}
           </div>
 
           <Nav />

@@ -1,13 +1,14 @@
 .filters {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 
-select {
-  color: var(--accent);
-  background-color: var(--background);
-}
+/* select {
+  color: var(--text-primary);
+  background-color: var(--div-background-color);
+} */
 
 .main-content .container {
   background-color: var(--div-background-color);
@@ -27,7 +28,7 @@ select {
 
 .fineArtGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 0.75fr));
   grid-template-rows: auto;
   background-color: transparent;
   gap: 2em;
@@ -44,7 +45,7 @@ select {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-color: white;
+  background-color: transparent;
 }
 
 .imageContainer[style*="background-image"]::before {
@@ -105,5 +106,13 @@ h3:hover {
 }
 
 .fineArtContainer .details > button {
-  margin: 1rem 0 1rem 0;
+  margin: 0.5rem 0 0.5rem 0;
+}
+
+@media only screen and (min-width: 800px) {
+  .filters {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
 }

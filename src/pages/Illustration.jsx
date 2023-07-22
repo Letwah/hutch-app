@@ -1,15 +1,20 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { selectIllustrationCatalogue } from "../features/appSlice";
-// import Modal from "../components/modal/Modal";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectIllustrationCatalogue,
+  selectModalImage,
+  selectIsModalVisible,
+  setModalImage,
+  setIsModalVisible,
+} from "../features/appSlice";
+import Modal from "../components/modal/Modal";
 import "./illustration/illustration.css";
 
 const Illustration = () => {
   const illustration = useSelector(selectIllustrationCatalogue);
-  // const [isModalVisible, setIsModalVisible] = useState(false);
-  // const [modalImage, setModalImage] = useState();
-
-  // console.log(illustration);
+  const modalImage = useSelector(selectModalImage);
+  const isModalVisible = useSelector(selectIsModalVisible);
+  const dispatch = useDispatch();
 
   //when written filter for implementing rending a project view on illustration as well=
   // if (filtered.length > 1) {
@@ -18,24 +23,24 @@ const Illustration = () => {
   //   })
   // }
 
-  // const showModal = (image) => {
-  //   setIsModalVisible(true);
-  //   setModalImage(image);
-  // };
+  const showModal = (image) => {
+    dispatch(setIsModalVisible(true));
+    dispatch(setModalImage(image));
+  };
 
-  // const closeModal = () => {
-  //   setIsModalVisible(false);
-  // };
+  const closeModal = () => {
+    dispatch(setIsModalVisible(false));
+  };
 
   return (
     <>
-      {/* {isModalVisible && (
+      {isModalVisible && (
         <Modal
           visible={isModalVisible}
           close={closeModal}
           modalImage={modalImage}
         />
-      )} */}
+      )}
       <section className="illustrationContainer">
         <div className="illustration">
           {illustration.map((item) => {
@@ -59,9 +64,9 @@ const Illustration = () => {
                     // console.log(image);
                     return (
                       <img
-                        // onClick={() => {
-                        //   showModal(item.image);
-                        // }}
+                        onClick={() => {
+                          showModal(item.image);
+                        }}
                         src={`/assets/images/illustration${image}`}
                         alt={item.title}
                         key={image}

@@ -43,7 +43,7 @@ body {
 button {
   background-color: var(--div-background-color);
   border: var(--border-width) solid var(--border-color);
-  padding: 1rem 2rem;
+  padding: 0.5rem 1rem;
   font-weight: bold;
   font-size: 1em;
   position: relative;
@@ -85,14 +85,15 @@ select,
 input,
 textarea {
   border: var(--border-width) solid var(--border-color);
-  padding: 1rem;
-  margin: 1rem 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem 0.5rem;
   background: var(--div-background-color);
 }
 
 option,
 input::placeholder {
   color: var(--text-secondary);
+  text-shadow: rgba(6, 255, 10, 0.312) 1px 0.3px 3px;
 }
 
 input:active,
@@ -198,7 +199,7 @@ input:checked + .slider:before {
 } */
 
 img.logo {
-  width: 10rem;
+  width: 5rem;
 }
 
 /*padding for nested divs*/
@@ -207,7 +208,7 @@ div.nav,
 div.social,
 .main-header,
 .main-footer {
-  padding: 2vh;
+  padding: 1vh;
   /* border-radius: 1em; */
 }
 
@@ -275,6 +276,10 @@ div.logo {
     grid-auto-flow: row;
   }
 
+  .main-header {
+    padding: 2vh;
+  }
+
   .main {
     grid-area: 1 / 2 / 4 / 3;
   }
@@ -296,6 +301,10 @@ div.logo {
   .logo {
     grid-area: logo;
     flex-direction: column;
+  }
+
+  img.logo {
+    width: 10rem;
   }
 
   .nav {
