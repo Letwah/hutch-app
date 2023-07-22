@@ -23,7 +23,6 @@ const FineArt = () => {
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
   const availability = useSelector(selectAvailability);
-
   const modalImage = useSelector(selectModalImage);
   const isModalVisible = useSelector(selectIsModalVisible);
   const dispatch = useDispatch();
