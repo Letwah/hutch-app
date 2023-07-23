@@ -36,6 +36,9 @@ const App = () => {
   //   setTheme(newTheme);
   // };
   // const [nightMode, setNightMode] = useState(false);
+  const urlArtInstagram = "https://www.instagram.com/byhutchart/";
+  const urlIllustrationInsta = "https://www.instagram.com/byhutchillo/";
+
   console.log(theme);
   return (
     <div>
@@ -64,9 +67,32 @@ const App = () => {
             </button>
           </div>
 
-          {/* <div className="social">
-            <h1>contact</h1>
-          </div> */}
+          <div className="social">
+            <h1>social</h1>
+            <div className="socialIcons">
+              <div className="artIcon">
+                <img
+                  className="artIcon"
+                  src="./assets/images/icons/palletDark.png"
+                  alt="By Hutch Art Instagram"
+                  onClick={() => {
+                    window.open(urlArtInstagram, "_blank");
+                  }}
+                ></img>
+              </div>
+
+              <div className="illustrationIcon">
+                <img
+                  className="illustrationIcon"
+                  src="./assets/images/icons/penDark.png"
+                  alt="By Hutch Illustration Instagram"
+                  onClick={() => {
+                    window.open(urlIllustrationInsta, "_blank");
+                  }}
+                ></img>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="main-header">
           <div className="pageTitle">
@@ -96,9 +122,9 @@ const App = () => {
           {page === "ILLUSTRATION" && <Illustration />}
           {page === "CART" && <Cart />}
         </div>
-        <div className="main-footer">
+        {/* <div className="main-footer">
           <Footer />
-        </div>
+        </div> */}
       </section>
     </div>
   );

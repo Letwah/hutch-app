@@ -6,14 +6,15 @@
 }
 
 .nav p {
-  border: 0 solid;
+  /* border: 0 solid; */
   padding: 1rem;
 }
 
 .nav p:active,
 .nav p:hover {
-  border: 2px solid;
+  /* border: 2px solid; */
   transition: all 0.5s;
+  cursor: pointer;
 }
 
 @media only screen and (max-width: 800px) {

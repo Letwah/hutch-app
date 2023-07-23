@@ -20,7 +20,7 @@
 }
 
 .fineArtContainer {
-  padding: 2rem;
+  padding: 2rem 4rem 2rem 2rem;
   /* display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: auto; */
@@ -65,25 +65,39 @@
   opacity: 0;
 }
 
-.imageContainer[style*="background-image"] > .details {
-  position: relative;
+.fineArt.card .details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* position: relative;
   bottom: 90%;
-  left: 50%;
-  transform: translate(-50%, 0%);
+  left: 50%; */
+  transform: translate(5%, 0%);
   text-align: left;
-  font-size: 0.8rem;
-  background-color: #57ff5cb0;
-  border: 2px solid var(--accent);
+  font-size: 0.7rem;
+  /* background-color: #57ff5cb0;
+  border: 2px solid var(--accent); */
   color: rgb(0, 0, 0);
-  text-shadow: rgb(255 255 255 / 74%) 1px 0.3px 3px;
+  /* text-shadow: rgb(255 255 255 / 74%) 1px 0.3px 3px; */
   opacity: 1;
   transition: all 0.5s;
   padding: 1rem;
-  z-index: 5;
+
   height: fit-content;
-  width: 200px;
+  width: 100%;
 }
 
+.fineArt.card .details p,
+.fineArt.card .details h1 {
+  margin-top: 0.5rem;
+}
+
+p.sold {
+  font-size: 1.5rem;
+  color: red;
+  background-color: var(--accent);
+  padding: 0.3rem;
+}
 /* .fineArtContainer .details p,
 h1,
 h2,
@@ -98,12 +112,12 @@ h3:hover {
   text-shadow: 0 0 0;
 } */
 
-.fineArtContainer .details:hover {
-  /* color: var(--accent);
-  text-shadow: 0; */
-  background-color: rgba(252, 252, 252, 0.487);
+/* .fineArt.card .details:hover {
+  color: var(--accent);
+  text-shadow: 0;
+  background-color: rgba(166, 255, 130, 0.487);
   border: 2px solid var(--border-color);
-}
+} */
 
 .fineArtContainer .details > button {
   margin: 0.5rem 0 0.5rem 0;

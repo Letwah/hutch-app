@@ -106,34 +106,32 @@ const FineArt = () => {
                   style={{
                     backgroundImage: `url("${item.image}")`,
                   }}
-                >
-                  <div className="details">
-                    <h2>{item.title}</h2>
-                    <h3>{item.medium}</h3>
-                    <h3>£{(item.price / 100).toFixed(2)}</h3>
-                    {item.avail ? (
-                      <button
-                        onClick={() => {
-                          dispatch(addProductToCart(item.id));
-                        }}
-                      >
-                        buy
-                      </button>
-                    ) : (
-                      <p>sold</p>
-                    )}
-                    <p>
-                      {new Date(item.createdTimeStamp).toLocaleDateString()}
-                      {item.size}
-                    </p>
+                ></div>
+                <div className="details">
+                  <h2>{item.title}</h2>
+                  <h3>{item.medium}</h3>
+                  <h3>£{(item.price / 100).toFixed(2)}</h3>
+                  {item.avail ? (
                     <button
                       onClick={() => {
-                        showModal(item.image);
+                        dispatch(addProductToCart(item.id));
                       }}
                     >
-                      detailed view
+                      buy
                     </button>
-                  </div>
+                  ) : (
+                    <p className="sold">SOLD</p>
+                  )}
+                  <p>{new Date(item.createdTimeStamp).toLocaleDateString()}</p>
+                  <p>{item.size}</p>
+
+                  <button
+                    onClick={() => {
+                      showModal(item.image);
+                    }}
+                  >
+                    detailed view
+                  </button>
                 </div>
               </section>
             );
