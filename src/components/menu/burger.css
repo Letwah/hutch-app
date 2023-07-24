@@ -10,9 +10,13 @@
 .burger {
   height: 0.25rem;
   width: 2rem;
-  background-color: black;
+  background-color: var(--background);
   transform-origin: 1px;
   transition: all 0.5 linear;
+}
+
+.burger.isOpen:active {
+  transition: all 0.5s ese;
 }
 
 /* .burgerMenu {

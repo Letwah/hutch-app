@@ -361,3 +361,7 @@ div.logo {
     justify-content: space-between;
   } */
 }
+
+[data-theme="dark"] path {
+  fill: var(--text-primary);
+}
