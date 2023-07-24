@@ -14,6 +14,8 @@ import Cart from "./pages/Cart";
 import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 
+import Burger from "./components/menu/Burger";
+
 // import hutchLogo from "./assets/images/logos/JimmyHutch.svg";
 
 const App = () => {
