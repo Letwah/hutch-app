@@ -1,3 +1,40 @@
-.burger {
+.burgerMenu {
   width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: column nowrap;
+  z-index: 20;
+}
+
+.burger {
+  height: 0.25rem;
+  width: 2rem;
+  background-color: black;
+  transform-origin: 1px;
+  transition: all 0.5 linear;
+}
+
+/* .burgerMenu {
+  display: none;
+} */
+
+/* need to add isOpen class */
+.burger1.isOpen {
+  transform: rotate(45deg);
+}
+.burger2.isOpen {
+  transform: translateX(100%, 0);
+  opacity: 0;
+}
+.burger3.isOpen {
+  transform: rotate(-45deg);
+}
+
+@media (max-width: 767px) {
+  .burgerMenu {
+    display: fixed;
+    padding: 2rem 0 0 2rem;
+    z-index: 20;
+  }
 }

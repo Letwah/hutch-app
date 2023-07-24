@@ -20,6 +20,7 @@ const initialState = {
   toastContent: "",
   modalImage: "",
   isModalVisible: false,
+  burgerOpen: false,
 };
 
 const appSlice = createSlice({
@@ -65,6 +66,9 @@ const appSlice = createSlice({
     setModalImage: (state, action) => {
       state.modalImage = action.payload;
     },
+    setBurgerOpen: (state) => {
+      state.burgerOpen = !state.burgerOpen;
+    },
   },
 });
 
@@ -80,6 +84,7 @@ export const {
 
   setIsModalVisible,
   setModalImage,
+  setBurgerOpen,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -94,4 +99,6 @@ export const selectContactForm = (state) => state.app.contactForm;
 export const selectToastContent = (state) => state.app.toastContent;
 export const selectIsModalVisible = (state) => state.app.isModalVisible;
 export const selectModalImage = (state) => state.app.modalImage;
+
+export const selectBurgerOpen = (state) => state.app.burgerOpen;
 export default appSlice.reducer;
