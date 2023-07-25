@@ -15,17 +15,15 @@ const Burger = () => {
 
   return (
     <>
-      <div className="burgerMenu">
-        <div
-          className={isOpen ? "burger1 burger isOpen" : "burger1 burger"}
-        ></div>
-        <div
-          className={isOpen ? "burger2 burger isOpen" : "burger2 burger"}
-        ></div>
-        <div
-          className={isOpen ? "burger3 burger isOpen" : "burger3 burger"}
-        ></div>
-      </div>
+      <div
+        className={isOpen ? "burger1 burger isOpen" : "burger1 burger"}
+      ></div>
+      <div
+        className={isOpen ? "burger2 burger isOpen" : "burger2 burger"}
+      ></div>
+      <div
+        className={isOpen ? "burger3 burger isOpen" : "burger3 burger"}
+      ></div>
     </>
   );
 };

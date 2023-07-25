@@ -362,6 +362,18 @@ div.logo {
   } */
 }
 
+/* 
+Make logo fill right color on switch theme */
 [data-theme="dark"] path {
   fill: var(--text-primary);
+}
+
+/* position switch */
+input.switchTheme.light {
+  display: none;
+}
+
+.sidebar > .burger.isOpen {
+  grid-template-columns: 1fr;
+  transition: all 0.5s ease;
 }

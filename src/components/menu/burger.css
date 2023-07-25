@@ -15,7 +15,7 @@
   transition: all 0.5 linear;
 }
 
-.burger.isOpen:active {
+.burger.isOpen {
   transition: all 0.5s ese;
 }
 
