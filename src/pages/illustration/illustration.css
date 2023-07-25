@@ -31,7 +31,7 @@ section.illustration.card {
   flex: 0 1 calc(100% - 1em);
 } */
 
-.illustration.imageContainer {
+.illustration .imageContainer {
   height: auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -48,7 +48,7 @@ section.illustration.card {
   overflow-y: scroll;
 }
 
-.illustration > .imageContainer > img {
+.illustration > .imageContainer > .imgDiv img {
   width: 300px;
   max-width: 100%;
   height: auto;

@@ -44,7 +44,7 @@ const Illustration = () => {
       <section className="illustrationContainer">
         <div className="illustration">
           {illustration.map((item) => {
-            console.log(item.show);
+            console.log(`url("${item.image}")`);
             if (!item.show) {
               //prevents item with show = false being rendered
               return;
@@ -63,14 +63,16 @@ const Illustration = () => {
                   {item.images.map((image) => {
                     // console.log(image);
                     return (
-                      <img
-                        onClick={() => {
-                          showModal(item.image);
-                        }}
-                        src={`/assets/images/illustration${image}`}
-                        alt={item.title}
-                        key={image}
-                      />
+                      <div className="imgDiv">
+                        <img
+                          onClick={() => {
+                            showModal(item.images);
+                          }}
+                          src={`/assets/images/illustration${image}`}
+                          alt={item.title}
+                          key={image}
+                        />
+                      </div>
                     );
                   })}
                 </div>
