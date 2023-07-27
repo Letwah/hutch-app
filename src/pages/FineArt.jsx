@@ -104,7 +104,10 @@ const FineArt = () => {
                 <div
                   className="imageContainer"
                   style={{
-                    backgroundImage: `url("${item.image}")`,
+                    backgroundImage: `url("./assets/images/fineArt${item.image}")`,
+                  }}
+                  onClick={() => {
+                    showModal("./assets/images/fineArt" + item.image);
                   }}
                 ></div>
                 <div className="details">
@@ -127,7 +130,7 @@ const FineArt = () => {
 
                   <button
                     onClick={() => {
-                      showModal(item.image);
+                      showModal("./assets/images/fineArt" + item.image);
                     }}
                   >
                     detailed view

@@ -61,14 +61,14 @@ const Illustration = () => {
                 </div>
                 <div className="imageContainer">
                   {item.images.map((image) => {
-                    // console.log(image);
+                    console.log(image);
                     return (
                       <div className="imgDiv">
                         <img
                           onClick={() => {
-                            showModal(item.image);
+                            showModal("./assets/images/illustration" + image);
                           }}
-                          src={`/assets/images/illustration${image}`}
+                          src={`./assets/images/illustration${image}`}
                           alt={item.title}
                           key={image}
                         />

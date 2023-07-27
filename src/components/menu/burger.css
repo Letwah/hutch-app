@@ -1,10 +1,16 @@
 .burgerMenu {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
   width: 2rem;
   height: 2rem;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 20;
+}
+div.burgerMenu {
+  background-color: transparent;
 }
 
 .burger {
@@ -16,7 +22,7 @@
 }
 
 .burger.isOpen {
-  transition: all 0.5s ese;
+  transition: all 0.5s;
 }
 
 /* .burgerMenu {

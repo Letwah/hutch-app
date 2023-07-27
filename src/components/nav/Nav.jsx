@@ -1,19 +1,14 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Burger from "../menu/Burger";
+// import Burger from "../menu/Burger";
 import { urlArtInstagram, urlIllustrationInsta } from "../../config";
-import {
-  setPage,
-  selectBurgerOpen,
-  setBurgerOpen,
-} from "../../features/appSlice";
+import { setPage, selectBurgerOpen } from "../../features/appSlice";
+import { gsap } from "gsap";
 import "./nav.css";
 
 const Nav = () => {
-  const burgerOpen = useSelector(selectBurgerOpen);
+  const isOpen = useSelector(selectBurgerOpen);
   const dispatch = useDispatch();
-
-  if (!burgerOpen) return null;
 
   return (
     <>

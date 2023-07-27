@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -21,17 +21,21 @@ import Nav from "./components/nav/Nav";
 
 import Burger from "./components/menu/Burger";
 
+import { gsap } from "gsap";
+
 // import hutchLogo from "./assets/images/logos/JimmyHutch.svg";
 
 const App = () => {
   const dispatch = useDispatch();
-  // const burgerOpen = useSelector(selectBurgerOpen);
+  const isOpen = useSelector(selectBurgerOpen);
   const page = useSelector(selectPage);
   const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
   const [theme, setTheme] = useLocalStorage(
     "theme",
     defaultDark ? "dark" : "light"
   );
+
+  const containerRef = useRef(null);
 
   const toastContent = useSelector(selectToastContent);
   useEffect(() => {
@@ -44,16 +48,33 @@ const App = () => {
     dispatch(setBurgerOpen());
   };
 
+  //for GSAP effect on closing sidebar
+  useEffect(() => {
+    console.log("testing gsap");
+    //menu just toggled use gsap
+    if (isOpen) {
+      gsap.to(containerRef.current, {
+        duration: 0.3,
+        gridTemplateColumns: "1fr 5fr",
+      });
+    } else {
+      gsap.to(containerRef.current, {
+        duration: 0.3,
+        gridTemplateColumns: "0fr 5fr",
+      });
+    }
+  }, [isOpen]);
+
   return (
     <div>
       <ToastContainer />
 
-      <section className="container" data-theme={theme}>
-        <div className="sidebar">
-          <div className="burgerMenu" onClick={toggleBurger}>
-            <Burger />
-          </div>
+      <section className="container" data-theme={theme} ref={containerRef}>
+        <div className="burgerMenu" onClick={toggleBurger}>
+          <Burger />
+        </div>
 
+        <div className="sidebar">
           <Nav />
           {/* <div>
             <button

@@ -3,7 +3,7 @@ const getFineArtCatalogue = () => {
     {
       title: "A.M",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      image: "./assets/images/fineArt/large/am.jpg",
+      image: "/large/am.jpg",
       avail: false,
       price: 160000, //in pennies
       createdTimeStamp: "2021-05-13 11:00:00",
@@ -14,7 +14,7 @@ const getFineArtCatalogue = () => {
     {
       title: "Drawn Up",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      image: "./assets/images/fineArt/large/drawnUp.jpg",
+      image: "/large/drawnUp.jpg",
       avail: true,
       price: 160000, //in pennies
       createdTimeStamp: "2022-11-1 11:00:00",
@@ -25,7 +25,7 @@ const getFineArtCatalogue = () => {
     {
       title: "Knowledge and Nature",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      image: "./assets/images/fineArt/large/knowledgeAndNature.jpg",
+      image: "/large/knowledgeAndNature.jpg",
 
       avail: false,
       price: 210000, //in pennies
@@ -37,7 +37,7 @@ const getFineArtCatalogue = () => {
     {
       title: "Orange Peel",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      image: "./assets/images/fineArt/large/orangePeel.jpg",
+      image: "/large/orangePeel.jpg",
 
       avail: true,
       price: 180000, //in pennies
@@ -49,7 +49,7 @@ const getFineArtCatalogue = () => {
     {
       title: "Plants and Planets",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      image: "./assets/images/fineArt/large/plantsAndPlanets.jpg",
+      image: "/large/plantsAndPlanets.jpg",
 
       avail: true,
       price: 195000, //in pennies
@@ -61,7 +61,7 @@ const getFineArtCatalogue = () => {
     {
       title: "Shelf Life",
       desc: "New work, 2022",
-      image: "./assets/images/fineArt/large/shelflife.jpg",
+      image: "/large/shelflife.jpg",
 
       avail: true,
       price: 160000, //in pennies
@@ -73,7 +73,7 @@ const getFineArtCatalogue = () => {
     {
       title: "Sofa",
       desc: "Part of the collection from the 'Hung Drawn and painted' exhibition",
-      image: "./assets/images/fineArt/large/sofa.jpg",
+      image: "/large/sofa.jpg",
 
       avail: true,
       price: 95000, //in pennies
