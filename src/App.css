@@ -376,4 +376,5 @@ input.switchTheme.light {
 .sidebar > .burger.isOpen {
   grid-template-columns: 1fr;
   transition: all 0.5s ease;
+  transition-delay: 0.1s;
 }

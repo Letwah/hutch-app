@@ -9,7 +9,7 @@ import { save, get } from "../persistance";
 const cartItemIdsFromDisc = get("cartItemIdsFromDisc");
 
 const initialState = {
-  page: FINE_ART,
+  page: ILLUSTRATION,
   fineArtCatalogue: getFineArtCatalogue(),
   illustrationCatalogue: getIllustrationCatalogue(),
   cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],

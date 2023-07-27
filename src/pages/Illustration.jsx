@@ -66,7 +66,7 @@ const Illustration = () => {
                       <div className="imgDiv">
                         <img
                           onClick={() => {
-                            showModal(item.images);
+                            showModal(item.image);
                           }}
                           src={`/assets/images/illustration${image}`}
                           alt={item.title}
