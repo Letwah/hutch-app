@@ -12,11 +12,11 @@ import {
 } from "./features/appSlice";
 
 import Contact from "./pages/Contact";
-import Home from "./pages/Home";
+import Intro from "./pages/Intro";
 import FineArt from "./pages/FineArt";
 import Illustration from "./pages/Illustration";
 import Cart from "./pages/Cart";
-import Footer from "./components/footer/Footer";
+// import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 
 import Burger from "./components/menu/Burger";
@@ -121,7 +121,7 @@ const App = () => {
           </div>
         </div>
         <div className="main-content">
-          {page === "HOME" && <Home />}
+          {page === "INTRO" && <Intro />}
           {page === "CONTACT" && <Contact />}
           {page === "FINE_ART" && <FineArt />}
           {page === "ILLUSTRATION" && <Illustration />}
