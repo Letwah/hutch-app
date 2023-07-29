@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
    
     -webkit-font-smoothing: antialiased;
   }
+
+ 
 `;
 
 export const Wrapper = styled.section.attrs(({ $color }) => ({
@@ -31,7 +33,7 @@ export const Wrapper = styled.section.attrs(({ $color }) => ({
 }))`
   align-items: center;
   display: flex;
-  height: 100vh;
+  height: 100%;
   justify-content: center;
 `;
 

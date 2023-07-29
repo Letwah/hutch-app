@@ -97,7 +97,9 @@ p.sold {
   color: red;
   background-color: var(--accent);
   padding: 0.3rem;
+  border: var(--border-width) solid var(--border-color);
 }
+
 /* .fineArtContainer .details p,
 h1,
 h2,

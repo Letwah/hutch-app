@@ -43,7 +43,7 @@ const Intro = () => {
       <Wrapper
         onMouseMove={handleMove}
         onTouchMove={handleTouchMove}
-        $color={Math.round(200 - distance * 80)}
+        $color={Math.round(228 - distance * 80)}
       >
         <ImageContainer $isTogether={distance < 0.001}>
           {matrix.map(([x, y], index) => (

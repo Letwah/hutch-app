@@ -18,11 +18,11 @@ div.burgerMenu {
   width: 2rem;
   background-color: var(--background);
   transform-origin: 1px;
-  transition: all 0.5 linear;
+  transition: all 0.5 ease;
 }
 
 .burger.isOpen {
-  transition: all 0.5s;
+  transition: all 0.5s ease;
 }
 
 /* .burgerMenu {

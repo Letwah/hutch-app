@@ -21,15 +21,30 @@
   );
   backdrop-filter: blur(15px);
   width: 80vw;
-  height: 95%;
+  height: fit-content;
   margin: 0 auto;
-  padding-top: 2rem;
+  padding: 5rem;
   position: sticky;
   top: 2.5%;
   border: var(--border-width) solid var(--border-color);
-  box-shadow: 0.5em 0.5em 0em;
+  box-shadow: var(--border-color) 0.5em 0.5em 0em;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  /* align-content: space-around; */
+  justify-content: flex-start;
+  align-items: flex-start;
+  color: black;
 }
 
+.cartBox h1 {
+  padding-bottom: 1rem;
+}
+
+.cartBox div {
+  padding-top: 1rem;
+}
 .cartContainer::after {
   background-color: transparent;
   border: none;

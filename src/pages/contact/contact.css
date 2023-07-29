@@ -22,6 +22,7 @@
   top: 2.5%;
   border: var(--border-width) solid var(--border-color);
   box-shadow: 0.5em 0.5em 0em;
+  color: #1b1b1b;
 }
 
 .contactForm > form div {

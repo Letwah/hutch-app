@@ -4,11 +4,13 @@ import {
   selectCartItemIds,
   selectFineArtCatalogue,
   removeProductFromCart,
+  selectPage,
 } from "../features/appSlice";
 
 import "./cart/cart.css";
 
 const Cart = () => {
+  const page = useSelector(selectPage);
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
   const cartItemIds = useSelector(selectCartItemIds);
   const cartItems = fineArtCatalogue.filter((item) => {
@@ -24,6 +26,7 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return <p>no items in cart</p>;
   }
+
   return (
     <>
       {" "}
@@ -34,6 +37,7 @@ const Cart = () => {
         }}
       >
         <div className="cartBox">
+          <h1>{page}</h1>
           {cartItems.map((item) => {
             return (
               <div key={item.id}>

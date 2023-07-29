@@ -49,20 +49,49 @@ const App = () => {
   };
 
   //for GSAP effect on closing sidebar
+
+  //OLD CODE HERE// minus the gsap matchMedia()
+  // useEffect(() => {
+  //   //menu just toggled use gsap
+  //   if (isOpen) {
+  //     gsap.to(containerRef.current, {
+  //       duration: 0.3,
+  //       gridTemplateColumns: "1fr 5fr",
+  //     });
+  //   } else {
+  //     gsap.to(containerRef.current, {
+  //       duration: 0.3,
+  //       gridTemplateColumns: "0fr 5fr",
+  //     });
+  //   }
+  // }, [isOpen]);
+
   useEffect(() => {
-    console.log("testing gsap");
-    //menu just toggled use gsap
-    if (isOpen) {
-      gsap.to(containerRef.current, {
-        duration: 0.3,
-        gridTemplateColumns: "1fr 5fr",
-      });
-    } else {
-      gsap.to(containerRef.current, {
-        duration: 0.3,
-        gridTemplateColumns: "0fr 5fr",
-      });
-    }
+    let mm = gsap.matchMedia();
+
+    mm.add("(min-width: 800px)", () => {
+      // desktop setup code here...
+      //menu just toggled use gsap
+      if (isOpen) {
+        gsap.to(containerRef.current, {
+          duration: 0.3,
+          gridTemplateColumns: "1fr 5fr",
+        });
+      } else {
+        gsap.to(containerRef.current, {
+          duration: 0.3,
+          gridTemplateColumns: "0fr 5fr",
+        });
+      }
+      return () => {
+        // optionally return a cleanup function that will be
+        //called when the media query no longer matches
+      };
+    });
+
+    // return () => {
+    //   mm.removeAll(); // Remove all matchMedia queries when the component unmounts
+    // };
   }, [isOpen]);
 
   return (

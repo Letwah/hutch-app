@@ -13,6 +13,15 @@ const Nav = () => {
   return (
     <>
       <div className="nav">
+        <div className="artIcon">
+          <a href={urlArtInstagram} target="_blank">
+            <img
+              className="artIcon"
+              src="./assets/images/icons/HutchPallet-1.svg"
+              alt="By Hutch Art Instagram"
+            ></img>
+          </a>
+        </div>
         <div className="navItems">
           <p
             onClick={() => {
@@ -44,37 +53,26 @@ const Nav = () => {
           </p>
           <p
             onClick={() => {
-              dispatch(setPage("HOME"));
+              dispatch(setPage("INTRO"));
             }}
           >
             Home
           </p>
         </div>
-      </div>
-      <div className="social">
-        <h1>social</h1>
-        <div className="socialIcons">
-          <div className="artIcon">
-            <a href={urlArtInstagram} target="_blank">
-              <img
-                className="artIcon"
-                src="./assets/images/icons/palletDark.png"
-                alt="By Hutch Art Instagram"
-              ></img>
-            </a>
-          </div>
 
-          <div className="illustrationIcon">
-            <a href={urlIllustrationInsta} target="_blank">
-              <img
-                className="illustrationIcon"
-                src="./assets/images/icons/penDark.png"
-                alt="By Hutch Illustration Instagram"
-              ></img>
-            </a>
-          </div>
+        <div className="illustrationIcon">
+          <a href={urlIllustrationInsta} target="_blank">
+            <img
+              className="illustrationIcon"
+              src="./assets/images/icons/H-pens.svg"
+              alt="By Hutch Illustration Instagram"
+            ></img>
+          </a>
         </div>
       </div>
+      {/* <div className="social">
+        <h1>social</h1>
+      </div> */}
     </>
   );
 };
