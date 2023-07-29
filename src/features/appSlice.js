@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import axios from "axios";
-import { FINE_ART, CART, ILLUSTRATION } from "../store/types";
+import { FINE_ART, CART, ILLUSTRATION, INTRO } from "../store/types";
 import getFineArtCatalogue from "../store/fineArtCatalogue";
 import getIllustrationCatalogue from "../store/illustrationCatalogue";
 // import dragImage from "../store/dragImage";
@@ -9,7 +9,7 @@ import { save, get } from "../persistance";
 const cartItemIdsFromDisc = get("cartItemIdsFromDisc");
 
 const initialState = {
-  page: ILLUSTRATION,
+  page: INTRO,
   fineArtCatalogue: getFineArtCatalogue(),
   illustrationCatalogue: getIllustrationCatalogue(),
   cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
