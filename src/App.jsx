@@ -9,6 +9,7 @@ import {
   selectToastContent,
   selectBurgerOpen,
   setBurgerOpen,
+  setPage,
 } from "./features/appSlice";
 
 import Contact from "./pages/Contact";
@@ -16,6 +17,7 @@ import Intro from "./pages/Intro";
 import FineArt from "./pages/FineArt";
 import Illustration from "./pages/Illustration";
 import Cart from "./pages/Cart";
+import About from "./pages/About";
 // import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
 
@@ -83,12 +85,11 @@ const App = () => {
           gridTemplateColumns: "0fr 5fr",
         });
       }
-      return () => {
-        // optionally return a cleanup function that will be
-        //called when the media query no longer matches
-      };
     });
-
+    return () => {
+      // optionally return a cleanup function that will be
+      //called when the media query no longer matches
+    };
     // return () => {
     //   mm.removeAll(); // Remove all matchMedia queries when the component unmounts
     // };
@@ -122,7 +123,12 @@ const App = () => {
             {/* render the page title here */}
             <h1>{page}</h1>
           </div>
-          <div className="logo">
+          <div
+            className="logo"
+            onClick={() => {
+              dispatch(setPage("INTRO"));
+            }}
+          >
             <svg
               width="250"
               height="50"
@@ -151,14 +157,12 @@ const App = () => {
         </div>
         <div className="main-content">
           {page === "INTRO" && <Intro />}
+          {page === "ABOUT" && <About />}
           {page === "CONTACT" && <Contact />}
           {page === "FINE_ART" && <FineArt />}
           {page === "ILLUSTRATION" && <Illustration />}
           {page === "CART" && <Cart />}
         </div>
-        {/* <div className="main-footer">
-          <Footer />
-        </div> */}
       </section>
     </div>
   );

@@ -36,7 +36,7 @@ const Cart = () => {
         >
           <div className="cartBox empty">
             <h1>{page}</h1>
-            <p>no items in cart </p>
+            <p>no items in cart &#128529; </p>
           </div>
         </div>
       </>

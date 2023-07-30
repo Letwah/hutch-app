@@ -25,6 +25,13 @@ const Nav = () => {
         <div className="navItems">
           <p
             onClick={() => {
+              dispatch(setPage("ABOUT"));
+            }}
+          >
+            About
+          </p>
+          <p
+            onClick={() => {
               dispatch(setPage("CONTACT"));
             }}
           >

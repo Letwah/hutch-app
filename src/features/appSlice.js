@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 // import axios from "axios";
-import { FINE_ART, CART, ILLUSTRATION, INTRO } from "../store/types";
+import { CART, INTRO } from "../store/types";
 import getFineArtCatalogue from "../store/fineArtCatalogue";
 import getIllustrationCatalogue from "../store/illustrationCatalogue";
 // import dragImage from "../store/dragImage";
