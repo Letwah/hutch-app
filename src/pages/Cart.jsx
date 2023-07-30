@@ -12,10 +12,12 @@ import "./cart/cart.css";
 const Cart = () => {
   const page = useSelector(selectPage);
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
+
   const cartItemIds = useSelector(selectCartItemIds);
   const cartItems = fineArtCatalogue.filter((item) => {
-    if (cartItemIds.includes(item.id)) return true;
+    if (cartItemIds.includes(item.id, item.image)) return true;
   });
+  // const fineArt = useSelector(selectFineArtCatalogue);
   const dispatch = useDispatch();
 
   console.log("testing", cartItems);
@@ -38,11 +40,18 @@ const Cart = () => {
       >
         <div className="cartBox">
           <h1>{page}</h1>
+
           {cartItems.map((item) => {
             return (
               <div key={item.id}>
-                {item.title} £{(item.price / 100).toFixed(2)}
+                <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
                 <div>
+                  <div
+                    className="imageContainerCart"
+                    style={{
+                      backgroundImage: `url("./assets/images/fineArt${item.image}")`,
+                    }}
+                  ></div>
                   <button
                     onClick={() => {
                       dispatch(removeProductFromCart(item.id));
@@ -54,7 +63,9 @@ const Cart = () => {
               </div>
             );
           })}
-          <div>£{(total / 100).toFixed(2)}</div>
+          <div>
+            <p>Total = £{(total / 100).toFixed(2)}</p>
+          </div>
 
           <button>Checkout</button>
         </div>

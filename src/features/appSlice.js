@@ -101,4 +101,5 @@ export const selectIsModalVisible = (state) => state.app.isModalVisible;
 export const selectModalImage = (state) => state.app.modalImage;
 
 export const selectBurgerOpen = (state) => state.app.burgerOpen;
+
 export default appSlice.reducer;

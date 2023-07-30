@@ -359,6 +359,11 @@ Make logo fill right color on switch theme */
   fill: var(--text-primary);
 }
 
+[data-theme="dark"] img.artIcon,
+[data-theme="dark"] img.illustrationIcon {
+  filter: invert(1);
+}
+
 /* position switch */
 input.switchTheme.light {
   display: none;
