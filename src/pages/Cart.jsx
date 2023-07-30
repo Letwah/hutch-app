@@ -26,12 +26,25 @@ const Cart = () => {
     total += item.price;
   });
   if (cartItems.length === 0) {
-    return <p>no items in cart</p>;
+    return (
+      <>
+        <div
+          className="cartContainer"
+          style={{
+            backgroundImage: `url("./assets/images/fineArt/large/drawnUp.jpg")`,
+          }}
+        >
+          <div className="cartBox empty">
+            <h1>{page}</h1>
+            <p>no items in cart </p>
+          </div>
+        </div>
+      </>
+    );
   }
 
   return (
     <>
-      {" "}
       <div
         className="cartContainer"
         style={{

@@ -46,6 +46,9 @@
 .cartBox div {
   padding-top: 1rem;
 }
+/* .cartBox.empty {
+} */
+
 .cartContainer::after {
   background-color: transparent;
   border: none;
