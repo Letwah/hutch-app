@@ -61,51 +61,24 @@ const About = () => {
 
           <div>
             <h2>Exhibitions</h2>
-            Previous exhibitions Artist in residence placement atHelmingham Hall
-            Gardens in Suffolk. Had solo exhibitions at Vortex Jazz Bar Gallery
-            - Stoke Newington, London, The Truman Brewery Gallery - Brick Lane,
-            London, The JLV Gallery - Cambridge Heath Road, London, North House
-            Gallery - Manningtree, Essex. In addition to many group shows in
-            London, Norwich, Ipswich, Aldeburgh, Manningtree and in Tuscany,
-            Italy. Illustration clients have included Suffolk Mind charity,
-            Essex University, musician Will Bloomfield, Architect Oliver
-            Houchell among others.
-          </div>
-          <div>
-            <h2>Exhibitions</h2>
-            Previous exhibitions Artist in residence placement atHelmingham Hall
-            Gardens in Suffolk. Had solo exhibitions at Vortex Jazz Bar Gallery
-            - Stoke Newington, London, The Truman Brewery Gallery - Brick Lane,
-            London, The JLV Gallery - Cambridge Heath Road, London, North House
-            Gallery - Manningtree, Essex. In addition to many group shows in
-            London, Norwich, Ipswich, Aldeburgh, Manningtree and in Tuscany,
-            Italy. Illustration clients have included Suffolk Mind charity,
-            Essex University, musician Will Bloomfield, Architect Oliver
-            Houchell among others.
-          </div>
-          <div>
-            <h2>Exhibitions</h2>
-            Previous exhibitions Artist in residence placement atHelmingham Hall
-            Gardens in Suffolk. Had solo exhibitions at Vortex Jazz Bar Gallery
-            - Stoke Newington, London, The Truman Brewery Gallery - Brick Lane,
-            London, The JLV Gallery - Cambridge Heath Road, London, North House
-            Gallery - Manningtree, Essex. In addition to many group shows in
-            London, Norwich, Ipswich, Aldeburgh, Manningtree and in Tuscany,
-            Italy. Illustration clients have included Suffolk Mind charity,
-            Essex University, musician Will Bloomfield, Architect Oliver
-            Houchell among others.
-          </div>
-          <div>
-            <h2>Exhibitions</h2>
-            Previous exhibitions Artist in residence placement atHelmingham Hall
-            Gardens in Suffolk. Had solo exhibitions at Vortex Jazz Bar Gallery
-            - Stoke Newington, London, The Truman Brewery Gallery - Brick Lane,
-            London, The JLV Gallery - Cambridge Heath Road, London, North House
-            Gallery - Manningtree, Essex. In addition to many group shows in
-            London, Norwich, Ipswich, Aldeburgh, Manningtree and in Tuscany,
-            Italy. Illustration clients have included Suffolk Mind charity,
-            Essex University, musician Will Bloomfield, Architect Oliver
-            Houchell among others.
+            Previous exhibitions Artist in residence placement at Helmingham
+            Hall Gardens in Suffolk.{" "}
+            <div>
+              Had solo exhibitions at
+              <ul>
+                <li>Vortex Jazz Bar Gallery - Stoke Newington, London</li>
+                <li>The Truman Brewery Gallery - Brick Lane, London</li>
+                <li>The JLV Gallery - Cambridge Heath Road, London</li>
+                <li>North House Gallery - Manningtree, Essex</li>
+              </ul>
+              As well as many group shows in London, Norwich, Ipswich,
+              Aldeburgh, Manningtree and in Tuscany, Italy.
+            </div>
+            <div>
+              {" "}
+              Illustration clients have included Suffolk Mind charity, Essex
+              University, Architect Oliver Houchell, Obsidian Wine among others.
+            </div>
           </div>
         </div>
       </section>
