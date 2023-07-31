@@ -40,6 +40,10 @@ body {
   min-width: 430px;
 }
 
+h1 {
+padding:1rem 0 1rem 0;
+}
+
 button {
   background-color: var(--div-background-color);
   border: var(--border-width) solid var(--border-color);
@@ -178,6 +182,14 @@ input.switchTheme.light {
   color: var(--text-primary);
   height: 100vh;
   /* transition: all 0.5s; */
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 10fr;
+  gap: 5px;
+  grid-template-areas:
+    "header header"
+    "nav main";
+  background-color: var(--background);
 }
 
 img.logo {
@@ -218,16 +230,6 @@ div.logo {
   padding: 0vh;
 }
 
-.container {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  grid-template-rows: 1fr 4fr;
-  gap: 5px;
-  grid-template-areas:
-    "header header"
-    "nav main";
-  background-color: var(--background);
-}
 
 .main-header {
   grid-area: header;
@@ -291,11 +293,11 @@ Make logo fill right color on switch theme */
 
 
 
-.burger.isOpen {
+/* .burger.isOpen {
   grid-template-columns: 1fr;
   transition: all 0.5s ease;
-  /* transition-delay: 0.1s; */
-}
+  transition-delay: 0.1s;
+} */
 
 .pageTitle {
   padding-left: 2rem;
@@ -314,7 +316,7 @@ Make logo fill right color on switch theme */
 @media screen and (min-width: 800px) {
   .container {
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 0.2fr 2.8fr;
+    
   }
   .sidebar {
     overflow: hidden;

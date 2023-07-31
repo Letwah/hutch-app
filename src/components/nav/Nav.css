@@ -1,62 +1,44 @@
 /* mobile first  */
 
-.nav {
-  display: flex;
-  flex-direction: column;
-  /* gap: 10px; */
-  white-space: nowrap;
-  justify-content: space-around;
-  align-items: center;
-}
-
-.navItems {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.nav p {
- 
-  padding: 1rem;
-  font-weight: 800;
-  font-size: 2rem;
-  text-decoration: none;
-  color:var(--text--primary);
-  transition: transform 0.25s ease-out;
-  text-transform: uppercase;
-}
-
 /* button.clear {
   padding: 0.5rem 1rem;
   display: none;
 } */
 
 
+.nav {
+  display: flex;
+  flex-direction: column;
+  /* gap: 10px; */
+  white-space: nowrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* .navItems {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+.nav p {
+ padding: 1rem 0 0.2rem 0;
+  font-weight: 800;
+  font-size: 2rem;
+  text-decoration: none;
+  color:var(--text--primary);
+ text-transform: uppercase;
+  /* display: inline-block;
+  position: relative; */
+}
+
 .nav p:active,
 .nav p:hover {
-  /* border: 2px solid; */
-  transition: all 0.5s;
+
+  transition: all 0.4s ease-out; 
+  color:var(--accent);
   cursor: pointer;
 }
-
-.nav p::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: var(--accent);
-  transform-origin: bottom right;
-  transition: transform 0.4s ease-out; 
-}
-
-.nav p::after:hover {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
 
 .artIcon,
 .illustrationIcon {
@@ -64,21 +46,17 @@
   align-items: stretch;
   justify-content: center;
   flex-direction: column;
-}
+} 
 
-img.artIcon {
-  width: 7rem;
-  height: auto;
-  transform: scaleX(1);
-}
-
-img.illustrationIcon {
+img.illustrationIcon, img.artIcon {
+ 
   height: 7rem;
   width: auto;
+  transition: transform 0.4s ease-in-out; 
 }
 
 img.artIcon:hover, img.illustrationIcon:hover  {
-  transform: scale(2);
+  transform: scale(1.5) ;
   transition: transform 0.4s ease-in-out; 
 }
 
@@ -86,10 +64,14 @@ img.artIcon:hover, img.illustrationIcon:hover  {
 /* desktop */
 
 @media only screen and (min-width: 800px) {
+ 
+  div.nav {
+    padding-left: 1.5rem;
+  }
   .nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items:flex-start;
     justify-content: space-evenly;
   }
 
@@ -106,4 +88,10 @@ img.artIcon:hover, img.illustrationIcon:hover  {
   img.illustrationIcon {
     height: 4rem;
   }
+
+  img.artIcon:hover, img.illustrationIcon:hover  {
+    transform: scale(1.5) translate(10px);
+    
+  }
+  
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import "./about/about.css";
+import { urlArtInstagram, urlIllustrationInsta } from "../config";
 
 const About = () => {
   return (
@@ -82,8 +83,8 @@ const About = () => {
           </div>
           <div className="social">
           <h2>Social</h2>
-          <p>Illustration instagram  </p>
-          <p>Art instagram  </p>
+          <a href={urlIllustrationInsta}>Illustration Instagram </a>
+          <a href={urlArtInstagram}>Art Instagram  </a>
           </div>
         </div>
       </section>
