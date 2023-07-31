@@ -63,6 +63,16 @@ img.illustrationIcon {
     justify-content: space-evenly;
   }
 
+  .nav p {
+    text-decoration: none;
+    transition: all 0.95s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
+  .nav p:hover {
+    text-decoration: underline;
+    transition: all 0.95s cubic-bezier(0.19, 1, 0.22, 1);
+  }
+
   .navItems {
     display: flex;
     /* text-align: center; */

@@ -37,6 +37,7 @@ body {
   text-align: justify;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Ubuntu, "Helvetica Neue", sans-serif;
+  min-width: 430px;
 }
 
 button {
@@ -65,9 +66,10 @@ button:hover,
 button:active {
   color: var(--accent);
   /* transition: all 0.3s ease;
-  box-shadow: 0.5em 0.5em 0em var(--div-background-color);
+  
   background-color: var(--background); */
   cursor: pointer;
+  box-shadow: 0.5em 0.5em 0em var(--div-background-color);
 }
 
 button:hover::after,

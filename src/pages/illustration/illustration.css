@@ -52,6 +52,7 @@ section.illustration.card {
   width: 300px;
   max-width: 100%;
   height: auto;
+  padding: 5px;
 }
 
 .illustration .card > .details {

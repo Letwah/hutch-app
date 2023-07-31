@@ -8,6 +8,7 @@ import {
 } from "../features/appSlice";
 
 import "./cart/cart.css";
+// import EmptyCart from "./cart/EmptyCart";
 
 const Cart = () => {
   const page = useSelector(selectPage);
@@ -28,6 +29,7 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return (
       <>
+        {/* <EmptyCart /> */}
         <div
           className="cartContainer"
           style={{
