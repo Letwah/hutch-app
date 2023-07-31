@@ -1,9 +1,9 @@
 .contactBackground {
+  display: flex;
   height: 100%;
   overflow-y: hidden;
   overflow-x: scroll;
   background-position: center;
-  background-size: repeat;
 }
 
 .contactForm {
@@ -14,12 +14,10 @@
     rgba(255, 255, 255, 0) 100%
   );
   backdrop-filter: blur(15px);
-  width: 80vw;
   height: fit-content;
   margin: 0 auto;
   padding-top: 5rem;
-  position: sticky;
-  top: 2.5%;
+
   border: var(--border-width) solid var(--border-color);
   box-shadow: 0.5em 0.5em 0em;
   color: #1b1b1b;
@@ -33,12 +31,6 @@
 .contactForm > form div {
   display: flex;
   flex-direction: column;
-  align-content: space-around;
-  /* align-self: center; */
-}
-
-label {
-  padding-right: 50%;
 }
 
 .contactForm > form button {

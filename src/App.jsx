@@ -38,6 +38,7 @@ const App = () => {
   );
 
   const containerRef = useRef(null);
+  const sidebarRef = useRef(null);
 
   const toastContent = useSelector(selectToastContent);
   useEffect(() => {
@@ -50,49 +51,56 @@ const App = () => {
     dispatch(setBurgerOpen());
   };
 
-  //for GSAP effect on closing sidebar
-
-  //OLD CODE HERE// minus the gsap matchMedia()
-  // useEffect(() => {
-  //   //menu just toggled use gsap
-  //   if (isOpen) {
-  //     gsap.to(containerRef.current, {
-  //       duration: 0.3,
-  //       gridTemplateColumns: "1fr 5fr",
-  //     });
-  //   } else {
-  //     gsap.to(containerRef.current, {
-  //       duration: 0.3,
-  //       gridTemplateColumns: "0fr 5fr",
-  //     });
-  //   }
-  // }, [isOpen]);
-
-  useEffect(() => {
-    let mm = gsap.matchMedia();
-
-    mm.add("(min-width: 800px)", () => {
-      // desktop setup code here...
-      //menu just toggled use gsap
+  const animateMenu = () => {
+    if (window.innerWidth < 800) {
       if (isOpen) {
         gsap.to(containerRef.current, {
           duration: 0.3,
           gridTemplateColumns: "1fr 5fr",
+        });
+        gsap.to(sidebarRef.current, {
+          duration: 0.3,
+          width: "100vw",
         });
       } else {
         gsap.to(containerRef.current, {
           duration: 0.3,
           gridTemplateColumns: "0fr 5fr",
         });
+        gsap.to(sidebarRef.current, {
+          duration: 0.3,
+          width: "0vw",
+        });
       }
-    });
-    return () => {
-      // optionally return a cleanup function that will be
-      //called when the media query no longer matches
-    };
-    // return () => {
-    //   mm.removeAll(); // Remove all matchMedia queries when the component unmounts
-    // };
+    } else {
+      if (isOpen) {
+        gsap.to(containerRef.current, {
+          duration: 0.3,
+          gridTemplateColumns: "1fr 5fr",
+        });
+        gsap.to(sidebarRef.current, {
+          duration: 0.3,
+          width: "unset",
+        });
+      } else {
+        gsap.to(containerRef.current, {
+          duration: 0.3,
+          gridTemplateColumns: "0fr 5fr",
+        });
+        gsap.to(sidebarRef.current, {
+          duration: 0.3,
+          width: "unset",
+        });
+      }
+    }
+  };
+
+  window.addEventListener("resize", () => {
+    animateMenu();
+  });
+
+  useEffect(() => {
+    animateMenu();
   }, [isOpen]);
 
   return (
@@ -104,7 +112,7 @@ const App = () => {
           <Burger />
         </div>
 
-        <div className="sidebar">
+        <div className="sidebar" ref={sidebarRef}>
           <Nav />
           {/* <div>
             <button
@@ -122,6 +130,18 @@ const App = () => {
           <div className="pageTitle">
             {/* render the page title here */}
             <h1>{page}</h1>
+          </div>
+          <div className="switch">
+            <label className="switch">
+              <input
+                className={`switchTheme ${theme}`}
+                type="checkbox"
+                onChange={(e) => {
+                  setTheme(e.target.checked ? "dark" : "light");
+                }}
+              />
+              <span className="slider "></span>
+            </label>
           </div>
           <div
             className="logo"
@@ -142,18 +162,7 @@ const App = () => {
               />
             </svg>
           </div>
-          <div className="switch">
-            <label className="switch">
-              <input
-                className={`switchTheme ${theme}`}
-                type="checkbox"
-                onChange={(e) => {
-                  setTheme(e.target.checked ? "dark" : "light");
-                }}
-              />
-              <span className="slider round"></span>
-            </label>
-          </div>
+          
         </div>
         <div className="main-content">
           {page === "INTRO" && <Intro />}

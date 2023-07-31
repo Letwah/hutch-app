@@ -2,8 +2,12 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import Burger from "../menu/Burger";
 import { urlArtInstagram, urlIllustrationInsta } from "../../config";
-import { setPage, selectBurgerOpen } from "../../features/appSlice";
-import { gsap } from "gsap";
+import {
+  setPage,
+  selectBurgerOpen,
+  setBurgerOpen,
+} from "../../features/appSlice";
+// import { gsap } from "gsap";
 import "./nav.css";
 
 const Nav = () => {
@@ -26,6 +30,9 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("ABOUT"));
+              if (window.innerWidth < 800) {
+                dispatch(setBurgerOpen());
+              }
             }}
           >
             About
@@ -33,6 +40,9 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("CONTACT"));
+              if (window.innerWidth < 800) {
+                dispatch(setBurgerOpen());
+              }
             }}
           >
             Contact
@@ -40,6 +50,9 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("FINE_ART"));
+              if (window.innerWidth < 800) {
+                dispatch(setBurgerOpen());
+              }
             }}
           >
             Fine Art
@@ -47,6 +60,9 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("ILLUSTRATION"));
+              if (window.innerWidth < 800) {
+                dispatch(setBurgerOpen());
+              }
             }}
           >
             Illustration
@@ -54,6 +70,9 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("CART"));
+              if (window.innerWidth < 800) {
+                dispatch(setBurgerOpen());
+              }
             }}
           >
             Cart
@@ -61,6 +80,9 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("INTRO"));
+              if (window.innerWidth < 800) {
+                dispatch(setBurgerOpen());
+              }
             }}
           >
             Home
