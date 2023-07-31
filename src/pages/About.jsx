@@ -80,6 +80,11 @@ const About = () => {
               University, Architect Oliver Houchell, Obsidian Wine among others.
             </div>
           </div>
+          <div className="social">
+          <h2>Social</h2>
+          <p>Illustration instagram  </p>
+          <p>Art instagram  </p>
+          </div>
         </div>
       </section>
     </>
