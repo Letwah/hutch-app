@@ -18,13 +18,19 @@ const Nav = () => {
     <>
       <div className="nav">
         <div className="artIcon">
-          <a href={urlArtInstagram} target="_blank">
-            <img
-              className="artIcon"
-              src="./assets/images/icons/HutchPallet-1.svg"
-              alt="By Hutch Art Instagram"
-            ></img>
-          </a>
+          <picture>
+            <source
+              srcSet="./assets/images/icons/HutchPalletwhite.png"
+              media="prefers-color-scheme: dark"
+            />
+            <a href={urlArtInstagram} target="_blank">
+              <img
+                className="artIcon"
+                src="./assets/images/icons/HutchPallet-1.svg"
+                alt="By Hutch Art Instagram"
+              ></img>
+            </a>
+          </picture>
         </div>
         <div className="navPageLinks">
           <p

@@ -53,10 +53,10 @@ img.illustrationIcon:hover {
   transition: transform 0.4s ease-in-out;
 }
 
-[data-theme="dark"] img.artIcon,
+/* [data-theme="dark"] img.artIcon,
 [data-theme="dark"] img.illustrationIcon {
   filter: invert(1);
-}
+} */
 
 /* desktop */
 
