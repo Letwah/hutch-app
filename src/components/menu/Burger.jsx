@@ -9,7 +9,7 @@ const Burger = () => {
   const isOpen = useSelector(selectBurgerOpen);
   // const tl = useRef(null);
 
-  console.log(isOpen);
+  // console.log(isOpen);
 
   return (
     <>

@@ -41,7 +41,7 @@ div.burgerMenu {
   transform: rotate(-45deg);
 }
 
-@media (max-width: 767px) {
+@media (max-width: 800px) {
   .burgerMenu {
     display: fixed;
     padding: 2rem 0 0 2rem;
