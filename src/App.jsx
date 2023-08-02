@@ -31,11 +31,11 @@ const App = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectBurgerOpen);
   const page = useSelector(selectPage);
-  const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const [theme, setTheme] = useLocalStorage(
-    "theme",
-    defaultDark ? "dark" : "light"
-  );
+  // const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+  // const [theme, setTheme] = useLocalStorage("theme", "light");
+
+  let theme = localStorage.getItem("theme");
+  theme = theme ? theme : "light";
 
   const containerRef = useRef(null);
   const sidebarRef = useRef(null);
@@ -182,8 +182,17 @@ const App = () => {
               <input
                 className={`switchTheme ${theme}`}
                 type="checkbox"
+                defaultChecked={theme === "dark"}
                 onChange={(e) => {
-                  setTheme(e.target.checked ? "dark" : "light");
+                  // setTheme(e.target.checked ? "dark" : "light");
+
+                  console.log(e.target.checked);
+                  localStorage.setItem(
+                    "theme",
+                    e.target.checked ? "dark" : "light"
+                  );
+                  location.reload();
+                  console.log(localStorage.getItem("theme"));
                 }}
               />
               <span className="slider "></span>

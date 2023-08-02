@@ -17,8 +17,6 @@ const Nav = () => {
   return (
     <>
       <div className="nav">
-       
-       
         <div className="artIcon">
           <a href={urlArtInstagram} target="_blank">
             <img
@@ -89,8 +87,8 @@ const Nav = () => {
           >
             Home
           </p>
-          </div>
-          <div className="illustrationIcon">
+        </div>
+        <div className="illustrationIcon">
           <a href={urlIllustrationInsta} target="_blank">
             <img
               className="illustrationIcon"
@@ -99,9 +97,6 @@ const Nav = () => {
             ></img>
           </a>
         </div>
-        
-
-     
       </div>
       {/* <div className="social">
         <h1>social</h1>
