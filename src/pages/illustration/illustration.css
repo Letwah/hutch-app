@@ -14,7 +14,11 @@
 } */
 
 .illustrationContainer .illustration {
-  padding: 2rem;
+  padding: 1rem;
+}
+
+.details h1 {
+  padding: 0.2rem 0 0.5rem 0;
 }
 section.illustration.card {
   position: relative;
@@ -58,7 +62,8 @@ section.illustration.card {
 .illustration .card > .details {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: 0.8rem;
 }
 
 @media only screen and (min-width: 800px) {
@@ -66,5 +71,15 @@ section.illustration.card {
     width: 200px;
     max-width: 100%;
     height: auto;
+  }
+  .illustration .card > .details {
+    font-size: 1rem;
+    padding: 0.2rem 1rem 1.5rem 1rem;
+  }
+  .illustrationContainer .illustration {
+    padding: 2rem;
+  }
+  .details h1 {
+    padding: 1rem 0 1rem 0;
   }
 }

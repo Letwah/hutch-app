@@ -1,8 +1,12 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import "./about/about.css";
 import { urlArtInstagram, urlIllustrationInsta } from "../config";
+import { setPage } from "../features/appSlice";
+import { CONTACT } from "../store/types";
 
 const About = () => {
+  const dispatch = useDispatch();
   return (
     <>
       <section
@@ -33,7 +37,13 @@ const About = () => {
               </p>
             </div>
             <div>
-              <button>GET IN TOUCH</button>
+              <button
+                onClick={() => {
+                  dispatch(setPage(CONTACT));
+                }}
+              >
+                GET IN TOUCH
+              </button>
             </div>
           </div>
         </div>
@@ -43,7 +53,7 @@ const About = () => {
             Hutch studied BA Fine Art at Central St Martins, London from
             2000-2004. He now lives in Woodbridge, Suffolk with his wife
             (Photographic artist + Visual Designer Colette Smith) and son.
-            Painting outside within the landscape was Hutch’s staple diet for
+            Painting outside within the landscape was Hutch's staple diet for
             many years. The Suffolk skies and woodlands near his home have
             propagated this. One hallmark of his oil paintings has been the
             staccato, obsessive brushwork that seeks to describe plane and
@@ -54,8 +64,8 @@ const About = () => {
             technological advancements and trends, artfully drawn line will
             always be valued as a tool that can deftly communicate an exciting
             piece of research, a product, a brand identity or a story that needs
-            telling. The ‘Fine Artist’ in him is seemingly allowed to morph and
-            reinvent style and rationales for making, whilst the ‘Illustrator’
+            telling. The 'Fine Artist' in him is seemingly allowed to morph and
+            reinvent style and rationales for making, whilst the 'Illustrator'
             consistently brings together neatly coordinated images, on brief and
             on schedule.
           </div>
@@ -63,7 +73,7 @@ const About = () => {
           <div>
             <h2>Exhibitions</h2>
             Previous exhibitions Artist in residence placement at Helmingham
-            Hall Gardens in Suffolk.{" "}
+            Hall Gardens in Suffolk.
             <div>
               Had solo exhibitions at
               <ul>
@@ -82,9 +92,9 @@ const About = () => {
             </div>
           </div>
           <div className="social">
-          <h2>Social</h2>
-          <a href={urlIllustrationInsta}>Illustration Instagram </a>
-          <a href={urlArtInstagram}>Art Instagram  </a>
+            <h2>Social</h2>
+            <a href={urlIllustrationInsta}>Illustration Instagram </a>
+            <a href={urlArtInstagram}>Art Instagram </a>
           </div>
         </div>
       </section>
