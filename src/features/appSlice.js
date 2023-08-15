@@ -31,10 +31,14 @@ const appSlice = createSlice({
       state.page = action.payload;
     },
     addProductToCart: (state, action) => {
-      state.cartItemIds.push(action.payload);
+      console.log(state.cartItemIds);
+      if (!state.cartItemIds.includes(action.payload)) {
+        state.cartItemIds.push(action.payload);
+        save("cartItemIdsFromDisc", state.cartItemIds);
+      }
       state.page = CART;
-      save("cartItemIdsFromDisc", state.cartItemIds);
     },
+
     removeProductFromCart: (state, action) => {
       const indexOf = state.cartItemIds.indexOf(action.payload);
       state.cartItemIds.splice(indexOf, 1);
