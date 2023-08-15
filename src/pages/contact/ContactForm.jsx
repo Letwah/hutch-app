@@ -64,6 +64,8 @@ import { validate } from "../../validation";
 import { useDispatch } from "react-redux";
 import { setToastContent } from "../../features/appSlice";
 
+import { API_KEY } from "../../key";
+
 const ContactForm = () => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
@@ -73,7 +75,7 @@ const ContactForm = () => {
     e.preventDefault();
 
     const formData = new FormData(e.target);
-    formData.append("access_key", "babf4c44-14e9-42b5-82e4-1ac8e74336e1");
+    formData.append("access_key", API_KEY);
     const res = await validate(userInput, "contactForm");
 
     if (!res) {
