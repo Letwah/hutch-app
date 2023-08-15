@@ -63,14 +63,12 @@ div.illustrationIcon svg:hover {
 
 /* 
 INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
-[data-theme="dark"] img.artIcon {
-  filter: invert();
-  /* 
-  fill: var(--text-primary); */
-}
-
+[data-theme="dark"] img.artIcon,
 [data-theme="dark"] div.illustrationIcon > a > div > div > svg.injected-svg {
   filter: invert();
+  display: block;
+  /* 
+  fill: var(--text-primary); */
 }
 
 /* desktop */
@@ -95,9 +93,6 @@ INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
     /* height: auto; */
   }
 
-  /* img.illustrationIcon {
-    height: 4rem;
-  } */
   div.illustrationIcon svg {
     height: 4rem;
   }
@@ -105,6 +100,14 @@ INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
   img.artIcon:hover,
   div.illustrationIcon svg:hover {
     transform: scale(1.5) translate(10px);
+  }
+
+  [data-theme="dark"] img.artIcon,
+  [data-theme="dark"] div.illustrationIcon > a > div > div > svg.injected-svg {
+    filter: invert();
+    display: block;
+    /* 
+  fill: var(--text-primary); */
   }
 }
 
