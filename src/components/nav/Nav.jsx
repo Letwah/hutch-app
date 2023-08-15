@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import Burger from "../menu/Burger";
+import { ReactSVG } from "react-svg";
 import { urlArtInstagram, urlIllustrationInsta } from "../../config";
 import {
   setPage,
@@ -9,10 +10,30 @@ import {
 } from "../../features/appSlice";
 // import { gsap } from "gsap";
 import "./nav.css";
+import {
+  INTRO,
+  FINE_ART,
+  CART,
+  ILLUSTRATION,
+  CONTACT,
+  ABOUT,
+} from "../../store/types";
 
 const Nav = () => {
   const isOpen = useSelector(selectBurgerOpen);
   const dispatch = useDispatch();
+
+  //router
+  useEffect(() => {
+    const pages = [INTRO, FINE_ART, CART, ILLUSTRATION, CONTACT, ABOUT];
+    const uRLParts = location.href.split("/");
+    console.log(uRLParts[uRLParts.length - 1].toUpperCase());
+
+    const page = uRLParts[uRLParts.length - 1].toUpperCase();
+    if (pages.includes(page)) {
+      dispatch(setPage(page));
+    }
+  }, []);
 
   return (
     <>
@@ -36,6 +57,7 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("ABOUT"));
+              window.history.pushState("About", "About", "/About");
               if (window.innerWidth < 800) {
                 dispatch(setBurgerOpen());
               }
@@ -46,6 +68,7 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("CONTACT"));
+              window.history.pushState("Contact", "Contact", "/Contact");
               if (window.innerWidth < 800) {
                 dispatch(setBurgerOpen());
               }
@@ -56,6 +79,7 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("FINE_ART"));
+              window.history.pushState("Fine_Art", "Fine Art", "/Fine_Art");
               if (window.innerWidth < 800) {
                 dispatch(setBurgerOpen());
               }
@@ -66,6 +90,11 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("ILLUSTRATION"));
+              window.history.pushState(
+                "Illustration",
+                "Illustration",
+                "/Illustration"
+              );
               if (window.innerWidth < 800) {
                 dispatch(setBurgerOpen());
               }
@@ -76,6 +105,7 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("CART"));
+              window.history.pushState("Cart", "Cart", "/Cart");
               if (window.innerWidth < 800) {
                 dispatch(setBurgerOpen());
               }
@@ -86,6 +116,7 @@ const Nav = () => {
           <p
             onClick={() => {
               dispatch(setPage("INTRO"));
+              window.history.pushState("Intro", "Intro", "/Intro");
               if (window.innerWidth < 800) {
                 dispatch(setBurgerOpen());
               }
@@ -96,11 +127,12 @@ const Nav = () => {
         </div>
         <div className="illustrationIcon">
           <a href={urlIllustrationInsta} target="_blank">
-            <img
+            <ReactSVG src="./assets/images/icons/H-pens.svg" />
+            {/* <img
               className="illustrationIcon"
               src="./assets/images/icons/H-pens.svg"
               alt="By Hutch Illustration Instagram"
-            ></img>
+            ></img> */}
           </a>
         </div>
       </div>

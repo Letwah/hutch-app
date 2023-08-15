@@ -40,7 +40,15 @@
   flex-direction: column;
 }
 
-img.illustrationIcon,
+/* attempt at styling the svg import  */
+div.illustrationIcon svg {
+  height: 7rem;
+  width: auto;
+}
+
+/* END attempt at styling the svg import  */
+
+div.illustrationIcon svg,
 img.artIcon {
   height: 7rem;
   width: auto;
@@ -48,15 +56,22 @@ img.artIcon {
 }
 
 img.artIcon:hover,
-img.illustrationIcon:hover {
+div.illustrationIcon svg:hover {
   transform: scale(1.5);
   transition: transform 0.4s ease-in-out;
 }
 
-/* [data-theme="dark"] img.artIcon,
-[data-theme="dark"] img.illustrationIcon {
-  filter: invert(1);
-} */
+/* 
+INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
+[data-theme="dark"] img.artIcon {
+  filter: invert();
+  /* 
+  fill: var(--text-primary); */
+}
+
+[data-theme="dark"] div.illustrationIcon > a > div > div > svg.injected-svg {
+  filter: invert();
+}
 
 /* desktop */
 
@@ -80,12 +95,15 @@ img.illustrationIcon:hover {
     /* height: auto; */
   }
 
-  img.illustrationIcon {
+  /* img.illustrationIcon {
+    height: 4rem;
+  } */
+  div.illustrationIcon svg {
     height: 4rem;
   }
 
   img.artIcon:hover,
-  img.illustrationIcon:hover {
+  div.illustrationIcon svg:hover {
     transform: scale(1.5) translate(10px);
   }
 }
@@ -94,4 +112,8 @@ img.illustrationIcon:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+} */
+
+/* [data-theme="dark"]svg.injected-svg {
+  fill: white;
 } */

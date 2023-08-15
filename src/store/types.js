@@ -7,3 +7,4 @@ export const AVAIL = "AVAIL";
 export const SOLD = "SOLD";
 export const INTRO = "INTRO";
 export const CONTACT = "CONTACT";
+export const ABOUT = "ABOUT";
