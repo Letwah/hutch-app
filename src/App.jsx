@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import useLocalStorage from "use-local-storage";
+// import useLocalStorage from "use-local-storage";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
@@ -20,7 +20,6 @@ import Cart from "./pages/Cart";
 import About from "./pages/About";
 // import Footer from "./components/footer/Footer";
 import Nav from "./components/nav/Nav";
-
 import Burger from "./components/menu/Burger";
 
 import { gsap } from "gsap";
@@ -94,52 +93,6 @@ const App = () => {
       }
     }
   };
-
-  //alternate way
-
-  // const animateMenu = () => {
-  //   const isSmallScreen = window.innerWidth < 800;
-  //   const targetColumns = isOpen
-  //     ? "1fr 5fr"
-  //     : isSmallScreen
-  //     ? "0fr 1fr "
-  //     : "0fr 5fr"; // Modified for both sizes
-  //   const targetWidth = isOpen && isSmallScreen ? "100vw" : "unset";
-
-  //   gsap.to(containerRef.current, {
-  //     duration: 0.3,
-  //     gridTemplateColumns: targetColumns,
-  //   });
-  //   gsap.to(sidebarRef.current, {
-  //     duration: 0.3,
-  //     width: targetWidth,
-  //   });
-  // };
-
-  //match media attempt {
-  //   useEffect(() => {
-  //     let mm = gsap.matchMedia();
-
-  //     mm.add("(min-width: 800px)", () => {
-  //       // desktop setup code here...
-  //       if (isOpen) {
-  //         gsap.to(containerRef.current, {
-  //           duration: 0.3,
-  //           gridTemplateColumns: "1fr 5fr",
-  //         });
-  //       } else {
-  //         gsap.to(containerRef.current, {
-  //           duration: 0.3,
-  //           gridTemplateColumns: "0fr 5fr",
-  //         });
-  //       }
-  //       return () => {
-  //         mm.removeAll(); // Remove all matchMedia queries when the component unmounts
-  //       };
-  //     }, [isOpen]);
-  //     });
-
-  // }
 
   window.addEventListener("resize", () => {
     animateMenu();
@@ -232,3 +185,49 @@ const App = () => {
 };
 
 export default App;
+
+//alternate way
+
+// const animateMenu = () => {
+//   const isSmallScreen = window.innerWidth < 800;
+//   const targetColumns = isOpen
+//     ? "1fr 5fr"
+//     : isSmallScreen
+//     ? "0fr 1fr "
+//     : "0fr 5fr"; // Modified for both sizes
+//   const targetWidth = isOpen && isSmallScreen ? "100vw" : "unset";
+
+//   gsap.to(containerRef.current, {
+//     duration: 0.3,
+//     gridTemplateColumns: targetColumns,
+//   });
+//   gsap.to(sidebarRef.current, {
+//     duration: 0.3,
+//     width: targetWidth,
+//   });
+// };
+
+//match media attempt {
+//   useEffect(() => {
+//     let mm = gsap.matchMedia();
+
+//     mm.add("(min-width: 800px)", () => {
+//       // desktop setup code here...
+//       if (isOpen) {
+//         gsap.to(containerRef.current, {
+//           duration: 0.3,
+//           gridTemplateColumns: "1fr 5fr",
+//         });
+//       } else {
+//         gsap.to(containerRef.current, {
+//           duration: 0.3,
+//           gridTemplateColumns: "0fr 5fr",
+//         });
+//       }
+//       return () => {
+//         mm.removeAll(); // Remove all matchMedia queries when the component unmounts
+//       };
+//     }, [isOpen]);
+//     });
+
+// }

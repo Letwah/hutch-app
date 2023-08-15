@@ -10,6 +10,16 @@
   --border-color: #1b1b1b;
   --shadow-color: #1b1b1b;
   --div-background-color: #fefefe;
+
+  --toastify-color-progress-light: linear-gradient(
+    to right,
+    rgb(0, 255, 123),
+    #fefefe,
+    #1b1b1b,
+    rgb(0, 255, 123),
+    #fefefe,
+    #1b1b1b
+  );
 }
 
 [data-theme="dark"] {
