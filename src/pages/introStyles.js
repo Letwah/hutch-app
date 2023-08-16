@@ -34,6 +34,7 @@ export const Wrapper = styled.section.attrs(({ $color }) => ({
   display: flex;
   height: 100%;
   justify-content: center;
+  overflow-y: hidden;
 `;
 
 export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
@@ -46,4 +47,8 @@ export const ImageContainer = styled.div.attrs(({ $isTogether }) => ({
   position: relative;
   height: 600px;
   width: 400px;
+
+  @media (max-width: 400px) {
+    display: none;
+  }
 `;
