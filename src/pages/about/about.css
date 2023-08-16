@@ -1,3 +1,12 @@
+@keyframes glow {
+  0% {
+    box-shadow: rgb(0, 255, 123) 0 0 0px;
+  }
+  100% {
+    box-shadow: rgb(0, 255, 123) 0 10px 100px;
+  }
+}
+
 .aboutBackground {
   /* position: relative;
   top: 0; */
@@ -68,6 +77,26 @@
 
 button {
   margin-top: 2rem;
+}
+
+.links a {
+  color: var(--links);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 0.5rem;
+  transition: background-color 0.5s ease-in-out;
+}
+
+.links a:hover {
+  animation: glow 3s infinite alternate;
+  background-color: var(--background);
+  transition: background-color 0.5s ease-in-out;
+}
+
+div.links {
+  margin: 1rem 0;
 }
 
 /* change display on desktop to sticky etc */

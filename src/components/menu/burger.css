@@ -1,21 +1,22 @@
 .burgerMenu {
   position: fixed;
   top: 1.8rem;
-  left: 2rem;
-  width: 2rem;
-  height: 2rem;
+  left: 1.5rem;
+  /* width: 2rem; */
+  height: 1rem;
   display: flex;
   justify-content: space-around;
   flex-flow: column nowrap;
   z-index: 20;
+  padding: 2rem 0 0 2rem;
 }
 div.burgerMenu {
   background-color: transparent;
 }
 
 .burger {
-  height: 0.25rem;
-  width: 2rem;
+  height: 0.18rem;
+  width: 1rem;
   background-color: var(--background);
   transform-origin: 1px;
   transition: all 0.5 ease;
@@ -41,10 +42,10 @@ div.burgerMenu {
   transform: rotate(-45deg);
 }
 
-@media (max-width: 800px) {
+@media (min-width: 800px) {
   .burgerMenu {
-    display: fixed;
-    padding: 2rem 0 0 2rem;
-    z-index: 20;
+    position: fixed;
+
+    left: 2rem;
   }
 }

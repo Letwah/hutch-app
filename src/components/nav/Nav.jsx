@@ -35,24 +35,11 @@ const Nav = () => {
     }
   }, []);
 
+  //attempt to move icons when the burger is shut on dark mode
+
   return (
     <>
       <div className="nav">
-        <div className="artIcon">
-          <picture>
-            <source
-              srcSet="./assets/images/icons/HutchPalletwhite.png"
-              media="prefers-color-scheme: dark"
-            />
-            <a href={urlArtInstagram} target="_blank">
-              <img
-                className="artIcon"
-                src="./assets/images/icons/HutchPallet-1.svg"
-                alt="By Hutch Art Instagram"
-              ></img>
-            </a>
-          </picture>
-        </div>
         <div className="navPageLinks">
           <p
             onClick={() => {
@@ -124,16 +111,6 @@ const Nav = () => {
           >
             Home
           </p>
-        </div>
-        <div className="illustrationIcon">
-          <a href={urlIllustrationInsta} target="_blank">
-            <ReactSVG src="./assets/images/icons/H-pens.svg" />
-            {/* <img
-              className="illustrationIcon"
-              src="./assets/images/icons/H-pens.svg"
-              alt="By Hutch Illustration Instagram"
-            ></img> */}
-          </a>
         </div>
       </div>
       {/* <div className="social">

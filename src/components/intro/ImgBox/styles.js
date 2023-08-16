@@ -12,4 +12,8 @@ export const Image = styled.div.attrs(({ $movedX, $movedY }) => ({
   height: 100px;
   width: 100px;
   position: relative;
+
+  @media (max-width: 400px) {
+    background-image: none;
+  }
 `;

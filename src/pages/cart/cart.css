@@ -21,10 +21,10 @@
     rgba(255, 255, 255, 0) 100%
   );
   backdrop-filter: blur(15px);
-  width: 80vw;
+  max-width: 80vw;
   height: fit-content;
   margin: 0 auto;
-  padding: 5rem;
+  padding: 2rem;
   position: sticky;
   top: 2.5%;
   border: var(--border-width) solid var(--border-color);
@@ -43,9 +43,9 @@
 .cartBox p {
   padding-bottom: 1rem;
 }
-
-.cartBox div {
+div.cartBox {
   padding-top: 1rem;
+  margin: 0 2.5rem;
 }
 /* .cartBox.empty {
 } */
@@ -107,8 +107,11 @@ label {
 @media only screen and (min-width: 800px) {
   .cartBox {
     width: 60vw;
+    padding: 5rem;
   }
-
+  div.cartBox {
+    margin: 0 auto;
+  }
   /* .contactForm {
     width: 50vw;
   }

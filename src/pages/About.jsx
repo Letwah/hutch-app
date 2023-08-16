@@ -93,8 +93,17 @@ const About = () => {
           </div>
           <div className="social">
             <h2>Social</h2>
-            <a href={urlIllustrationInsta}>Illustration Instagram </a>
-            <a href={urlArtInstagram}>Art Instagram </a>
+            <div className="links">
+              <a href={urlIllustrationInsta}>
+                Illustration Instagram
+                <span>&#8680;</span>
+              </a>
+            </div>
+            <div className="links">
+              <a href={urlArtInstagram}>
+                Art Instagram <span>&#8680;</span>
+              </a>
+            </div>
           </div>
         </div>
       </section>

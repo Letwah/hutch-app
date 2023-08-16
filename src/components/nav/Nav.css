@@ -17,7 +17,7 @@
 .nav p {
   padding: 1rem 0 0.2rem 0;
   font-weight: 800;
-  font-size: 2rem;
+  font-size: 1.5rem;
   text-decoration: none;
   color: var(--text--primary);
   text-transform: uppercase;
@@ -32,45 +32,6 @@
   cursor: pointer;
 }
 
-.artIcon,
-.illustrationIcon {
-  display: flex;
-  align-items: stretch;
-  justify-content: center;
-  flex-direction: column;
-}
-
-/* attempt at styling the svg import  */
-div.illustrationIcon svg {
-  height: 7rem;
-  width: auto;
-}
-
-/* END attempt at styling the svg import  */
-
-div.illustrationIcon svg,
-img.artIcon {
-  height: 7rem;
-  width: auto;
-  transition: transform 0.4s ease-in-out;
-}
-
-img.artIcon:hover,
-div.illustrationIcon svg:hover {
-  transform: scale(1.5);
-  transition: transform 0.4s ease-in-out;
-}
-
-/* 
-INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
-[data-theme="dark"] img.artIcon,
-[data-theme="dark"] div.illustrationIcon > a > div > div > svg.injected-svg {
-  filter: invert();
-  display: block;
-  /* 
-  fill: var(--text-primary); */
-}
-
 /* desktop */
 
 @media only screen and (min-width: 800px) {
@@ -81,33 +42,12 @@ INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-evenly;
+    justify-content: flex-end;
+    margin-bottom: 2rem;
   }
 
   .nav p {
     font-size: 1rem;
-  }
-
-  img.artIcon {
-    width: 4rem;
-    /* height: auto; */
-  }
-
-  div.illustrationIcon svg {
-    height: 4rem;
-  }
-
-  img.artIcon:hover,
-  div.illustrationIcon svg:hover {
-    transform: scale(1.5) translate(10px);
-  }
-
-  [data-theme="dark"] img.artIcon,
-  [data-theme="dark"] div.illustrationIcon > a > div > div > svg.injected-svg {
-    filter: invert();
-    display: block;
-    /* 
-  fill: var(--text-primary); */
   }
 }
 

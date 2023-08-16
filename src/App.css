@@ -10,7 +10,6 @@
   --border-color: #1b1b1b;
   --shadow-color: #1b1b1b;
   --div-background-color: #fefefe;
-
   --toastify-color-progress-light: linear-gradient(
     to right,
     rgb(0, 255, 123),
@@ -20,6 +19,8 @@
     #fefefe,
     #1b1b1b
   );
+
+  --links: rgb(0, 255, 123);
 }
 
 [data-theme="dark"] {
@@ -37,6 +38,7 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  max-width: 100vw;
 }
 
 *:focus {
@@ -128,7 +130,9 @@ input:focus {
   align-items: center;
   width: 40px;
 }
-
+div.switch {
+  width: 0px;
+}
 /* .switch p {
   white-space: wrap;
   margin-bottom: 0;
@@ -145,15 +149,15 @@ input:focus {
 
 /* The slider */
 .slider {
-  position: absolute;
+  position: fixed;
   cursor: pointer;
-  top: 2rem;
-  right: 2rem;
+  top: 2.2rem;
+  right: 1.3rem;
   background-color: var(--background);
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  height: 19px;
-  width: 35px;
+  height: 10px;
+  width: 20px;
 }
 
 [data-theme="dark"] .slider {
@@ -167,15 +171,15 @@ input:focus {
   bottom: 2px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  height: 15px;
-  width: 15px;
+  height: 6px;
+  width: 6px;
   background-color: var(--div-background-color);
 }
 
 input:checked + .slider:before {
-  -webkit-transform: translateX(16px);
-  -ms-transform: translateX(16px);
-  transform: translateX(16px);
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
 }
 
 /* position switch */
@@ -200,10 +204,9 @@ input.switchTheme.light {
   background-color: var(--background);
 }
 
-img.logo {
-  width: 5rem;
+div.logo svg {
+  width: 10rem;
 }
-
 /*padding for nested divs*/
 
 div.nav,
@@ -217,7 +220,8 @@ div.social,
 div.logo {
   display: flex;
   align-items: center;
-  padding-right: 2rem;
+  /* padding-right: 2rem; */
+  margin: 0 1rem;
 }
 
 .main-content {
@@ -240,11 +244,50 @@ div.logo {
 }
 
 .main-header {
-  grid-area: header;
+  grid-area: 1 / 2 / 2 / 3;
   display: flex;
-  justify-content: center;
+
   align-items: center;
+  padding: 1rem;
+  justify-items: center;
+  justify-content: center;
+  align-content: center;
 }
+
+/* div.illustrationIcon svg, */
+img.illustrationIcon,
+img.artIcon {
+  height: 2rem;
+  width: auto;
+  transition: transform 0.4s ease-in-out;
+}
+
+img.artIcon:hover,
+img.illustrationIcon:hover {
+  transform: scale(1.5);
+  transition: transform 0.4s ease-in-out;
+}
+
+/* 
+INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
+[data-theme="dark"] img.artIcon,
+[data-theme="dark"] img.illustrationIcon
+/* [data-theme="dark"] div.illustrationIcon > a > div > div > svg.injected-svg */ {
+  filter: invert();
+  display: block;
+  /* 
+  fill: var(--text-primary); */
+}
+
+/* .main-header {
+  grid-area: 1 / 2 / 2 / 3;
+  display: flex;
+  flex-direction: row;
+  
+  align-items: center;
+  padding: 1rem;
+} */
+
 .main-content {
   grid-area: main;
 }
@@ -254,7 +297,6 @@ div.logo {
   display: grid;
   grid-template-rows: 1fr 10fr;
   gap: 5px 5px;
-
   grid-template-areas:
     "logo"
     "nav";
@@ -275,15 +317,6 @@ img.logo {
   grid-area: nav;
 }
 
-.main-header {
-  grid-area: 1 / 2 / 2 / 3;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 1rem;
-}
-
 .main-content {
   grid-area: 2 / 2 / 4 / 3;
 }
@@ -300,11 +333,11 @@ Make logo fill right color on switch theme */
   transition-delay: 0.1s;
 } */
 
-.pageTitle {
+/* .pageTitle {
   padding-left: 2rem;
   font-size: 0.5rem;
   display: none;
-}
+} */
 
 /* Russells rules */
 
@@ -312,7 +345,42 @@ Make logo fill right color on switch theme */
   grid-template-columns: 0fr 5fr;
 }
 
+.header-content {
+  padding-right: 0rem;
+}
+
+img.illustrationIcon {
+  position: fixed;
+  bottom: 1rem;
+  right: 5rem;
+  z-index: 99;
+}
+
+img.artIcon {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 99;
+}
+
 /* DESKTOP STYLES */
+@media screen and (min-width: 400px) {
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    justify-content: center;
+    padding-left: 2rem;
+  }
+
+  img.illustrationIcon {
+    position: inherit;
+  }
+
+  img.artIcon {
+    position: inherit;
+  }
+}
 
 @media screen and (min-width: 800px) {
   .container {
@@ -320,5 +388,31 @@ Make logo fill right color on switch theme */
   }
   .sidebar {
     overflow: hidden;
+  }
+
+  div.logo svg {
+    width: 15rem;
+  }
+
+  img.artIcon {
+    width: 4rem;
+    /* height: auto; */
+  }
+
+  img.illustrationIcon {
+    width: 4rem;
+  }
+
+  img.artIcon:hover,
+  img.illustrationIcon:hover {
+    transform: scale(1.5) translate(10px);
+  }
+
+  div.logo {
+    margin: 0 2rem;
+  }
+
+  .header-content {
+    padding-right: 4rem;
   }
 }
