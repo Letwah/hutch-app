@@ -6,12 +6,14 @@ import "./App.css";
 import { useDispatch, useSelector } from "react-redux";
 import { urlArtInstagram, urlIllustrationInsta } from "./config";
 import { ReactSVG } from "react-svg";
+import getFineArtCatalogue from "./store/fineArtCatalogue";
 import {
   selectPage,
   selectToastContent,
   selectBurgerOpen,
   setBurgerOpen,
   setPage,
+  setFineArt,
 } from "./features/appSlice";
 
 import Contact from "./pages/Contact";
@@ -40,6 +42,17 @@ const App = () => {
 
   const containerRef = useRef(null);
   const sidebarRef = useRef(null);
+
+  const getInitialData = async () => {
+    const items = await getFineArtCatalogue();
+
+    console.log(items);
+    dispatch(setFineArt(items));
+  };
+
+  useEffect(() => {
+    getInitialData();
+  }, []);
 
   const toastContent = useSelector(selectToastContent);
   useEffect(() => {

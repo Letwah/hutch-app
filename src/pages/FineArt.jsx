@@ -59,11 +59,11 @@ const FineArt = () => {
   //YEY IT WORKS!!!!!!
   if (availability) {
     filtered = fineArt.filter((item) => {
-      console.log(item.avail);
+      // console.log(item.avail);
       if (availability === AVAIL) {
-        return item.avail === true;
+        return item.sold == true; // sql 1 = true hence loose comparison
       } else {
-        return item.avail === false;
+        return item.sold == false;
       }
     });
   }
@@ -125,7 +125,7 @@ const FineArt = () => {
                   ) : (
                     <p className="sold">SOLD</p>
                   )}
-                  <p>{new Date(item.createdTimeStamp).toLocaleDateString()}</p>
+                  <p>{item.date}</p>
                   <p>{item.size}</p>
 
                   <button

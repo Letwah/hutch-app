@@ -1,31 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
-// import axios from "axios";
+
 import { CART, INTRO } from "../store/types";
-import getFineArtCatalogue from "../store/fineArtCatalogue";
+
 import getIllustrationCatalogue from "../store/illustrationCatalogue";
 // import dragImage from "../store/dragImage";
 import { save, get } from "../persistance";
 
 const cartItemIdsFromDisc = get("cartItemIdsFromDisc");
 
-const initialState = {
-  page: INTRO,
-  fineArtCatalogue: getFineArtCatalogue(),
-  illustrationCatalogue: getIllustrationCatalogue(),
-  cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
-  search: "",
-  sort: "",
-  availability: "",
-  contactForm: "",
-  toastContent: "",
-  modalImage: "",
-  isModalVisible: false,
-  burgerOpen: false,
+const getInitialState = async () => {
+  const initialState = {
+    page: INTRO,
+    fineArtCatalogue: [], //empty array to stop comp crashing before data arrived.
+    illustrationCatalogue: getIllustrationCatalogue(),
+    cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
+    search: "",
+    sort: "",
+    availability: "",
+    contactForm: "",
+    toastContent: "",
+    modalImage: "",
+    isModalVisible: false,
+    burgerOpen: false,
+  };
+  return initialState;
 };
 
 const appSlice = createSlice({
   name: "app",
-  initialState,
+  initialState: await getInitialState(),
   reducers: {
     setPage: (state, action) => {
       state.page = action.payload;
@@ -73,6 +76,10 @@ const appSlice = createSlice({
     setBurgerOpen: (state) => {
       state.burgerOpen = !state.burgerOpen;
     },
+
+    setFineArt: (state, action) => {
+      state.fineArtCatalogue = action.payload;
+    },
   },
 });
 
@@ -89,6 +96,7 @@ export const {
   setIsModalVisible,
   setModalImage,
   setBurgerOpen,
+  setFineArt,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
