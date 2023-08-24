@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { urlArtInstagram, urlIllustrationInsta } from "./config";
 import { ReactSVG } from "react-svg";
 import getFineArtCatalogue from "./store/fineArtCatalogue";
+import getIllustrationCatalogue from "./store/illustrationCatalogue";
 import {
   selectPage,
   selectToastContent,
@@ -14,6 +15,7 @@ import {
   setBurgerOpen,
   setPage,
   setFineArt,
+  setIllustration,
 } from "./features/appSlice";
 
 import Contact from "./pages/Contact";
@@ -44,10 +46,11 @@ const App = () => {
   const sidebarRef = useRef(null);
 
   const getInitialData = async () => {
-    const items = await getFineArtCatalogue();
-
-    console.log(items);
-    dispatch(setFineArt(items));
+    const fineArtItems = await getFineArtCatalogue();
+    const illustrationItems = await getIllustrationCatalogue();
+    console.log(fineArtItems, illustrationItems);
+    dispatch(setFineArt(fineArtItems));
+    dispatch(setIllustration(illustrationItems));
   };
 
   useEffect(() => {

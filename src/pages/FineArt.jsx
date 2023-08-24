@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
-import Availability from "./fineArt/Availabililty";
+import Sold from "./fineArt/Sold";
 import Modal from "../components/modal/Modal";
 import {
   selectFineArtCatalogue,
   addProductToCart,
   selectSearch,
   selectSort,
-  selectAvailability,
+  selectSold,
   selectModalImage,
   selectIsModalVisible,
   setModalImage,
@@ -22,7 +22,7 @@ const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
-  const availability = useSelector(selectAvailability);
+  const sold = useSelector(selectSold);
   const modalImage = useSelector(selectModalImage);
   const isModalVisible = useSelector(selectIsModalVisible);
   const dispatch = useDispatch();
@@ -55,15 +55,15 @@ const FineArt = () => {
     });
   }
 
-  console.log(availability);
+  console.log(sold);
   //YEY IT WORKS!!!!!!
-  if (availability) {
+  if (sold) {
     filtered = fineArt.filter((item) => {
       // console.log(item.avail);
-      if (availability === AVAIL) {
-        return item.sold == true; // sql 1 = true hence loose comparison
+      if (sold === SOLD) {
+        return item.sold == false; // sql 1 = true hence loose comparison
       } else {
-        return item.sold == false;
+        return item.sold == true;
       }
     });
   }
@@ -90,7 +90,7 @@ const FineArt = () => {
         <div className="filters">
           <Search />
           <Sort />
-          <Availability />
+          <Sold />
         </div>
         <div className="fineArtGrid">
           {filtered.map((item) => {
@@ -114,7 +114,7 @@ const FineArt = () => {
                   <h2>{item.title}</h2>
                   <h3>{item.medium}</h3>
                   <h3>£{(item.price / 100).toFixed(2)}</h3>
-                  {item.avail ? (
+                  {item.sold ? (
                     <button
                       onClick={() => {
                         dispatch(addProductToCart(item.id));

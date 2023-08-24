@@ -54,10 +54,8 @@ const Illustration = () => {
                 <div className="details">
                   <h1>{item.title}</h1>
                   <p>{item.desc}</p>
-                  <p>
-                    {new Date(item.createdTimeStamp).toLocaleDateString()} -
-                    {item.medium}
-                  </p>
+                  <p>{item.date}</p>
+                  <p>{item.medium}</p>
                 </div>
                 <div className="imageContainer">
                   {item.images.map((image) => {

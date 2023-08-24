@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 import { CART, INTRO } from "../store/types";
 
-import getIllustrationCatalogue from "../store/illustrationCatalogue";
+// import getIllustrationCatalogue from "../store/illustrationCatalogue";
 // import dragImage from "../store/dragImage";
 import { save, get } from "../persistance";
 
@@ -12,11 +12,11 @@ const getInitialState = async () => {
   const initialState = {
     page: INTRO,
     fineArtCatalogue: [], //empty array to stop comp crashing before data arrived.
-    illustrationCatalogue: getIllustrationCatalogue(),
+    illustrationCatalogue: [], //getIllustrationCatalogue(),
     cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
     search: "",
     sort: "",
-    availability: "",
+    sold: "",
     contactForm: "",
     toastContent: "",
     modalImage: "",
@@ -55,8 +55,8 @@ const appSlice = createSlice({
       state.sort = action.payload;
     },
 
-    setAvailability: (state, action) => {
-      state.availability = action.payload;
+    setSold: (state, action) => {
+      state.sold = action.payload;
     },
 
     setContactForm: (state, action) => {
@@ -80,6 +80,9 @@ const appSlice = createSlice({
     setFineArt: (state, action) => {
       state.fineArtCatalogue = action.payload;
     },
+    setIllustration: (state, action) => {
+      state.illustrationCatalogue = action.payload;
+    },
   },
 });
 
@@ -89,14 +92,15 @@ export const {
   removeProductFromCart,
   setSearch,
   setSort,
-  setAvailability,
+  setSold,
   setContactForm,
   setToastContent,
-
   setIsModalVisible,
   setModalImage,
   setBurgerOpen,
+
   setFineArt,
+  setIllustration,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -106,7 +110,7 @@ export const selectIllustrationCatalogue = (state) =>
 export const selectCartItemIds = (state) => state.app.cartItemIds;
 export const selectSearch = (state) => state.app.search;
 export const selectSort = (state) => state.app.sort;
-export const selectAvailability = (state) => state.app.availability;
+export const selectSold = (state) => state.app.sold;
 export const selectContactForm = (state) => state.app.contactForm;
 export const selectToastContent = (state) => state.app.toastContent;
 export const selectIsModalVisible = (state) => state.app.isModalVisible;
