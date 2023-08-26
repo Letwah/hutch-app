@@ -33,7 +33,7 @@ const Cart = () => {
         <div
           className="cartContainer"
           style={{
-            backgroundImage: `url("./assets/images/fineArt/large/drawnUp.jpg")`,
+            backgroundImage: `url("./assets/images/fineArt/drawnUp.jpg")`,
           }}
         >
           <div className="cartBox empty">
@@ -50,7 +50,7 @@ const Cart = () => {
       <div
         className="cartContainer"
         style={{
-          backgroundImage: `url("./assets/images/fineArt/large/drawnUp.jpg")`,
+          backgroundImage: `url("./assets/images/fineArt/drawnUp.jpg")`,
         }}
       >
         <div className="cartBox">

@@ -48,6 +48,12 @@ const App = () => {
   const getInitialData = async () => {
     const fineArtItems = await getFineArtCatalogue();
     const illustrationItems = await getIllustrationCatalogue();
+
+    console.log(illustrationItems);
+    illustrationItems.forEach((item) => {
+      item.images = item.images.split(",");
+    });
+
     console.log(fineArtItems, illustrationItems);
     dispatch(setFineArt(fineArtItems));
     dispatch(setIllustration(illustrationItems));

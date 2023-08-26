@@ -12,7 +12,7 @@ const Contact = () => {
       <section
         className="contactBackground"
         style={{
-          backgroundImage: `url("./assets/images/illustration/large/insights/Insights_2021_Back_Cover_artwork_only_no_titles_Hutch.jpg")`,
+          backgroundImage: `url("./assets/images/illustration/Insights_2021_Back_Cover_artwork_only_no_titles_Hutch.jpg")`,
         }}
       >
         <div className="contactForm">

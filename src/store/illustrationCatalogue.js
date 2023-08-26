@@ -3,7 +3,7 @@ const getIllustrationCatalogue = async () => {
   const { data } = await axios.get("http://localhost:6003/get/illustration");
   console.log(data);
 
-  return data.projects;
+  return data.items;
 };
 
 export default getIllustrationCatalogue;

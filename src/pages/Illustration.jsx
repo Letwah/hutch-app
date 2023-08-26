@@ -32,8 +32,14 @@ const Illustration = () => {
     dispatch(setIsModalVisible(false));
   };
 
+  //check if the component is mounting at right time...
+  if (!illustration) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
+      {console.log("Rendering Illustration component")}
       {isModalVisible && (
         <Modal
           visible={isModalVisible}
@@ -44,11 +50,12 @@ const Illustration = () => {
       <section className="illustrationContainer">
         <div className="illustration">
           {illustration.map((item) => {
-            const imageUrls = item.images.split(",").map((url) => url.trim());
+            console.log("Mapping over illustration data:", item);
+            // const imageUrls = item.images.split(",").map((url) => url.trim());
             // console.log(`url("${item.image}")`);
             if (!item.show) {
               //prevents item with show = false being rendered
-              return null;
+              return;
             }
             return (
               <section className="illustration card" key={item.id}>
@@ -59,7 +66,7 @@ const Illustration = () => {
                   <p>{item.medium}</p>
                 </div>
                 <div className="imageContainer">
-                  {imageUrls.map((imageUrl) => {
+                  {item.images.map((imageUrl) => {
                     // console.log(image);
                     return (
                       <div className="imgDiv" key={imageUrl}>
@@ -71,7 +78,7 @@ const Illustration = () => {
                           }}
                           src={`./assets/images/illustration${imageUrl}`}
                           alt={item.title}
-                          key={image}
+                          key={imageUrl}
                         />
                       </div>
                     );

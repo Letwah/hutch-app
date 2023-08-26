@@ -56,7 +56,7 @@ const FineArt = () => {
   }
 
   console.log(sold);
-  //YEY IT WORKS!!!!!!
+  //sort by sold / not sold
   if (sold) {
     filtered = fineArt.filter((item) => {
       // console.log(item.avail);
