@@ -1,6 +1,7 @@
 import axios from "axios";
+import { apiURL } from "../config";
 const getIllustrationCatalogue = async () => {
-  const { data } = await axios.get("http://localhost:6003/get/illustration");
+  const { data } = await axios.get(`${apiURL}/get/illustration`);
   console.log(data);
 
   return data.items;

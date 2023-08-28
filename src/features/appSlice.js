@@ -8,27 +8,24 @@ import { save, get } from "../persistance";
 
 const cartItemIdsFromDisc = get("cartItemIdsFromDisc");
 
-const getInitialState = async () => {
-  const initialState = {
-    page: INTRO,
-    fineArtCatalogue: [], //empty array to stop comp crashing before data arrived.
-    illustrationCatalogue: [], //getIllustrationCatalogue(),
-    cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
-    search: "",
-    sort: "",
-    sold: "",
-    contactForm: "",
-    toastContent: "",
-    modalImage: "",
-    isModalVisible: false,
-    burgerOpen: false,
-  };
-  return initialState;
+const initialState = {
+  page: INTRO,
+  fineArtCatalogue: [], //empty array to stop comp crashing before data arrived.
+  illustrationCatalogue: [], //getIllustrationCatalogue(),
+  cartItemIds: cartItemIdsFromDisc ? cartItemIdsFromDisc : [],
+  search: "",
+  sort: "",
+  sold: "",
+  contactForm: "",
+  toastContent: "",
+  modalImage: "",
+  isModalVisible: false,
+  burgerOpen: false,
 };
 
 const appSlice = createSlice({
   name: "app",
-  initialState: await getInitialState(),
+  initialState,
   reducers: {
     setPage: (state, action) => {
       state.page = action.payload;

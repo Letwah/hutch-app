@@ -79,6 +79,7 @@ const Illustration = () => {
                           src={`./assets/images/illustration${imageUrl}`}
                           alt={item.title}
                           key={imageUrl}
+                          loading="lazy"
                         />
                       </div>
                     );

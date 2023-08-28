@@ -101,15 +101,14 @@ const FineArt = () => {
             }
             return (
               <section className="fineArt card" key={item.id}>
-                <div
+                <img
                   className="imageContainer"
-                  style={{
-                    backgroundImage: `url("./assets/images/fineArt${item.image}")`,
-                  }}
+                  loading="lazy"
+                  src={`./assets/images/fineArt${item.image}`}
                   onClick={() => {
                     showModal("./assets/images/fineArt" + item.image);
                   }}
-                ></div>
+                ></img>
                 <div className="details">
                   <h2>{item.title}</h2>
                   <h3>{item.medium}</h3>
