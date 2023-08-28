@@ -37,7 +37,7 @@ select {
   background-color: transparent;
   gap: 2em;
 }
-.imageContainer[style*="background-image"] {
+.imageContainer {
   position: relative;
   cursor: pointer;
   border: var(--border-width) solid var(--border-color);
@@ -52,7 +52,7 @@ select {
   background-color: transparent;
 }
 
-.imageContainer[style*="background-image"]::before {
+.imageContainer::before {
   display: block;
   position: relative;
   content: "";
@@ -65,7 +65,7 @@ select {
   transition: 0.5s;
 }
 
-.imageContainer[style*="background-image"]:hover::before {
+.imageContainer:hover::before {
   opacity: 0;
 }
 
@@ -137,9 +137,9 @@ h3:hover {
     padding-left: 0.7rem;
   }
 
-  .imageContainer[style*="background-image"] {
+  .imageContainer {
     width: 100%;
-    height: 350px;
+    height: auto;
 
     margin: 1rem;
   }
