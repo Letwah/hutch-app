@@ -11,6 +11,7 @@
   overflow-x: scroll;
   background-position: center;
   background-size: repeat;
+  background-attachment: fixed;
 }
 
 .cartBox {
@@ -72,7 +73,7 @@ label {
   left: 45%;
 }
 
-.imageContainerCart[style*="background-image"] {
+img.imageContainerCart {
   position: relative;
 
   border: var(--border-width) solid var(--border-color);
@@ -87,7 +88,7 @@ label {
   background-color: transparent;
 }
 
-.imageContainerCart[style*="background-image"]::before {
+img.imageContainerCart::before {
   display: block;
   position: relative;
   content: "";
@@ -102,6 +103,10 @@ label {
 
 .imageContainerCart[style*="background-image"]:hover::before {
   opacity: 0;
+}
+
+form.purchaseEnq {
+  padding: 0.5rem 0;
 }
 
 @media only screen and (min-width: 800px) {

@@ -3,6 +3,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  margin-left: 2rem;
 }
 [data-theme="dark"] input#search {
   color: var(--text-primary);
@@ -32,18 +33,23 @@ select {
 
 .fineArtGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 0.75fr));
+  grid-template-columns: repeat(auto-fill, minmax(280px, 0.85fr));
+  justify-content: center;
   grid-template-rows: auto;
   background-color: transparent;
   gap: 2em;
 }
+
+.fineArt.card {
+  margin-left: 2rem;
+}
 .imageContainer {
   position: relative;
-  cursor: url(../../../public/my-cursor.svg), pointer;
+  cursor: url(/my-cursor.svg), pointer;
   border: var(--border-width) solid var(--border-color);
   box-shadow: 0.5em 0.5em 0em;
   width: 90%;
-  height: 250px;
+  height: auto;
   overflow: hidden;
   margin: 0.2rem;
   background-size: contain;
@@ -135,6 +141,12 @@ h3:hover {
     flex-direction: row;
     justify-content: flex-start;
     padding-left: 0.7rem;
+    margin-left: 0;
+  }
+
+  .filters > input,
+  .filters > select {
+    margin: 0.5rem 0.5rem;
   }
 
   .imageContainer {
@@ -145,5 +157,9 @@ h3:hover {
   }
   .fineArtContainer {
     padding: 2rem 4rem 2rem 2rem;
+  }
+
+  .fineArt.card {
+    margin-left: 0;
   }
 }

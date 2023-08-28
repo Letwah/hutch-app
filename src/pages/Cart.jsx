@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectCartItemIds,
@@ -7,12 +7,15 @@ import {
   selectPage,
 } from "../features/appSlice";
 
+import CartCheckout from "./cart/CartCheckout";
+
 import "./cart/cart.css";
 // import EmptyCart from "./cart/EmptyCart";
 
 const Cart = () => {
   const page = useSelector(selectPage);
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
+  const [selectCartCheckout, setSelectCartCheckout] = useState(false);
 
   const cartItemIds = useSelector(selectCartItemIds);
   const cartItems = fineArtCatalogue.filter((item) => {
@@ -55,18 +58,16 @@ const Cart = () => {
       >
         <div className="cartBox">
           <h1>{page}</h1>
-
           {cartItems.map((item) => {
             return (
               <div key={item.id}>
                 <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
                 <div>
-                  <div
+                  <img
                     className="imageContainerCart"
-                    style={{
-                      backgroundImage: `url("./assets/images/fineArt${item.image}")`,
-                    }}
-                  ></div>
+                    src={`./assets/images/fineArt${item.image}`}
+                    loading="lazy"
+                  ></img>
                   <button
                     onClick={() => {
                       dispatch(removeProductFromCart(item.id));
@@ -81,8 +82,15 @@ const Cart = () => {
           <div>
             <p>Total = £{(total / 100).toFixed(2)}</p>
           </div>
-
-          <button>Checkout</button>
+          <button
+            onClick={() => {
+              setSelectCartCheckout(true); // Update state to show CartCheckout
+            }}
+          >
+            Purchase Enquiry
+          </button>
+          {selectCartCheckout && <CartCheckout />}
+          {/* Render CartCheckout if selectCartCheckout is true */}
         </div>
       </div>
     </>

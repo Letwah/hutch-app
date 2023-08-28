@@ -107,7 +107,7 @@ input,
 textarea {
   border: var(--border-width) solid var(--border-color);
   padding: 0.5rem 1rem;
-  margin: 0.5rem 0.5rem;
+  margin: 0.5rem 0;
   background: var(--div-background-color);
 }
 

@@ -80,6 +80,10 @@ const appSlice = createSlice({
     setIllustration: (state, action) => {
       state.illustrationCatalogue = action.payload;
     },
+
+    setPurchaseEnq: (state, action) => {
+      state.purchaseEnq = action.payload;
+    },
   },
 });
 
@@ -98,6 +102,7 @@ export const {
 
   setFineArt,
   setIllustration,
+  setPurchaseEnq,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -114,5 +119,6 @@ export const selectIsModalVisible = (state) => state.app.isModalVisible;
 export const selectModalImage = (state) => state.app.modalImage;
 
 export const selectBurgerOpen = (state) => state.app.burgerOpen;
+export const selectPurchaseEnq = (state) => state.app.purchaseEnq;
 
 export default appSlice.reducer;
