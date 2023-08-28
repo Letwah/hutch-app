@@ -10,7 +10,7 @@ import {
 import CartCheckout from "./cart/CartCheckout";
 
 import "./cart/cart.css";
-// import EmptyCart from "./cart/EmptyCart";
+import EmptyCart from "./cart/EmptyCart";
 
 const Cart = () => {
   const page = useSelector(selectPage);
@@ -32,18 +32,7 @@ const Cart = () => {
   if (cartItems.length === 0) {
     return (
       <>
-        {/* <EmptyCart /> */}
-        <div
-          className="cartContainer"
-          style={{
-            backgroundImage: `url("./assets/images/fineArt/drawnUp.jpg")`,
-          }}
-        >
-          <div className="cartBox empty">
-            <h1>{page}</h1>
-            <p>no items in cart &#128529; </p>
-          </div>
-        </div>
+        <EmptyCart page={page} />
       </>
     );
   }
@@ -90,7 +79,7 @@ const Cart = () => {
             Purchase Enquiry
           </button>
           {selectCartCheckout && <CartCheckout />}
-          {/* Render CartCheckout if selectCartCheckout is true */}
+          {/* //render cart checkout if it is requested */}
         </div>
       </div>
     </>

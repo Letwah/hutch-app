@@ -1,13 +1,13 @@
 import React from "react";
 import "./cart.css";
 
-const EmptyCart = () => {
+const EmptyCart = ({ page }) => {
   return (
     <>
       <div
         className="cartContainer"
         style={{
-          backgroundImage: `url("./assets/images/fineArt/large/drawnUp.jpg")`,
+          backgroundImage: `url("./assets/images/fineArt/drawnUp.jpg")`,
         }}
       >
         <div className="cartBox empty">

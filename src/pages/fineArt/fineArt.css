@@ -57,23 +57,23 @@ select {
   background-position: center;
   background-color: transparent;
 }
-
+/* 
 .imageContainer::before {
   display: block;
   position: relative;
   content: "";
-  /* background-color: rgb(255, 255, 255); */
+  
   width: 100%;
   height: 100%;
   z-index: 3;
-  /* opacity: 0.3; */
+  
   pointer-events: none;
   transition: 0.5s;
 }
 
 .imageContainer:hover::before {
   opacity: 0;
-}
+} */
 
 .fineArt.card .details {
   display: flex;
