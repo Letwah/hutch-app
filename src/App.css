@@ -151,8 +151,8 @@ div.switch {
 .slider {
   position: fixed;
   cursor: pointer;
-  top: 2.2rem;
-  right: 1.3rem;
+  top: 4%;
+  right: 4%;
   background-color: var(--background);
   -webkit-transition: 0.4s;
   transition: 0.4s;
