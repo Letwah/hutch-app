@@ -61,7 +61,7 @@ const Illustration = () => {
               <section className="illustration card" key={item.id}>
                 <div className="details">
                   <h1>{item.title}</h1>
-                  <p>{item.desc}</p>
+                  <p>{item.description}</p>
                   <p>{item.date}</p>
                   <p>{item.medium}</p>
                 </div>
