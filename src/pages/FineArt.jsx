@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
 import Sold from "./fineArt/Sold";
+import SortByDate from "./fineArt/SortByDate";
 import Modal from "../components/modal/Modal";
 import {
   selectFineArtCatalogue,
@@ -10,19 +11,21 @@ import {
   selectSearch,
   selectSort,
   selectSold,
+  selectSortByDate,
   selectModalImage,
   selectIsModalVisible,
   setModalImage,
   setIsModalVisible,
 } from "../features/appSlice";
 import "./fineArt/fineArt.css";
-import { ASC, DESC, AVAIL, SOLD } from "../store/types";
+import { ASC, DESC, SOLD } from "../store/types";
 
 const FineArt = () => {
   const fineArt = useSelector(selectFineArtCatalogue);
   const search = useSelector(selectSearch);
   const sort = useSelector(selectSort);
   const sold = useSelector(selectSold);
+  const sortByDate = useSelector(selectSortByDate);
   const modalImage = useSelector(selectModalImage);
   const isModalVisible = useSelector(selectIsModalVisible);
   const dispatch = useDispatch();
@@ -68,6 +71,21 @@ const FineArt = () => {
     });
   }
 
+  console.log(sortByDate);
+  // /sort by asc/dec
+  if (sortByDate === ASC) {
+    filtered.sort((itemOne, itemTwo) => {
+      console.log(itemOne);
+      if (itemOne.date > itemTwo.date) return 1;
+      if (itemOne.date < itemTwo.date) return -1;
+    });
+  } else if (sortByDate === DESC) {
+    filtered.sort((itemOne, itemTwo) => {
+      if (itemOne.date > itemTwo.date) return -1;
+      if (itemOne.date < itemTwo.date) return 1;
+    });
+  }
+
   const showModal = (image) => {
     dispatch(setIsModalVisible(true));
     dispatch(setModalImage(image));
@@ -91,6 +109,7 @@ const FineArt = () => {
           <Search />
           <Sort />
           <Sold />
+          <SortByDate />
         </div>
         <div className="fineArtGrid">
           {filtered.map((item) => {

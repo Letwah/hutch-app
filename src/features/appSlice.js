@@ -16,6 +16,7 @@ const initialState = {
   search: "",
   sort: "",
   sold: "",
+  sortByDate: "",
   contactForm: "",
   toastContent: "",
   modalImage: "",
@@ -56,6 +57,10 @@ const appSlice = createSlice({
       state.sold = action.payload;
     },
 
+    setSortByDate: (state, action) => {
+      state.sortByDate = action.payload;
+    },
+
     setContactForm: (state, action) => {
       state.contactForm = action.payload;
     },
@@ -94,6 +99,7 @@ export const {
   setSearch,
   setSort,
   setSold,
+  setSortByDate,
   setContactForm,
   setToastContent,
   setIsModalVisible,
@@ -113,6 +119,8 @@ export const selectCartItemIds = (state) => state.app.cartItemIds;
 export const selectSearch = (state) => state.app.search;
 export const selectSort = (state) => state.app.sort;
 export const selectSold = (state) => state.app.sold;
+export const selectSortByDate = (state) => state.app.sortByDate;
+
 export const selectContactForm = (state) => state.app.contactForm;
 export const selectToastContent = (state) => state.app.toastContent;
 export const selectIsModalVisible = (state) => state.app.isModalVisible;

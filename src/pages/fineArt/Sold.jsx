@@ -9,7 +9,7 @@ const Sold = () => {
   return (
     <>
       <select onChange={(e) => dispatch(setSold(e.target.value))}>
-        <option value=""> See All</option>
+        <option value=""> Availability: See All</option>
         <option value={AVAIL}>Available to buy</option>
         <option value={SOLD}>Sold</option>
       </select>

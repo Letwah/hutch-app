@@ -12,7 +12,7 @@ const Sort = () => {
   return (
     <>
       <select onChange={(e) => dispatch(setSort(e.target.value))}>
-        <option value="">Reset</option>
+        <option value="">Sort by price</option>
         <option value={ASC}>Asc</option>
         <option value={DESC}>Des</option>
       </select>
