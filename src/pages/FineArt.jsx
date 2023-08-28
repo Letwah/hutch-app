@@ -112,6 +112,10 @@ const FineArt = () => {
                 <div className="details">
                   <h2>{item.title}</h2>
                   <h3>{item.medium}</h3>
+                  <p>
+                    {item.date}, {item.size}
+                  </p>
+
                   <h3>£{(item.price / 100).toFixed(2)}</h3>
                   {item.sold ? (
                     <button
@@ -124,16 +128,15 @@ const FineArt = () => {
                   ) : (
                     <p className="sold">SOLD</p>
                   )}
-                  <p>{item.date}</p>
-                  <p>{item.size}</p>
 
+                  {/* 
                   <button
                     onClick={() => {
                       showModal("./assets/images/fineArt" + item.image);
                     }}
                   >
                     detailed view
-                  </button>
+                  </button> */}
                 </div>
               </section>
             );
