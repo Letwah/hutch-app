@@ -264,6 +264,7 @@ img.artIcon {
 
 img.artIcon:hover,
 img.illustrationIcon:hover {
+  -webkit-transform: scale(1.5);
   transform: scale(1.5);
   transition: transform 0.4s ease-in-out;
 }
@@ -405,6 +406,7 @@ img.artIcon {
 
   img.artIcon:hover,
   img.illustrationIcon:hover {
+    -webkit-transform: scale(1.5) translate(10px);
     transform: scale(1.5) translate(10px);
   }
 

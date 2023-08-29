@@ -47,18 +47,23 @@ const CartCheckout = () => {
         onSubmit={handleSubmit}
       >
         <div>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name">Name: *</label>
           <input type="text" id="name" name="name" required />
           <p>{errors.name}</p>
         </div>
         <div>
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email">Email: *</label>
           <input type="email" id="email" name="email" required />
           <p>{errors.email}</p>
         </div>
         <div>
-          <label htmlFor="message">Message:</label>
-          <textarea id="message" name="message" required />
+          <label htmlFor="message">Message: *</label>
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Please write the details of the piece / pieces of your you are interested in buying.  "
+            required
+          />
           <p>{errors.message}</p>
         </div>
         <button type="submit">Submit Enquiry</button>

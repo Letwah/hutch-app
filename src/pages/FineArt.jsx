@@ -142,7 +142,7 @@ const FineArt = () => {
                         dispatch(addProductToCart(item.id));
                       }}
                     >
-                      buy
+                      Purchase Enquiry
                     </button>
                   ) : (
                     <p className="sold">SOLD</p>
