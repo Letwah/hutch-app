@@ -51,18 +51,13 @@ const Cart = () => {
             return (
               <div key={item.id}>
                 <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
-                <div>
+                <div className="cartItemDetails">
                   <img
                     className="imageContainerCart"
                     src={`./assets/images/fineArt${item.image}`}
                     loading="lazy"
                   ></img>
                   <div className="totalRemove">
-                    <div>
-                      <button className="total">
-                        Total = £{(total / 100).toFixed(2)}
-                      </button>
-                    </div>
                     <button
                       className="remove"
                       onClick={() => {
@@ -77,15 +72,20 @@ const Cart = () => {
             );
           })}
 
-          <button
-            onClick={() => {
-              setSelectCartCheckout(true); // Update state to show CartCheckout
-            }}
-          >
-            Purchase Enquiry
-          </button>
-          {selectCartCheckout && <CartCheckout />}
-          {/* //render cart checkout if it is requested */}
+          <div className="totalBuy">
+            <button className="total">
+              Total = £{(total / 100).toFixed(2)}
+            </button>
+            <button
+              onClick={() => {
+                setSelectCartCheckout(true); // Update state to show CartCheckout
+              }}
+            >
+              Purchase Enquiry
+            </button>
+            {selectCartCheckout && <CartCheckout />}
+            {/* //render cart checkout if it is requested */}
+          </div>
         </div>
       </div>
     </>

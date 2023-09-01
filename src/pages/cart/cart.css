@@ -127,13 +127,25 @@ button.total:active::after {
   opacity: 0;
 }
 
+div.cartItemDetails {
+  display: flex;
+  align-items: baseline;
+}
+
 .totalRemove {
   display: flex;
   align-content: center;
   justify-content: space-between;
-  flex-direction: row;
+  flex-direction: row-reverse;
   flex-wrap: wrap;
   align-items: baseline;
+}
+
+.totalBuy {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  flex-direction: row;
 }
 
 .remove {
@@ -142,7 +154,7 @@ button.total:active::after {
 
 @media only screen and (min-width: 800px) {
   .cartBox {
-    width: 60vw;
+    width: 75vw;
     padding: 5rem;
   }
   div.cartBox {
