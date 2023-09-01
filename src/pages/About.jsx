@@ -9,6 +9,9 @@ const About = () => {
   const dispatch = useDispatch();
   return (
     <>
+      <div class="flier">
+        <img src="./assets/images/icons/palletjimmySmall.svg"></img>
+      </div>
       <section
         className="aboutBackground"
         style={
