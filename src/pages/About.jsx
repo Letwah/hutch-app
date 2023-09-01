@@ -23,7 +23,7 @@ const About = () => {
           </div>
           <div className="aboutDetails">
             <div>
-              <h2>ABOUT </h2>
+              <h2>About</h2>
             </div>
             <div>
               <p>
@@ -32,8 +32,8 @@ const About = () => {
                 and colour. My have enjoyed working on projects in the realms of
                 science, lifestyle, environment, and social well-being through
                 my practice. Collaborating with like minded people on
-                illustration projects is my jam, so please don't hesitate to
-                reach out with any inquiries.
+                illustration projects is my speciality, so please don't hesitate
+                to reach out with any inquiries.
               </p>
             </div>
             <div>
@@ -72,10 +72,8 @@ const About = () => {
 
           <div>
             <h2>Exhibitions</h2>
-            Previous exhibitions Artist in residence placement at Helmingham
-            Hall Gardens in Suffolk.
+            Previous exhibitions have included solo exhibitions at
             <div>
-              Had solo exhibitions at
               <ul>
                 <li>Vortex Jazz Bar Gallery - Stoke Newington, London</li>
                 <li>The Truman Brewery Gallery - Brick Lane, London</li>

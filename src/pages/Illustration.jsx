@@ -62,8 +62,8 @@ const Illustration = () => {
                 <div className="details">
                   <h1>{item.title}</h1>
                   <p>{item.description}</p>
-                  <p>{item.date}</p>
-                  <p>{item.medium}</p>
+                  <h2>{item.date}</h2>
+                  <p2>{item.medium}</p2>
                 </div>
                 <div className="imageContainer">
                   {item.images.map((imageUrl) => {

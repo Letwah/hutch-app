@@ -16,10 +16,13 @@
 .illustrationContainer .illustration {
   padding: 1rem;
 }
-
+.details {
+  background-color: transparent;
+}
 .details h1 {
   padding: 0.2rem 0 0.5rem 0;
 }
+
 section.illustration.card {
   position: relative;
   cursor: pointer;

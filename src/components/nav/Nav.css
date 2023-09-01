@@ -16,7 +16,7 @@
 
 .nav p {
   padding: 1rem 0 0.2rem 0;
-  font-weight: 800;
+  font-weight: 700;
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--text--primary);
@@ -47,7 +47,7 @@
   }
 
   .nav p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 
