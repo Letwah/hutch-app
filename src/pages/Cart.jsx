@@ -83,9 +83,10 @@ const Cart = () => {
             >
               Purchase Enquiry
             </button>
-            {selectCartCheckout && <CartCheckout />}
-            {/* //render cart checkout if it is requested */}
           </div>
+          {selectCartCheckout && <CartCheckout />}
+          {/* //render cart checkout if it is requested 
+          Ideally reder a modal here at somepoint..*/}
         </div>
       </div>
     </>
