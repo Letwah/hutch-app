@@ -64,6 +64,7 @@ const Cart = () => {
                       </button>
                     </div>
                     <button
+                      className="remove"
                       onClick={() => {
                         dispatch(removeProductFromCart(item.id));
                       }}

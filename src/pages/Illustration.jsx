@@ -39,7 +39,7 @@ const Illustration = () => {
 
   return (
     <>
-      {console.log("Rendering Illustration component")}
+      {/* {console.log("Rendering Illustration component")} */}
       {isModalVisible && (
         <Modal
           visible={isModalVisible}

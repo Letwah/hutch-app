@@ -135,6 +135,11 @@ button.total:active::after {
   flex-wrap: wrap;
   align-items: baseline;
 }
+
+.remove {
+  font-size: 0.7rem;
+}
+
 @media only screen and (min-width: 800px) {
   .cartBox {
     width: 60vw;
