@@ -57,20 +57,25 @@ const Cart = () => {
                     src={`./assets/images/fineArt${item.image}`}
                     loading="lazy"
                   ></img>
-                  <button
-                    onClick={() => {
-                      dispatch(removeProductFromCart(item.id));
-                    }}
-                  >
-                    Remove
-                  </button>
+                  <div className="totalRemove">
+                    <div>
+                      <button className="total">
+                        Total = £{(total / 100).toFixed(2)}
+                      </button>
+                    </div>
+                    <button
+                      onClick={() => {
+                        dispatch(removeProductFromCart(item.id));
+                      }}
+                    >
+                      Remove
+                    </button>
+                  </div>
                 </div>
               </div>
             );
           })}
-          <div>
-            <p>Total = £{(total / 100).toFixed(2)}</p>
-          </div>
+
           <button
             onClick={() => {
               setSelectCartCheckout(true); // Update state to show CartCheckout
