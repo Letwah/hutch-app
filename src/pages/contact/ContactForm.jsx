@@ -9,6 +9,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const [userInput, setUserInput] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -18,20 +19,37 @@ const ContactForm = () => {
     const res = await validate(userInput, "contactForm");
 
     if (!res) {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      }).then((res) => res.json());
-
-      if (response.success) {
-        dispatch(setToastContent("Thanks for getting in touch!"));
-      } else {
-        console.error("Error from API:", response.message);
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+        console.log(response);
+        // dispatch(setToastContent("Thanks for getting in touch!"));
+        setSubmitted(true);
+      } catch (error) {
+        console.log(error);
       }
-      return;
     }
-    setErrors(res);
+    setErrors(!res ? {} : res);
   };
+
+  if (submitted) {
+    dispatch(setToastContent("Thanks for getting in touch!"));
+    return <p>We'll get back to you asap!</p>;
+  }
+
+  //     .then((res) => res.json());
+
+  //     if (response.success) {
+  //       dispatch(setToastContent("Thanks for getting in touch!"));
+  //     } else {
+  //       console.error("Error from API:", response.message);
+  //     }
+  //     return;
+  //   }
+  //   setErrors(res);
+  // };
 
   return (
     <form
