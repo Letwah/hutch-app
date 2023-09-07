@@ -5,11 +5,12 @@ import { setToastContent } from "../../features/appSlice";
 
 import { API_KEY } from "../../key";
 
-const CartCheckout = () => {
+const CartCheckout = (props) => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const [userInput, setUserInput] = useState({});
-  const [submitted, setSubmitted] = useState(false);
+
+  // const [selectCartCheckout, setSelectCartCheckout] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,7 +26,9 @@ const CartCheckout = () => {
         });
         console.log(response);
 
-        setSubmitted(true);
+        props.setSubmitted(true);
+        setSelectCartCheckout(false);
+        dispatch(setToastContent("Thank you for your purchase enquiry!"));
       } catch (error) {
         console.log(error);
       }
@@ -33,8 +36,8 @@ const CartCheckout = () => {
     setErrors(!res ? {} : res);
   };
 
-  if (submitted) {
-    dispatch(setToastContent("Thank you for your purchase enquiry!"));
+  console.log(props.submitted);
+  if (props.submitted) {
     return (
       <h2>
         The items are reserved and we will be in touch to arrange payment. Thank
@@ -73,13 +76,6 @@ const CartCheckout = () => {
           <p>{errors.message}</p>
         </div>
         <button type="submit">Submit Enquiry</button>
-        {/* Dont need this message cos of toastify ....
-      
-      <div className="contactMsg">
-        <p>
-          Jimmy will get back to you asap! <br></br>Thanks for getting in touch.
-        </p>
-      </div> */}
       </form>
     </>
   );

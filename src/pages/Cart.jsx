@@ -15,7 +15,8 @@ import EmptyCart from "./cart/EmptyCart";
 const Cart = () => {
   const page = useSelector(selectPage);
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
-  const [selectCartCheckout, setSelectCartCheckout] = useState(false);
+  const [selectCartCheckout, setSelectCartCheckout] = useState(false); //rename to showContactForm/ contactFormSubitted
+  const [submitted, setSubmitted] = useState(false);
 
   const cartItemIds = useSelector(selectCartItemIds);
   const cartItems = fineArtCatalogue.filter((item) => {
@@ -24,7 +25,7 @@ const Cart = () => {
   // const fineArt = useSelector(selectFineArtCatalogue);
   const dispatch = useDispatch();
 
-  console.log("testing", cartItems);
+  console.log(cartItems);
   let total = 0;
   cartItems.forEach((item) => {
     total += item.price;
@@ -47,7 +48,8 @@ const Cart = () => {
       >
         <div className="cartBox">
           <h1>{page}</h1>
-          {!selectCartCheckout &&
+
+          {!submitted &&
             cartItems.map((item) => {
               return (
                 <div key={item.id}>
@@ -72,23 +74,30 @@ const Cart = () => {
                 </div>
               );
             })}
+
           {!selectCartCheckout && (
             <div className="totalBuy">
               <button className="total">
                 Total = £{(total / 100).toFixed(2)}
               </button>
-              {!selectCartCheckout && (
-                <button
-                  onClick={() => {
-                    setSelectCartCheckout(true); // Update state to show CartCheckout
-                  }}
-                >
-                  Purchase Enquiry
-                </button>
-              )}
+
+              <button
+                onClick={() => {
+                  setSelectCartCheckout(true); // Update state to show CartCheckout
+                }}
+              >
+                Purchase Enquiry
+              </button>
             </div>
           )}
-          {selectCartCheckout && <CartCheckout />}
+
+          {selectCartCheckout && (
+            <CartCheckout
+              submitted={submitted}
+              setSubmitted={setSubmitted}
+              onSubmitSuccess={() => setSelectCartCheckout(false)}
+            />
+          )}
         </div>
       </div>
     </>
