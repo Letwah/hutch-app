@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { validate } from "../../validation";
 import { useDispatch } from "react-redux";
-import { setToastContent } from "../../features/appSlice";
+import {
+  setToastContent,
+  setSubmitted,
+  setPage,
+} from "../../features/appSlice";
 
 import { API_KEY } from "../../key";
 
@@ -24,7 +28,7 @@ const CartCheckout = (props) => {
         });
         console.log(response);
 
-        props.setSubmitted(true);
+        dispatch(setSubmitted(true));
         purchaseEnqFormSubmitted(false);
         dispatch(setToastContent("Thank you for your purchase enquiry!"));
       } catch (error) {
@@ -37,10 +41,19 @@ const CartCheckout = (props) => {
   console.log(props.submitted);
   if (props.submitted) {
     return (
-      <h2>
-        The items are reserved and we will be in touch to arrange payment. Thank
-        You! &#128578; &#128077;
-      </h2>
+      <>
+        <h2>
+          The items are reserved and we will be in touch to arrange payment.
+          Thank You! &#128578; &#128077;
+        </h2>
+        <button
+          onClick={() => {
+            dispatch(setPage("FINE_ART"));
+          }}
+        >
+          Back to Fine Art
+        </button>
+      </>
     );
   }
 

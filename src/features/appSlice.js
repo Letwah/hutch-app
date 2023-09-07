@@ -22,6 +22,7 @@ const initialState = {
   modalImage: "",
   isModalVisible: false,
   burgerOpen: false,
+  submitted: false,
 };
 
 const appSlice = createSlice({
@@ -89,6 +90,9 @@ const appSlice = createSlice({
     setPurchaseEnq: (state, action) => {
       state.purchaseEnq = action.payload;
     },
+    setSubmitted: (state, action) => {
+      state.submitted = action.payload;
+    },
   },
 });
 
@@ -109,6 +113,7 @@ export const {
   setFineArt,
   setIllustration,
   setPurchaseEnq,
+  setSubmitted,
 } = appSlice.actions;
 
 export const selectPage = (state) => state.app.page;
@@ -128,5 +133,6 @@ export const selectModalImage = (state) => state.app.modalImage;
 
 export const selectBurgerOpen = (state) => state.app.burgerOpen;
 export const selectPurchaseEnq = (state) => state.app.purchaseEnq;
+export const selectSubmitted = (state) => state.app.submitted;
 
 export default appSlice.reducer;

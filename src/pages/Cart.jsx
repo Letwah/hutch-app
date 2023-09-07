@@ -5,6 +5,7 @@ import {
   selectFineArtCatalogue,
   removeProductFromCart,
   selectPage,
+  selectSubmitted,
 } from "../features/appSlice";
 
 import CartCheckout from "./cart/CartCheckout";
@@ -15,8 +16,8 @@ import EmptyCart from "./cart/EmptyCart";
 const Cart = () => {
   const page = useSelector(selectPage);
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
+  const submitted = useSelector(selectSubmitted);
   const [showPurchaseEnqForm, purchaseEnqFormSubmitted] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
 
   const cartItemIds = useSelector(selectCartItemIds);
   const cartItems = fineArtCatalogue.filter((item) => {
@@ -94,7 +95,6 @@ const Cart = () => {
           {showPurchaseEnqForm && (
             <CartCheckout
               submitted={submitted}
-              setSubmitted={setSubmitted}
               onSubmitSuccess={() => purchaseEnqFormSubmitted(false)}
             />
           )}
