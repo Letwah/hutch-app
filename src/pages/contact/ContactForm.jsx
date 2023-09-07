@@ -39,18 +39,6 @@ const ContactForm = () => {
     return <p>We'll get back to you asap!</p>;
   }
 
-  //     .then((res) => res.json());
-
-  //     if (response.success) {
-  //       dispatch(setToastContent("Thanks for getting in touch!"));
-  //     } else {
-  //       console.error("Error from API:", response.message);
-  //     }
-  //     return;
-  //   }
-  //   setErrors(res);
-  // };
-
   return (
     <form
       onInput={(e) => {
