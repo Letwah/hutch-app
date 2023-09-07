@@ -10,8 +10,6 @@ const CartCheckout = (props) => {
   const [errors, setErrors] = useState({});
   const [userInput, setUserInput] = useState({});
 
-  // const [selectCartCheckout, setSelectCartCheckout] = useState(false);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
