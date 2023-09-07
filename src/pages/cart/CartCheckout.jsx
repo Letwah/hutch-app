@@ -38,7 +38,7 @@ const CartCheckout = () => {
     return (
       <h2>
         The items are reserved and we will be in touch to arrange payment. Thank
-        You!
+        You! &#128578; &#128077;
       </h2>
     );
   }
@@ -86,23 +86,3 @@ const CartCheckout = () => {
 };
 
 export default CartCheckout;
-
-//   if (!res) {
-//     const response = await fetch("https://api.web3forms.com/submit", {
-//       method: "POST",
-//       body: formData,
-//     }).then((res) => res.json());
-
-//     if (response.success) {
-//       dispatch(
-//         setToastContent(
-//           "Thank you for your interest in Jimmy's work.  The items are reserved and we will be in touch to arrange payment!"
-//         )
-//       );
-//     } else {
-//       console.error("Error from API:", response.message);
-//     }
-//     return;
-//   }
-//   setErrors(res);
-// };

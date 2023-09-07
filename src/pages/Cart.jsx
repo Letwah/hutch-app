@@ -47,46 +47,48 @@ const Cart = () => {
       >
         <div className="cartBox">
           <h1>{page}</h1>
-          {cartItems.map((item) => {
-            return (
-              <div key={item.id}>
-                <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
-                <div className="cartItemDetails">
-                  <img
-                    className="imageContainerCart"
-                    src={`./assets/images/fineArt${item.image}`}
-                    loading="lazy"
-                  ></img>
-                  <div className="totalRemove">
-                    <button
-                      className="remove"
-                      onClick={() => {
-                        dispatch(removeProductFromCart(item.id));
-                      }}
-                    >
-                      Remove
-                    </button>
+          {!selectCartCheckout &&
+            cartItems.map((item) => {
+              return (
+                <div key={item.id}>
+                  <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
+                  <div className="cartItemDetails">
+                    <img
+                      className="imageContainerCart"
+                      src={`./assets/images/fineArt${item.image}`}
+                      loading="lazy"
+                    ></img>
+                    <div className="totalRemove">
+                      <button
+                        className="remove"
+                        onClick={() => {
+                          dispatch(removeProductFromCart(item.id));
+                        }}
+                      >
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 </div>
-              </div>
-            );
-          })}
-
-          <div className="totalBuy">
-            <button className="total">
-              Total = £{(total / 100).toFixed(2)}
-            </button>
-            <button
-              onClick={() => {
-                setSelectCartCheckout(true); // Update state to show CartCheckout
-              }}
-            >
-              Purchase Enquiry
-            </button>
-          </div>
+              );
+            })}
+          {!selectCartCheckout && (
+            <div className="totalBuy">
+              <button className="total">
+                Total = £{(total / 100).toFixed(2)}
+              </button>
+              {!selectCartCheckout && (
+                <button
+                  onClick={() => {
+                    setSelectCartCheckout(true); // Update state to show CartCheckout
+                  }}
+                >
+                  Purchase Enquiry
+                </button>
+              )}
+            </div>
+          )}
           {selectCartCheckout && <CartCheckout />}
-          {/* //render cart checkout if it is requested 
-          Ideally reder a modal here at somepoint..*/}
         </div>
       </div>
     </>
