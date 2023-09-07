@@ -9,6 +9,7 @@ const CartCheckout = () => {
   const dispatch = useDispatch();
   const [errors, setErrors] = useState({});
   const [userInput, setUserInput] = useState({});
+  const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -16,26 +17,51 @@ const CartCheckout = () => {
     const formData = new FormData(e.target);
     formData.append("access_key", API_KEY);
     const res = await validate(userInput, "contactForm");
-
     if (!res) {
-      const response = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: formData,
-      }).then((res) => res.json());
+      try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          body: formData,
+        });
+        console.log(response);
 
-      if (response.success) {
-        dispatch(
-          setToastContent(
-            "Thank you for your interest in Jimmy's work.  The items are reserved and we will be in touch to arrange payment!"
-          )
-        );
-      } else {
-        console.error("Error from API:", response.message);
+        setSubmitted(true);
+      } catch (error) {
+        console.log(error);
       }
-      return;
     }
-    setErrors(res);
+    setErrors(!res ? {} : res);
   };
+
+  if (submitted) {
+    dispatch(setToastContent("Thank you for your purchase enquiry!"));
+    return (
+      <h2>
+        The items are reserved and we will be in touch to arrange payment. Thank
+        You!
+      </h2>
+    );
+  }
+
+  //   if (!res) {
+  //     const response = await fetch("https://api.web3forms.com/submit", {
+  //       method: "POST",
+  //       body: formData,
+  //     }).then((res) => res.json());
+
+  //     if (response.success) {
+  //       dispatch(
+  //         setToastContent(
+  //           "Thank you for your interest in Jimmy's work.  The items are reserved and we will be in touch to arrange payment!"
+  //         )
+  //       );
+  //     } else {
+  //       console.error("Error from API:", response.message);
+  //     }
+  //     return;
+  //   }
+  //   setErrors(res);
+  // };
 
   return (
     <>
