@@ -15,14 +15,14 @@ import EmptyCart from "./cart/EmptyCart";
 const Cart = () => {
   const page = useSelector(selectPage);
   const fineArtCatalogue = useSelector(selectFineArtCatalogue);
-  const [selectCartCheckout, setSelectCartCheckout] = useState(false); //rename to showContactForm/ contactFormSubitted
+  const [showPurchaseEnqForm, purchaseEnqFormSubmitted] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   const cartItemIds = useSelector(selectCartItemIds);
   const cartItems = fineArtCatalogue.filter((item) => {
     if (cartItemIds.includes(item.id, item.image)) return true;
   });
-  // const fineArt = useSelector(selectFineArtCatalogue);
+
   const dispatch = useDispatch();
 
   console.log(cartItems);
@@ -75,7 +75,7 @@ const Cart = () => {
               );
             })}
 
-          {!selectCartCheckout && (
+          {!showPurchaseEnqForm && (
             <div className="totalBuy">
               <button className="total">
                 Total = £{(total / 100).toFixed(2)}
@@ -83,7 +83,7 @@ const Cart = () => {
 
               <button
                 onClick={() => {
-                  setSelectCartCheckout(true); // Update state to show CartCheckout
+                  purchaseEnqFormSubmitted(true); // Update state to show CartCheckout
                 }}
               >
                 Purchase Enquiry
@@ -91,11 +91,11 @@ const Cart = () => {
             </div>
           )}
 
-          {selectCartCheckout && (
+          {showPurchaseEnqForm && (
             <CartCheckout
               submitted={submitted}
               setSubmitted={setSubmitted}
-              onSubmitSuccess={() => setSelectCartCheckout(false)}
+              onSubmitSuccess={() => purchaseEnqFormSubmitted(false)}
             />
           )}
         </div>

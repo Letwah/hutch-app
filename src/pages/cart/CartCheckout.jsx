@@ -25,7 +25,7 @@ const CartCheckout = (props) => {
         console.log(response);
 
         props.setSubmitted(true);
-        setSelectCartCheckout(false);
+        purchaseEnqFormSubmitted(false);
         dispatch(setToastContent("Thank you for your purchase enquiry!"));
       } catch (error) {
         console.log(error);
