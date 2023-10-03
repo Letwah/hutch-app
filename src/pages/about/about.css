@@ -118,6 +118,10 @@ div.links {
   z-index: 999999;
 }
 
+[data-theme="dark"] .flier > * {
+  filter: invert();
+}
+
 @keyframes fly {
   98.001%,
   0% {
