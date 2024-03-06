@@ -1,4 +1,3 @@
-import React from "react";
 import { useDispatch } from "react-redux";
 import "./about/about.css";
 import { urlArtInstagram, urlIllustrationInsta } from "../config";
@@ -9,7 +8,7 @@ const About = () => {
   const dispatch = useDispatch();
   return (
     <>
-      <div class="flier">
+      <div className="flier">
         <img src="./assets/images/icons/palletjimmySmall.svg"></img>
       </div>
       <section
@@ -35,8 +34,8 @@ const About = () => {
                 and colour. My have enjoyed working on projects in the realms of
                 science, lifestyle, environment, and social well-being through
                 my practice. Collaborating with like minded people on
-                illustration projects is my speciality, so please don't hesitate
-                to reach out with any inquiries.
+                illustration projects is my speciality, so please don&apos;t
+                hesitate to reach out with any inquiries.
               </p>
             </div>
             <div>
@@ -56,8 +55,8 @@ const About = () => {
             Hutch studied BA Fine Art at Central St Martins, London from
             2000-2004. He now lives in Woodbridge, Suffolk with his wife
             (Photographic artist + Visual Designer Colette Smith) and son.
-            Painting outside within the landscape was Hutch's staple diet for
-            many years. The Suffolk skies and woodlands near his home have
+            Painting outside within the landscape was Hutch&apos;s staple diet
+            for many years. The Suffolk skies and woodlands near his home have
             propagated this. One hallmark of his oil paintings has been the
             staccato, obsessive brushwork that seeks to describe plane and
             contour in nature. Over time his practice has permeated many
@@ -67,10 +66,10 @@ const About = () => {
             technological advancements and trends, artfully drawn line will
             always be valued as a tool that can deftly communicate an exciting
             piece of research, a product, a brand identity or a story that needs
-            telling. The 'Fine Artist' in him is seemingly allowed to morph and
-            reinvent style and rationales for making, whilst the 'Illustrator'
-            consistently brings together neatly coordinated images, on brief and
-            on schedule.
+            telling. The &apos;Fine Artist&apos; in him is seemingly allowed to
+            morph and reinvent style and rationales for making, whilst the
+            &apos;Illustrator&apos; consistently brings together neatly
+            coordinated images, on brief and on schedule.
           </div>
 
           <div>
