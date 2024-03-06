@@ -1,5 +1,5 @@
-import { useDispatch, useSelector } from "react-redux";
-import { setSold, selectSold } from "../../features/appSlice";
+import { useDispatch } from "react-redux";
+import { setSold } from "../../features/appSlice";
 import { AVAIL, SOLD } from "../../store/types";
 
 const Sold = () => {

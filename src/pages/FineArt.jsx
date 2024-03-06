@@ -58,26 +58,14 @@ const FineArt = () => {
     });
   }
 
-  // console.log(sold);
-  // //sort by sold / not sold
-  // if (sold) {
-  //   filtered = fineArt.filter((item) => {
-  //     if (sold === SOLD) {
-  //       return item.sold == false; // sql 1 = true hence loose comparison
-  //     } else {
-  //       return item.sold == true;
-  //     }
-  //   });
-  // }
-
   console.log(sold);
-  // Sort by sold / not sold
+  //sort by sold / not sold
   if (sold) {
     filtered = fineArt.filter((item) => {
       if (sold === SOLD) {
-        return item.sold == true; // Return items that are sold
+        return item.sold == false; // sql 1 = true hence loose comparison
       } else {
-        return item.sold == false; // Return items that are not sold
+        return item.sold == true;
       }
     });
   }
