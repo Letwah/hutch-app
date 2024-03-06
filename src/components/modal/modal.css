@@ -36,7 +36,7 @@
 }
 .modal-dialog {
   position: relative;
-  /* width: 95vw; */
+  max-width: 95vw;
   background-color: #f2f2f2a1;
   border: 3px solid var(--border-color);
   padding: 50px;

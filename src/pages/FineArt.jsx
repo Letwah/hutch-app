@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
