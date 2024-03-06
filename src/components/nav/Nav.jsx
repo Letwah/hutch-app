@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import Burger from "../menu/Burger";
 // import { ReactSVG } from "react-svg";
 // import { urlArtInstagram, urlIllustrationInsta } from "../../config";
+import { urlColetteSmithDeveloper } from "../../config";
 import {
   setPage,
   selectBurgerOpen,
@@ -114,10 +115,10 @@ const Nav = () => {
             Home
           </p>
         </div>
+        <div className="copyright">
+          <a href={urlColetteSmithDeveloper}>© Colette Smith 2024</a>
+        </div>
       </div>
-      {/* <div className="social">
-        <h1>social</h1>
-      </div> */}
     </>
   );
 };

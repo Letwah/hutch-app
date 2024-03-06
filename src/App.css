@@ -72,8 +72,9 @@ h2 {
   text-transform: uppercase;
 }
 
-p2 {
-  font-size: 0.7rem;
+p {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 button {
@@ -323,6 +324,26 @@ INVERT SEEMS TO BE MAKING THEM SHOW WHEN MENU CLOSED???? */
     "nav";
   grid-area: 1 / 1 / 4 / 2;
   overflow: unset;
+}
+
+.copyright {
+  margin-top: 1rem;
+}
+
+.copyright a {
+  font-size: 0.5rem;
+  color: var(--text-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  background-color: transparent;
+  padding: 0.5rem;
+  transition: background-color 0.5s ease-in-out;
+}
+.copyright a:hover {
+  animation: glow 3s infinite alternate;
+  background-color: var(--links);
+  transition: background-color 0.5s ease-in-out;
 }
 
 .logo {

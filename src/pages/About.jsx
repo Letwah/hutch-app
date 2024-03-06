@@ -1,8 +1,13 @@
 import { useDispatch } from "react-redux";
 import "./about/about.css";
-import { urlArtInstagram, urlIllustrationInsta } from "../config";
+import {
+  urlArtInstagram,
+  urlColetteSmithDeveloper,
+  urlIllustrationInsta,
+} from "../config";
 import { setPage } from "../features/appSlice";
 import { CONTACT } from "../store/types";
+// import Footer from "../components/footer/Footer";
 
 const About = () => {
   const dispatch = useDispatch();
@@ -102,6 +107,11 @@ const About = () => {
             <div className="links">
               <a href={urlArtInstagram}>
                 Art Instagram <span>&#8680;</span>
+              </a>
+            </div>
+            <div className="links">
+              <a href={urlColetteSmithDeveloper}>
+                Web Design and Development by Colette Smith <span>&#8680;</span>
               </a>
             </div>
           </div>

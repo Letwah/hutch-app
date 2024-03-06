@@ -42,6 +42,9 @@ select {
 
 .fineArt.card {
   margin-left: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .imageContainer {
   position: relative;
@@ -79,12 +82,13 @@ select {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+
   /* position: relative;
   bottom: 90%;
   left: 50%; */
   transform: translate(5%, 0%);
   text-align: left;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   /* background-color: #57ff5cb0;
   border: 2px solid var(--accent); */
   /* color: rgb(0, 0, 0); */

@@ -23,7 +23,7 @@ import FineArt from "./pages/FineArt";
 import Illustration from "./pages/Illustration";
 import Cart from "./pages/Cart";
 import About from "./pages/About";
-// import Footer from "./components/footer/Footer";
+
 import Nav from "./components/nav/Nav";
 import Burger from "./components/menu/Burger";
 
@@ -136,6 +136,7 @@ const App = () => {
 
         <div className="sidebar" ref={sidebarRef}>
           <Nav />
+
           {/* <div>
             <button
               className="clear"
