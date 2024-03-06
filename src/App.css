@@ -26,6 +26,8 @@
   );
 
   --links: rgb(0, 255, 123);
+
+  --modal-veil-bg: rgba(0, 255, 123, 0.75);
 }
 
 [data-theme="dark"] {
@@ -36,6 +38,7 @@
   --border-color: #fefefe;
   --shadow-color: #fefefe;
   --div-background-color: #1b1b1b;
+  --modal-veil-bg: rgba(27, 27, 27, 0.85);
 }
 
 * {
