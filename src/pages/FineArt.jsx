@@ -58,15 +58,26 @@ const FineArt = () => {
     });
   }
 
+  // console.log(sold);
+  // //sort by sold / not sold
+  // if (sold) {
+  //   filtered = fineArt.filter((item) => {
+  //     if (sold === SOLD) {
+  //       return item.sold == false; // sql 1 = true hence loose comparison
+  //     } else {
+  //       return item.sold == true;
+  //     }
+  //   });
+  // }
+
   console.log(sold);
-  //sort by sold / not sold
+  // Sort by sold / not sold
   if (sold) {
     filtered = fineArt.filter((item) => {
-      // console.log(item.avail);
       if (sold === SOLD) {
-        return item.sold == false; // sql 1 = true hence loose comparison
+        return item.sold == true; // Return items that are sold
       } else {
-        return item.sold == true;
+        return item.sold == false; // Return items that are not sold
       }
     });
   }
@@ -135,7 +146,8 @@ const FineArt = () => {
                     {item.date}, {item.size}
                   </p>
 
-                  <h3>£{(item.price / 100).toFixed(2)}</h3>
+                  {item.sold ? <h3>£{(item.price / 100).toFixed(2)}</h3> : null}
+
                   {item.sold ? (
                     <button
                       onClick={() => {
