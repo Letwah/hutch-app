@@ -36,22 +36,23 @@
 
 form {
   padding: 0.5rem;
+  width: 100%;
 }
 
 div.contactForm {
-  max-width: 100vw;
+  width: 80vw;
 }
 
 .contactForm > form button {
   margin: 0 auto 0 0.5rem;
 }
 .contactForm > form input {
-  width: 30vw;
+  width: 100%;
 }
 
 textarea {
   margin-bottom: 2rem;
-  width: 15rem;
+  width: 100%;
   height: 10rem;
   color: var(--border-color);
 }
@@ -61,11 +62,17 @@ textarea {
 }
 
 @media only screen and (min-width: 800px) {
-  /* .contactForm {
-    width: 50vw;
-  } */
+  .contactForm {
+    max-width: 80vw;
+  }
   textarea {
-    width: 30vw;
+    width: 100%;
     height: 30vh;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  .contactForm {
+    max-width: 50vw;
   }
 }

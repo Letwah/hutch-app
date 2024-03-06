@@ -1,8 +1,6 @@
 //pages are for routes
 //imr + sfc
 
-import React from "react";
-
 import ContactForm from "./contact/ContactForm";
 import "./contact/contact.css";
 

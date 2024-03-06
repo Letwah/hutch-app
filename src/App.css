@@ -1,6 +1,11 @@
 /* 
 ----------------- */
 
+@font-face {
+  font-family: "Satoshi", sans-serif;
+  src: url(./assets/fonts/Satoshi-Variable.woff2);
+}
+
 :root {
   --background: #1b1b1b;
   --text-primary: #1b1b1b;
@@ -47,7 +52,7 @@
 
 body {
   text-align: justify;
-  font-family: "Work Sans", sans-serif;
+  font-family: "Satoshi", sans-serif;
   min-width: 430px;
 }
 

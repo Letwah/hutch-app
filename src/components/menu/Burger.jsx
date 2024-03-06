@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+// import React, { useEffect } from "react";
 import "./burger.css";
-import { gsap } from "gsap";
+// import { gsap } from "gsap";
 
 import { useSelector } from "react-redux";
 

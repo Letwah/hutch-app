@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 // import Burger from "../menu/Burger";
-import { ReactSVG } from "react-svg";
-import { urlArtInstagram, urlIllustrationInsta } from "../../config";
+// import { ReactSVG } from "react-svg";
+// import { urlArtInstagram, urlIllustrationInsta } from "../../config";
 import {
   setPage,
   selectBurgerOpen,
@@ -23,6 +23,8 @@ const Nav = () => {
   const isOpen = useSelector(selectBurgerOpen);
   const dispatch = useDispatch();
 
+  console.log(isOpen);
+
   //router
   useEffect(() => {
     const pages = [INTRO, FINE_ART, CART, ILLUSTRATION, CONTACT, ABOUT];
@@ -33,7 +35,7 @@ const Nav = () => {
     if (pages.includes(page)) {
       dispatch(setPage(page));
     }
-  }, []);
+  });
 
   //attempt to move icons when the burger is shut on dark mode
 

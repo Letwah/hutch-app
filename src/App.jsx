@@ -155,7 +155,7 @@ const App = () => {
               <h1>{page}</h1>
             </div> */}
             <div className="artIcon">
-              <a href={urlArtInstagram} target="_blank">
+              <a href={urlArtInstagram} rel="noreferrer" target="_blank">
                 <img
                   className="artIcon"
                   src="./assets/images/icons/HutchPallet-1.svg"
@@ -183,7 +183,7 @@ const App = () => {
               </svg>
             </div>
             <div className="illustrationIcon">
-              <a href={urlIllustrationInsta} target="_blank">
+              <a href={urlIllustrationInsta} rel="noreferrer" target="_blank">
                 {/* <ReactSVG src="./assets/images/icons/H-pens.svg" /> */}
                 <img
                   className="illustrationIcon"
