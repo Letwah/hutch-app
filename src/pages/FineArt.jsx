@@ -33,6 +33,7 @@ const FineArt = () => {
   const isModalVisible = useSelector(selectIsModalVisible);
   const dispatch = useDispatch();
 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   let filtered = [...fineArt];
 
   // Apply search filter if a search term is present
@@ -87,13 +88,12 @@ const FineArt = () => {
     gsap.registerPlugin(ScrollTrigger);
     gsap.fromTo(
       ".fineArtGrid .fineArt",
-      { opacity: 0, y: -30 }, // From
+      { opacity: 0, y: -30 },
       {
-        // To
         opacity: 1,
-        stagger: 0.3,
-        duration: 0.5,
-        y: 0, // End at original position
+        stagger: 0.25,
+        duration: 0.4,
+        y: 0,
         scrollTrigger: {
           trigger: ".fineArtGrid",
           start: "top bottom",

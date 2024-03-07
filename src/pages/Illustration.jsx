@@ -1,4 +1,5 @@
 import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
 import {
   selectIllustrationCatalogue,
   selectModalImage,
@@ -8,6 +9,8 @@ import {
 } from "../features/appSlice";
 import Modal from "../components/modal/Modal";
 import "./illustration/illustration.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Illustration = () => {
   const illustration = useSelector(selectIllustrationCatalogue);
@@ -30,6 +33,26 @@ const Illustration = () => {
   const closeModal = () => {
     dispatch(setIsModalVisible(false));
   };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      ".illustrationContainer .illustration.card .imgDiv",
+      { opacity: 0, y: -30 }, // From
+      {
+        // To
+        opacity: 1,
+        stagger: 0.3,
+        duration: 0.5,
+        y: 0, // End at original position
+        scrollTrigger: {
+          trigger: ".illustrationContainer .illustration.card  .imgDiv",
+          start: "top bottom",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, [illustration]);
 
   //check if the component is mounting at right time...
   if (!illustration) {
