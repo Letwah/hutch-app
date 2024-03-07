@@ -29,14 +29,10 @@ import Burger from "./components/menu/Burger";
 
 import { gsap } from "gsap";
 
-// import hutchLogo from "./assets/images/logos/JimmyHutch.svg";
-
 const App = () => {
   const dispatch = useDispatch();
   const isOpen = useSelector(selectBurgerOpen);
   const page = useSelector(selectPage);
-  // const defaultDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  // const [theme, setTheme] = useLocalStorage("theme", "light");
 
   let theme = localStorage.getItem("theme");
   theme = theme ? theme : "light";
@@ -127,6 +123,7 @@ const App = () => {
 
   return (
     <div>
+      {/* <ScrollToTop /> */}
       <ToastContainer />
 
       <section className="container" data-theme={theme} ref={containerRef}>
@@ -136,25 +133,10 @@ const App = () => {
 
         <div className="sidebar" ref={sidebarRef}>
           <Nav />
-
-          {/* <div>
-            <button
-              className="clear"
-              onClick={() => {
-                localStorage.clear();
-              }}
-            >
-              CLEAR
-            </button>
-          </div> */}
         </div>
 
         <div className="main-header">
           <div className="header-content">
-            {/* <div className="pageTitle">
-             
-              <h1>{page}</h1>
-            </div> */}
             <div className="artIcon">
               <a href={urlArtInstagram} rel="noreferrer" target="_blank">
                 <img
@@ -185,7 +167,6 @@ const App = () => {
             </div>
             <div className="illustrationIcon">
               <a href={urlIllustrationInsta} rel="noreferrer" target="_blank">
-                {/* <ReactSVG src="./assets/images/icons/H-pens.svg" /> */}
                 <img
                   className="illustrationIcon"
                   src="./assets/images/icons/H-pens.svg"

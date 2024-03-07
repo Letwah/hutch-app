@@ -35,6 +35,7 @@ const Nav = () => {
     const page = uRLParts[uRLParts.length - 1].toUpperCase();
     if (pages.includes(page)) {
       dispatch(setPage(page));
+      window.scrollTo(0, 0);
     }
   });
 

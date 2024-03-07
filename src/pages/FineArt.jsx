@@ -1,10 +1,13 @@
-// import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Search from "./fineArt/Search";
 import Sort from "./fineArt/Sort";
 import Sold from "./fineArt/Sold";
 import SortByDate from "./fineArt/SortByDate";
 import Modal from "../components/modal/Modal";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import {
   selectFineArtCatalogue,
   addProductToCart,
@@ -32,36 +35,19 @@ const FineArt = () => {
 
   let filtered = [...fineArt];
 
+  // Apply search filter if a search term is present
   if (search) {
-    filtered = fineArt.filter((item) => {
-      const values = Object.values(item).toString();
-      console.log(values);
-      if (values.toLowerCase().includes(search.toLowerCase())) {
-        return true;
-      }
-    });
-  }
-
-  //
-  console.log(sort);
-  // /sort by asc/dec
-  if (sort === ASC) {
-    filtered.sort((itemOne, itemTwo) => {
-      console.log(itemOne);
-      if (itemOne.price > itemTwo.price) return 1;
-      if (itemOne.price < itemTwo.price) return -1;
-    });
-  } else if (sort === DESC) {
-    filtered.sort((itemOne, itemTwo) => {
-      if (itemOne.price > itemTwo.price) return -1;
-      if (itemOne.price < itemTwo.price) return 1;
+    filtered = filtered.filter((item) => {
+      const values = Object.values(item).toString().toLowerCase();
+      return values.includes(search.toLowerCase());
     });
   }
 
   console.log(sold);
   //sort by sold / not sold
   if (sold) {
-    filtered = fineArt.filter((item) => {
+    filtered = filtered.filter((item) => {
+      //changed from fineArt.filter because of other filters not working in conjunction
       if (sold === SOLD) {
         return item.sold == false; // sql 1 = true hence loose comparison
       } else {
@@ -70,19 +56,22 @@ const FineArt = () => {
     });
   }
 
-  console.log(sortByDate);
-  // /sort by asc/dec
+  // Apply price sorting if a sort option is selected
+  if (sort === ASC) {
+    filtered.sort((itemOne, itemTwo) => itemOne.price - itemTwo.price);
+  } else if (sort === DESC) {
+    filtered.sort((itemOne, itemTwo) => itemTwo.price - itemOne.price);
+  }
+
+  // Apply date sorting if a date sort option is selected
   if (sortByDate === ASC) {
-    filtered.sort((itemOne, itemTwo) => {
-      console.log(itemOne);
-      if (itemOne.date > itemTwo.date) return 1;
-      if (itemOne.date < itemTwo.date) return -1;
-    });
+    filtered.sort(
+      (itemOne, itemTwo) => new Date(itemOne.date) - new Date(itemTwo.date)
+    );
   } else if (sortByDate === DESC) {
-    filtered.sort((itemOne, itemTwo) => {
-      if (itemOne.date > itemTwo.date) return -1;
-      if (itemOne.date < itemTwo.date) return 1;
-    });
+    filtered.sort(
+      (itemOne, itemTwo) => new Date(itemTwo.date) - new Date(itemOne.date)
+    );
   }
 
   const showModal = (image) => {
@@ -93,6 +82,26 @@ const FineArt = () => {
   const closeModal = () => {
     dispatch(setIsModalVisible(false));
   };
+
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.fromTo(
+      ".fineArtGrid .fineArt",
+      { opacity: 0, y: -30 }, // From
+      {
+        // To
+        opacity: 1,
+        stagger: 0.3,
+        duration: 0.5,
+        y: 0, // End at original position
+        scrollTrigger: {
+          trigger: ".fineArtGrid",
+          start: "top bottom",
+          toggleActions: "play none none none",
+        },
+      }
+    );
+  }, [filtered]);
 
   return (
     <>
@@ -138,7 +147,9 @@ const FineArt = () => {
 
                   {item.sold ? (
                     <button
-                      onClick={() => {
+                      type="button"
+                      onClick={(e) => {
+                        e.preventDefault();
                         dispatch(addProductToCart(item.id));
                       }}
                     >
@@ -147,15 +158,6 @@ const FineArt = () => {
                   ) : (
                     <p className="sold">SOLD</p>
                   )}
-
-                  {/* 
-                  <button
-                    onClick={() => {
-                      showModal("./assets/images/fineArt" + item.image);
-                    }}
-                  >
-                    detailed view
-                  </button> */}
                 </div>
               </section>
             );
@@ -167,9 +169,3 @@ const FineArt = () => {
 };
 
 export default FineArt;
-
-//multiple images  {item.images.map((image) => {
-// return <img src={image} alt={item.title} key={image} />;
-// })}
-
-// <img src={item.image} alt={item.title} key={item.image}></img>

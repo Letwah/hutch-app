@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectCartItemIds,
@@ -47,57 +47,58 @@ const Cart = () => {
           backgroundImage: `url("./assets/images/fineArt/drawnUp.jpg")`,
         }}
       >
-        <div className="cartBox">
+        <div className="cartBoxWrapper">
           <h1>{page}</h1>
-
-          {!submitted &&
-            cartItems.map((item) => {
-              return (
-                <div key={item.id}>
-                  <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
-                  <div className="cartItemDetails">
-                    <img
-                      className="imageContainerCart"
-                      src={`./assets/images/fineArt${item.image}`}
-                      loading="lazy"
-                    ></img>
-                    <div className="totalRemove">
-                      <button
-                        className="remove"
-                        onClick={() => {
-                          dispatch(removeProductFromCart(item.id));
-                        }}
-                      >
-                        Remove
-                      </button>
+          <div className="cartBox">
+            {!submitted &&
+              cartItems.map((item) => {
+                return (
+                  <div key={item.id}>
+                    <h2>{item.title} </h2> £{(item.price / 100).toFixed(2)}
+                    <div className="cartItemDetails">
+                      <img
+                        className="imageContainerCart"
+                        src={`./assets/images/fineArt${item.image}`}
+                        loading="lazy"
+                      ></img>
+                      <div className="totalRemove">
+                        <button
+                          className="remove"
+                          onClick={() => {
+                            dispatch(removeProductFromCart(item.id));
+                          }}
+                        >
+                          Remove
+                        </button>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
 
-          {!showPurchaseEnqForm && (
-            <div className="totalBuy">
-              <button className="total">
-                Total = £{(total / 100).toFixed(2)}
-              </button>
+            {!showPurchaseEnqForm && (
+              <div className="totalBuy">
+                <button className="total">
+                  Total = £{(total / 100).toFixed(2)}
+                </button>
 
-              <button
-                onClick={() => {
-                  purchaseEnqFormSubmitted(true); // Update state to show CartCheckout
-                }}
-              >
-                Purchase Enquiry
-              </button>
-            </div>
-          )}
+                <button
+                  onClick={() => {
+                    purchaseEnqFormSubmitted(true); // Update state to show CartCheckout
+                  }}
+                >
+                  Enquiry Form
+                </button>
+              </div>
+            )}
 
-          {showPurchaseEnqForm && (
-            <CartCheckout
-              submitted={submitted}
-              onSubmitSuccess={() => purchaseEnqFormSubmitted(false)}
-            />
-          )}
+            {showPurchaseEnqForm && (
+              <CartCheckout
+                submitted={submitted}
+                onSubmitSuccess={() => purchaseEnqFormSubmitted(false)}
+              />
+            )}
+          </div>
         </div>
       </div>
     </>

@@ -57,38 +57,43 @@ const About = () => {
         <div className="bioCV">
           <div>
             <h2>Bio</h2>
-            Hutch studied BA Fine Art at Central St Martins, London from
-            2000-2004. He now lives in Woodbridge, Suffolk with his wife
-            (Photographic artist + Visual Designer Colette Smith) and son.
-            Painting outside within the landscape was Hutch&apos;s staple diet
-            for many years. The Suffolk skies and woodlands near his home have
-            propagated this. One hallmark of his oil paintings has been the
-            staccato, obsessive brushwork that seeks to describe plane and
-            contour in nature. Over time his practice has permeated many
-            subjects and media. At the core Hutch is an innovative draughtsman.
-            As a medium, line, transcends genre; it is timeless, classical, yet
-            also contemporary, visceral and hugely adaptable. Regardless of
-            technological advancements and trends, artfully drawn line will
-            always be valued as a tool that can deftly communicate an exciting
-            piece of research, a product, a brand identity or a story that needs
-            telling. The &apos;Fine Artist&apos; in him is seemingly allowed to
-            morph and reinvent style and rationales for making, whilst the
-            &apos;Illustrator&apos; consistently brings together neatly
-            coordinated images, on brief and on schedule.
+            <p>
+              Hutch studied BA Fine Art at Central St Martins, London from
+              2000-2004. He now lives in Woodbridge, Suffolk with his wife
+              (Photographic artist + Visual Designer Colette Smith) and son.
+              Painting outside within the landscape was Hutch&apos;s staple diet
+              for many years. The Suffolk skies and woodlands near his home have
+              propagated this. One hallmark of his oil paintings has been the
+              staccato, obsessive brushwork that seeks to describe plane and
+              contour in nature. Over time his practice has permeated many
+              subjects and media. At the core Hutch is an innovative
+              draughtsman. As a medium, line, transcends genre; it is timeless,
+              classical, yet also contemporary, visceral and hugely adaptable.
+              Regardless of technological advancements and trends, artfully
+              drawn line will always be valued as a tool that can deftly
+              communicate an exciting piece of research, a product, a brand
+              identity or a story that needs telling. The &apos;Fine
+              Artist&apos; in him is seemingly allowed to morph and reinvent
+              style and rationales for making, whilst the
+              &apos;Illustrator&apos; consistently brings together neatly
+              coordinated images, on brief and on schedule.{" "}
+            </p>
           </div>
 
           <div>
             <h2>Exhibitions</h2>
-            Previous exhibitions have included solo exhibitions at
+            <p> Previous exhibitions have included solo exhibitions at</p>
             <div>
-              <ul>
-                <li>Vortex Jazz Bar Gallery - Stoke Newington, London</li>
-                <li>The Truman Brewery Gallery - Brick Lane, London</li>
-                <li>The JLV Gallery - Cambridge Heath Road, London</li>
-                <li>North House Gallery - Manningtree, Essex</li>
-              </ul>
-              As well as many group shows in London, Norwich, Ipswich,
-              Aldeburgh, Manningtree and in Tuscany, Italy.
+              <p>
+                <ul>
+                  <li>Vortex Jazz Bar Gallery - Stoke Newington, London</li>
+                  <li>The Truman Brewery Gallery - Brick Lane, London</li>
+                  <li>The JLV Gallery - Cambridge Heath Road, London</li>
+                  <li>North House Gallery - Manningtree, Essex</li>
+                </ul>
+                As well as many group shows in London, Norwich, Ipswich,
+                Aldeburgh, Manningtree and in Tuscany, Italy.
+              </p>
             </div>
             <div>
               {" "}

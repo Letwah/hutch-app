@@ -14,7 +14,7 @@
   background-attachment: fixed;
 }
 
-.cartBox {
+.cartBoxWrapper {
   background: linear-gradient(
     138deg,
     #fff 0%,
@@ -31,11 +31,17 @@
   top: 2.5%;
   border: var(--border-width) solid var(--border-color);
   box-shadow: var(--border-color) 0.5em 0.5em 0em;
+}
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  /* align-content: space-around; */
+.cartBoxWrapper h1 {
+  margin: 0 4vw;
+  font-size: 1.8rem;
+}
+
+.cartBox {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2rem;
   justify-content: flex-start;
   align-items: flex-start;
   color: black;
@@ -129,7 +135,8 @@ button.total:active::after {
 
 div.cartItemDetails {
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
+  flex-direction: column-reverse;
 }
 
 .totalRemove {
@@ -145,7 +152,8 @@ div.cartItemDetails {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
+  grid-column: span 2;
 }
 
 .remove {
