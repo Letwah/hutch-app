@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ImgBox from "../components/intro/ImgBox";
 import { GlobalStyle, Wrapper, ImageContainer } from "./introStyles";
 // import "./introStylesCss";

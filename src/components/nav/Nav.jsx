@@ -1,8 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import Burger from "../menu/Burger";
-// import { ReactSVG } from "react-svg";
-// import { urlArtInstagram, urlIllustrationInsta } from "../../config";
+
 import { urlColetteSmithDeveloper } from "../../config";
 import {
   setPage,
@@ -24,20 +22,36 @@ const Nav = () => {
   const isOpen = useSelector(selectBurgerOpen);
   const dispatch = useDispatch();
 
-  console.log(isOpen);
-
-  //router
+  // Set scroll restoration behavior to 'manual' when component mounts
   useEffect(() => {
-    const pages = [INTRO, FINE_ART, CART, ILLUSTRATION, CONTACT, ABOUT];
-    const uRLParts = location.href.split("/");
-    console.log(uRLParts[uRLParts.length - 1].toUpperCase());
-
-    const page = uRLParts[uRLParts.length - 1].toUpperCase();
-    if (pages.includes(page)) {
-      dispatch(setPage(page));
-      window.scrollTo(0, 0);
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
     }
-  });
+  }, []);
+
+  const navigate = (page, pageUrl) => {
+    dispatch(setPage(page));
+    window.history.pushState({ page }, page, pageUrl);
+    window.scrollTo(0, 0);
+    if (window.innerWidth < 800 && isOpen) {
+      dispatch(setBurgerOpen(false));
+    }
+  };
+
+  // console.log(isOpen);
+
+  // //router
+  // useEffect(() => {
+  //   const pages = [INTRO, FINE_ART, CART, ILLUSTRATION, CONTACT, ABOUT];
+  //   const uRLParts = location.href.split("/");
+  //   console.log(uRLParts[uRLParts.length - 1].toUpperCase());
+
+  //   const page = uRLParts[uRLParts.length - 1].toUpperCase();
+  //   if (pages.includes(page)) {
+  //     dispatch(setPage(page));
+  //     window.scrollTo(0, 0);
+  //   }
+  // });
 
   //attempt to move icons when the burger is shut on dark mode
 
@@ -45,7 +59,15 @@ const Nav = () => {
     <>
       <div className="nav">
         <div className="navPageLinks">
-          <p
+          <p onClick={() => navigate(INTRO, "/")}>Home</p>
+          <p onClick={() => navigate(ABOUT, "/About")}>About</p>
+          <p onClick={() => navigate(CONTACT, "/Contact")}>Contact</p>
+          <p onClick={() => navigate(FINE_ART, "/Fine_Art")}>Fine Art</p>
+          <p onClick={() => navigate(ILLUSTRATION, "/Illustration")}>
+            Illustration
+          </p>
+          <p onClick={() => navigate(CART, "/Cart")}>Cart</p>
+          {/* <p
             onClick={() => {
               dispatch(setPage("ABOUT"));
               window.history.pushState("About", "About", "/About");
@@ -114,7 +136,7 @@ const Nav = () => {
             }}
           >
             Home
-          </p>
+          </p> */}
         </div>
         <div className="copyright">
           <a href={urlColetteSmithDeveloper}>© Colette Smith 2024</a>

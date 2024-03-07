@@ -1,9 +1,7 @@
 .filters {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  margin-left: 2rem;
+  display: grid;
+  grid-auto-columns: 1fr;
+  margin: 0 1vw 2rem 1vw;
 }
 [data-theme="dark"] input#search {
   color: var(--text-primary);
