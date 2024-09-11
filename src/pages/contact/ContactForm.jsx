@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { validate } from "../../validation";
 import { useDispatch } from "react-redux";
 import { setToastContent } from "../../features/appSlice";
@@ -36,7 +36,7 @@ const ContactForm = () => {
 
   if (submitted) {
     dispatch(setToastContent("Thanks for getting in touch!"));
-    return <p>We'll get back to you asap!</p>;
+    return <p>We will get back to you asap!</p>;
   }
 
   return (
