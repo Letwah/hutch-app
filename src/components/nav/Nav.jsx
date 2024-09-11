@@ -7,7 +7,7 @@ import {
   setBurgerOpen,
 } from "../../features/appSlice";
 // import { gsap } from "gsap";
-import "./nav.css";
+import "./Nav.css";
 import {
   INTRO,
   FINE_ART,
